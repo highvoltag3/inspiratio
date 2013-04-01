@@ -8,7 +8,6 @@
 <% end %>
 
 <section class="controls">
-  <a class="newideabox" href="#newideabox"></a>
   <div id="newideabox">
     <header>
       <h1>New Idea</h1>
@@ -92,43 +91,32 @@
     </header>
     <div id="ideas" class="clearfix">
       <% for idea in [{'id' => ['3', '4'], 'title' => 'Idea 1'}, {'id' => ['2', '1'], 'title' => 'Second Idea'}, {'id' => ['3', '4'], 'title' => 'Another Idea'}] %>
-        <div class="idea">
-          <div id="thumbs">
-            <%= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0], :width => 151, :height => 77 %>
-            <%= image_tag 'idea_thumb'+idea['id'][1]+'.png', :alt => 'idea_thumb'+idea['id'][1], :width => 151, :height => 77 %>
+        <article class="idea">
+          <header>
+            <%= image_tag 'avatar.png', :alt => 'avatar', :width => 80, :height => 80 %>
+            <span class="username">User's Name</span>
+            <span class="location">San Francisco, CA</span>     
+            <button type="button" name="" value="" class="follow"></button>             
+          </header>
+          <div class="preview">
+            <%#= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0] %>
+            <%= link_to image_tag('idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0]), idea_index_path %>
           </div>
-          <p class="ideaTitle">
-            <%= link_to idea['title'], '#' %>
-          </p>
-          <nav class="fr ideaBtns">
-            <ul>
-              <li><button type="button" name="" value="" class="grey share_btn">share</button></li>
-              <li class="idea_comments">
-                <%= link_to '0', '#', :title => 'You have no comments' %>
-              </li>
-              <li class="idea_likes">
-                <%= link_to '12', '#', :title => 'Number of times your idea has been seen' %>
-              </li>
-              <li class="idea_views">
-                <%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %>
-              </li>
-              <li class="idea_delete">
-                <%= link_to ' ', '#', :title => "This will delete the idea and it'll be lost for ever...", :class => 'confirm' %>
-              </li>
-            </ul>
-          </nav>
-          <div class="ideaComments hidden">
-            <div class="left_comment fl"></div>
-            <div class="left_comment fl"></div>
-            <div class="left_comment fl"></div>
-            <div class="right_comment fl"></div>
-            <div class="right_comment fl"></div>
-            <div class="right_comment fl"></div>
-            <div class="left_comment fl"></div>
-            <div class="left_comment fl"></div>
-            <div class="left_comment fl"></div>
-          </div>
-        </div> <!-- /idea -->
+          <footer class="clearfix">
+            <div>
+              <span class="comments number"> <%= link_to '0', '#', :title => 'You have no comments' %></span>
+            </div>
+            <div>
+              <span class="likes number"><%= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
+            </div>
+            <div>
+              <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
+            </div>
+            <span class="idea_delete">
+               <%= link_to ' ', '#', :title => "This will delete the idea and it'll be lost for ever...", :class => 'confirm' %>
+            </span>
+          </footer>
+        </article><!-- /idea -->
       <% end %>
     </div> <!-- /ideas -->
   </div> <!-- /ideasList -->

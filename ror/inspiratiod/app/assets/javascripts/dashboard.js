@@ -1,18 +1,29 @@
 $(document).ready(function() {
 
-
 	$('.addidea').click(function(){
-		$('.newideabox').trigger('click');		
+    //because we are using CSS transitions we don't need slideDown or up or siletoggle here.
+		if ( $('.controls').css('height') === '0px' ) {
+      $('.controls').css('height', '600');
+    }	else {
+      $('.controls').css('height', '0'); 
+    }      
 	});
 
-	$('.newideabox').toggle(function() {
-		  $('.controls').css('height', '600');
-		  //$('#files-table tbody').empty();
-		}, 
-		function() {
-		  $('.controls').css('height','0');
-		}
-	);
+  $('html').click(function() {
+    if ($('#notificationsWrapper').is(':visible')) {
+      $('#notificationsWrapper').fadeOut('normal');
+    }
+  })
+
+  $('#notificationsCircle').click(function(e) {
+    if ($('#notificationsWrapper').is(':visible')) {
+      $('#notificationsWrapper').fadeOut('normal');
+    } else {
+      $('#notificationsWrapper').fadeIn('fast');
+    }
+    $(this).css('background', '#999');
+    e.stopPropagation();
+  });
 	
 	$('#tags_p').tagsInput();
 
@@ -76,7 +87,7 @@ $(document).ready(function() {
 	setTimeout(function() {
 		$container.imagesLoaded( function(){
 		  $container.masonry({
-		    	itemSelector : '.ideacontainer',
+		    	itemSelector : '.idea',
 		    	// set columnWidth a fraction of the container width
 				columnWidth: function( containerWidth ) {
 				console.log(containerWidth / 3);
@@ -87,6 +98,18 @@ $(document).ready(function() {
 		});
 	}, 1300);
 
+  //delete ideas
+  $(".confirm").easyconfirm({
+    locale: {
+      title: 'Are you sure?',
+      button: ['No', 'Yes']
+    }
+  });
+
+  $(".confirm").click(function() {
+    $(this).closest('.idea').fadeOut('slow');
+  });
+
 }); /* end on ready function */
 
 
@@ -95,6 +118,28 @@ function userfriendlyresult(what) {
 	response = (what == "undefined") ? what : "0";
 	return response;	
 }
+
+function runFunctionIfEnter(e, fnName) {
+  var keynum;
+  if (window.event) {
+    keynum = e.keyCode;
+  } else if (e.which) {
+    keynum = e.which;
+  }
+  if (keynum == 13) {
+    eval(fnName)();
+  }
+}
+
+function makeComment() {
+  var inputFiled = $('input.reply');
+  var commentText = inputFiled.val();
+  $('.triangle_top_notInput').before('<p class="response"><img class="fl" src="imgs/avatar.png" alt="avatar" width="40" height="40">' + commentText + '</p>');
+}
+
+jQuery(document).keypress(function(e) {
+  runFunctionIfEnter(e, 'makeComment');
+});
 
 $.fn.serializeObject = function()
 {

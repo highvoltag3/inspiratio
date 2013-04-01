@@ -507,7 +507,11 @@ article footer > div {
 article footer > div:nth-child(2) {
 	border-left: 1px solid #666;
 	border-right: 1px solid #666;
-	margin: 0 .5em;
+	width: 40%;
+	padding: 0 8%;
+}
+article footer > div:nth-child(3) {
+	padding-left: 14%;
 }
 
 .number {
@@ -608,7 +612,8 @@ h2 {
 		background: url(/assets/icon_idea_folder.png) 0 0 no-repeat;
 	}
 	#likes {
-		background: url(/assets/icon_idea_love.png) 0 0 no-repeat; }
+		background: url(/assets/icon_idea_love.png) 0 0 no-repeat; 
+	}
 	#palette {
 		background: url(/assets/icon_idea_palette.png) 0 0 no-repeat;
 	}
@@ -685,96 +690,7 @@ article div.preview img {
 		margin-top: 1em;	
 	}
 	
-	.idea { 
-		padding: 1em .5em; 
-		border-top: 1px solid #666;
-		border-bottom: 1px solid #666;
-	}
-	.idea:first-child { 
-		border-top: 0;
-	}
-	.idea:last-child { 
-		border-bottom: 0;
-	}
-	.idea:nth-child(even){
-		background: #ccc;
-	}
-	.idea:hover {
-		background: #8F99A8;
-	}
-	.idea:hover > .ideaTitle a {
-		color: #fff;
-	}
 	
-		.ideaTitle { 
-			width: 50%;
-			display: inline-block;
-			margin-top: .5em;
-			text-transform: uppercase;
-		 }
-		 .ideaTitle a {
-		 	color: #555;
-		 	text-decoration: underline;
-		 } 
-		 .ideaTitle a:hover {
-		 	color: #555;
-		 	text-decoration: underline;
-		 } 
-		
-		.ideaBtns li {
-			width: 27px;
-			height: 27px;
-			display: inline-block;
-			margin: 0 1em;
-			color: #fff;
-			text-align: center;
-			padding-top: 4px;
-			font-size: .8em;
-			vertical-align: middle;
-		}
-		.ideaBtns li a {
-			padding: 0;
-			margin: 0;
-			color: #fff;
-		}
-		
-		.idea_comments {
-			background: url(/assets/icon_comment.png) 0 0 no-repeat;
-		}
-		.newcomments {
-			background: url(/assets/icon_comment_hover.png) 0 0 no-repeat;
-		}
-		
-		.files {
-			height: 22px;
-			display: block;
-			background: url(/assets/new/folder_icon.png) 10px 0 no-repeat;
-		}
-
-		.idea_likes {
-			background: url(/assets/icon_love.png) 0 0 no-repeat;
-		}
-		.idea_views {
-			background: url(/assets/icon_eye.png) 0 0 no-repeat;
-		}
-		.idea_delete {
-			background: url(/assets/icon_delete.png) 0 0 no-repeat;
-		}
-		
-		.ideaComments { 
-			width: 95%;
-			max-height: 120px; 
-			padding: 1em;
-			background: #F2F2F2;
-			border: 1px solid #808080;
-			margin: 0 auto;
-			overflow: scroll;
-		}
-			.ideaComments div {
-				width: 410px; 
-				height: 60px;
-				margin-bottom: .8em;
-			}
 			
 /* Notifications */
 #signinreg > div#notificationsCircle {
@@ -796,7 +712,6 @@ article div.preview img {
 
 #signinreg div#notificationsWrapper {
 	position: relative;
-	top: -20px;
 	display: none;
 }
 	#notificationsWindow {
