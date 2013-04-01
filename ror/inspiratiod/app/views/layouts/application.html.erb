@@ -59,7 +59,7 @@
   </div>
 
   <!-- !Javascript - at the bottom for fast page loading -->
-  <%= javascript_include_tag 'plugins', 'bootstrap.min' %>
+  <%= javascript_include_tag 'plugins', 'bootstrap.min', 'global.js' %>
   <!-- template specific js includes -->
   <%= yield(:js_includes) if content_for?(:js_includes) %>
 </body>

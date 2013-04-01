@@ -1,0 +1,69 @@
+<% content_for :more_headers do %>
+  <%#= stylesheet_link_tag 'jquery.tagsinput' %>
+<% end %>
+<% content_for :js_includes do %>
+  <%# javascript_include_tag 'dashboard' %>
+<% end %>
+
+<section id="main" class="clearfix">
+  
+  	<div id="useridea">
+	    <header>
+	      <h2>Your ideas</h2>
+	      <ul class="breadcrumb">
+	        <li>
+	          <%= link_to 'Home', root_path %>
+	          <span class="divider">/</span>
+	        </li>
+	        <li>
+	          <%= link_to 'Dashboard', dashboard_index_path %>
+	          <span class="divider">/</span>
+	        </li>
+	        <li>
+	          <%= link_to 'IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)', dashboard_index_path, :class => 'active' %>
+	        </li>
+	      </ul>
+
+	    </header>
+	   
+       <section class="mainidea row-fluid">
+	   		<div class="span6">
+		        <article>
+		          <header>
+		            <h1>IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)</h1>         
+		          </header>
+		          <div class="preview">
+		            <%#= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0] %>
+		            <%#= link_to image_tag('idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0]), user_idea_index_path %>
+		          </div>
+		          <footer class="clearfix">
+		            <div>
+		              <span class="comments number"> <%#= link_to '0', '#', :title => 'You have no comments' %></span>
+		            </div>
+		            <div>
+		              <span class="likes number"><%#= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
+		            </div>
+		            <div>
+		              <span class="views number"><%#= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
+		            </div>
+		            <span class="idea_delete">
+		               <%#= link_to ' ', '#', :title => "This will delete the idea and it'll be lost for ever...", :class => 'confirm' %>
+		            </span>
+		          </footer>
+
+		        </article><!-- /idea -->
+		    </div>
+    	</section> <!-- /ideas -->
+	</div><!-- /useridea -->
+
+</section><!-- /main -->
+
+
+ <!--  keep this we will need it.
+      <li class="divider-vertical"></li>
+      <li>
+        <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+      </li>
+      <li>
+        <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+      </li> -->

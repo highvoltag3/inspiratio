@@ -1,4 +1,6 @@
 Inspiratiod::Application.routes.draw do
+  get "user_idea/index"
+
   resources :users
 
 

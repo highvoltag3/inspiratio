@@ -9,7 +9,7 @@ $(document).ready(function() {
     }      
 	});
 
-  $('html').click(function() {
+  $('#main, header a').click(function() {
     if ($('#notificationsWrapper').is(':visible')) {
       $('#notificationsWrapper').fadeOut('normal');
     }

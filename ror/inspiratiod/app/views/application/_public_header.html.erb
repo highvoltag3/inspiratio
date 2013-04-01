@@ -3,19 +3,35 @@
     <%= link_to image_tag('new/logo.png', :alt => 'logo', :width => 179, :height => 40), root_path %>
   </div>
   <nav>
-    <ul id="nav">
+    <ul id="nav" class="mainnav">
       <li class="selected">
-        <%= link_to 'All', root_path, :id => 'home', :title => 'Browse the gallery' %>
+        <%= link_to 'Home', root_path, :id => 'home', :title => 'Browse the gallery' %>
       </li>
       <li>
-        <%= link_to 'Most Popular', '#', :id => 'mp', :title => 'Most Popular' %>
-      </li>
-      <li>
-        <%= link_to 'Most Viewed', '#', :id => 'mv', :title => 'Most Viewed' %>
+        <%= link_to 'Login', '#', :id => 'lg', :title => 'Login' %>
       </li>
     </ul>
   </nav><!-- /nav  -->
-  <div id="signinreg">
+ 
+  <nav>
+    <ul id="subnav" class="navbar">
+      <li>
+        <%= link_to '', '#', :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom' %>
+      </li>
+      <li>
+        <%= link_to '', '#', :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
+      </li>
+      <li class="divider-vertical"></li>
+      <li>
+        <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+      </li>
+      <li>
+        <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+      </li>
+    </ul>
+  </nav><!-- /nav  -->
+
+  <!-- <div id="signinreg">
     <div>
       <input type="email" name="username" value="" id="username" placeholder="email or screen name" />
       <input type="password" name="password"  value="" id="password" placeholder="password" />
@@ -28,5 +44,5 @@
         You can fill the form and click on register to create a new account is that easy!
       </div>
     </div>
-  </div>
+  </div> -->
 </header><!-- /header -->

@@ -80,14 +80,16 @@
   <div id="ideasList">
     <header>
       <h2>Your ideas</h2>
-      <ul class="breadcrumbs">
+      <ul class="breadcrumb">
         <li>
           <%= link_to 'Home', root_path %>
+          <span class="divider">/</span>
         </li>
         <li>
-          <%= link_to 'Dashboard', dashboard_index_path %>
+          <%= link_to 'Dashboard', dashboard_index_path, :class => 'active' %>
         </li>
       </ul>
+
     </header>
     <div id="ideas" class="clearfix">
       <% for idea in [{'id' => ['3', '4'], 'title' => 'Idea 1'}, {'id' => ['2', '1'], 'title' => 'Second Idea'}, {'id' => ['3', '4'], 'title' => 'Another Idea'}] %>
@@ -100,7 +102,7 @@
           </header>
           <div class="preview">
             <%#= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0] %>
-            <%= link_to image_tag('idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0]), idea_index_path %>
+            <%= link_to image_tag('idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0]), user_idea_index_path %>
           </div>
           <footer class="clearfix">
             <div>

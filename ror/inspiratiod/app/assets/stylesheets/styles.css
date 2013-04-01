@@ -193,10 +193,12 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
          url('/assets/helveticalight-webfont.woff') format('woff'),
          url('/assets/helveticalight-webfont.ttf') format('truetype'),
          url('/assets/helveticalight-webfont.svg#HelveticaLight') format('svg');
-    font-weight: normal;
+    font-weight:  200;
     font-style: normal;
 
 }
+
+
 
 @font-face {
 	font-family: 'HelveticaRegular';
@@ -261,14 +263,14 @@ a:hover {
 		margin: 1.5em 3em 0 5em;
 	}
 	
-	header ul li {
+	header ul#nav li {
 		width: 76px;
 		margin: 0 1.5em;
 		padding-top: 1.5em;
 		text-align: center;
 		display: inline-block;
 	}
-	header ul li:first-child {
+	header ul#nav li:first-child {
 		margin-right: 0;
 	}
 	
@@ -277,7 +279,6 @@ a:hover {
 		top: .8em;
 		right: 2.5em;
 		width: 170px;
-		height: 110px;
 		color: #fff;
 		
 	}
@@ -339,15 +340,20 @@ a:hover {
 	
 	#signinreg .actions { text-align: center; }
 	
-	nav {
+	#nav {
 		width: 60%;
+		height: 59px;
 		margin: 0 auto;
 		text-align: center;
 	}
+	#nav li {
+		height: 100%;
+	}
 	
 	nav .selected { 
+		background: url('/assets/new/bg.png') 0 0 repeat;
 	}
-	nav li a {
+	#nav li a {
 		height: 15px;
 		padding-top: 25px;
 		display: block;
@@ -357,6 +363,9 @@ a:hover {
 	
 	nav #home {
 		background: url(/assets/new/home_icon.png) center 0 no-repeat;
+	}
+	nav #lg {
+		background: url(/assets/new/login_icon.png) center 0 no-repeat;
 	}
 	nav #mv {
 		background: url(/assets/new/eye_icon.png) center 0 no-repeat;
@@ -373,6 +382,12 @@ a:hover {
 	}
 	nav #st {
 		background: url(/assets/new/settings_icon.png) center 0 no-repeat;
+	}
+	nav #gv {
+		background: url(/assets/new/grid_view_icon.png) center 0 no-repeat;
+	}
+	nav #lv {
+		background: url(/assets/new/list_view_icon.png) center 0 no-repeat;
 	}
 	
 	nav .selected #home,
@@ -398,6 +413,34 @@ a:hover {
 	nav #addidea:hover {
 
 	}
+	
+	#subnav { 
+		display: block;
+		width: 15%;
+		position: absolute;
+		right: 10%;
+		background: rgba(255,255,255,.8);
+		border: 2px solid #999;
+		border-top: none;
+		border-bottom-right-radius: 3px;
+		border-bottom-left-radius: 	3px;
+		top: 80px;
+		padding-top: .7%;
+	}
+
+	#subnav li { 
+		float: left;
+		margin-left: 8%;
+	}
+	#subnav li.divider-vertical { 
+		height: 30px;
+		border-left: 1px solid #b9b9b9;
+	}
+		#subnav li a { 
+			display: block;
+			width: 25px;
+			height: 25px;
+		}
 
 	#main {
 		position: relative;
@@ -407,11 +450,11 @@ a:hover {
 		margin: 0 auto;
 	}
 
-#main header {
-	background: none;
-	box-shadow: none;
-	height: auto;
-}	
+		#main header {
+			background: none;
+			box-shadow: none;
+			height: auto;
+		}	
 	
 /* Home */
 #showIdeas {
@@ -911,6 +954,11 @@ article div.preview img {
 	#upload-panel.hover {
 	  background-color: #ffffcc;
 	}
+
+ /* Registered User Individual idea */
+  #useridea article {
+  	width: 100%;
+  }
 
 /* END OF THE SITE */	
 footer.endofsite {
