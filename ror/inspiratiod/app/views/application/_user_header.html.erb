@@ -1,0 +1,43 @@
+<header>
+  <div id="logo">
+    <%= link_to image_tag('new/logo.png', :alt => 'logo', :width => 179, :height => 40), root_path %>
+  </div>
+  <nav>
+    <ul id="nav">
+      <li class="selected">
+        <%= link_to 'All', root_path, :id => 'home', :title => 'Browse the gallery' %>
+      </li>
+      <li>
+        <%= link_to 'Your Ideas', '#', :id => 'yi', :title => 'Your ideas' %>
+      </li>
+      <li>
+        <%= link_to 'New Idea', '#', :id => 'ni', :title => 'New Idea' %>
+      </li>
+      <li>
+        <%= link_to 'Settings', '#', :id => 'st', :title => 'Settings' %>
+      </li>
+    </ul>
+  </nav><!-- /nav  -->
+  <div id="signinreg">
+    <%= image_tag 'avatar.png', :class => 'fl', :alt => 'avatar', :width => 60, :height => 60 %>
+    <span class="username"><!-- John Doe --></span>
+    <%= link_to 'My Profile', '#', :class => 'fl c2as' %>
+    <%= link_to 'Sign Out', '#', :class => 'fl c2as logout' %>
+    <div id="notificationsCircle">
+      <p>1</p>
+    </div>
+    <div id="notificationsWrapper">
+      <div class="triangle_top_notifications"></div>	
+      <div id="notificationsWindow">
+        <h1>Notifications</h1>
+        <div class="notification">
+          <% image_tag 'avatar_jane_doe.jpeg', :alt => 'avatar_jane_doe', :width => 40, :height => 40 %>
+          <span class="notificationTitle"></span>
+          <p class="notificationContent">Excellent Job, great chromatic use.</p>
+          <div class="triangle_top_notInput"></div>	
+          <input type="text" name="reply" class="reply" value="" placeholder="Type your reply here" />
+        </div><!-- /notification -->
+      </div> <!-- /notificationsWindow -->
+    </div> <!-- /notificationsWrapper -->
+  </div>
+</header><!-- /header -->

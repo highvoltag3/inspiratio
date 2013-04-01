@@ -13,7 +13,6 @@
     <header>
       <h1>New Idea</h1>
     </header>
-    
     <div id="newidea_text" class="fl">
       <form id="ideaform">
         <div>
@@ -26,7 +25,7 @@
         </div>
         <div>
           <p>Client (optional)</p>
-          <input type="text" value="" name="client" class="client" placeholder="This is optional"/>
+          <input type="text" value="" name="client" class="client" placeholder="This is optional" />
         </div>
         <div>
           <p>Do you want to display it as a public idea?</p>
@@ -48,131 +47,92 @@
         </div>	
       </form>
     </div>
-    
     <div id="newideaupload" class="fr">				
       <div class="uploader">
         <!--
-
         <h1>Files</h1>
-        
         <table id="files-table" class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>File Name</th>
-            <th>File Size</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
+          <thead>
+            <tr>
+              <th>File Name</th>
+              <th>File Size</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
         </table>
-        
--->
+        -->
         <h1>Upload</h1>
-          <div id="upload-panel" class="well">Drag a file here to upload!</div>
-          <div id="uploads">
-        </div>
-        
+        <div id="upload-panel" class="well">Drag a file here to upload!</div>
+        <div id="uploads"></div>
         <!--
-<h1>Upload alternate</h1>
+        <h1>Upload alternate</h1>
         <form action="/s3bucket" enctype="multipart/form-data" method="post" class="uploaderst">
           <input type="file" name="upload" class="uploadfield" />
           <button type="submit" class="btn btn-primary btn-upload">Upload</button>
         </form>
--->
+        -->
       </div>
-      
     </div>
   </div> <!-- /ideabox -->
 </section>
-  
-
 <section id="main" class="clearfix">
-
   <div id="ideasList">
-  
     <header>
       <h2>Your ideas</h2>
       <ul class="breadcrumbs">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Dashboard</a></li>
+        <li>
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li>
+          <%= link_to 'Dashboard', dashboard_index_path %>
+        </li>
       </ul>
     </header>
-    
     <div id="ideas" class="clearfix">
-      
-      <div class="idea">
-        <div id="thumbs">
-          <img src="imgs/idea_thumb3.png" alt="idea_thumb3" width="151" height="77">
-          <img src="imgs/idea_thumb4.png" alt="idea_thumb3" width="151" height="77">
-        </div>
-        <p class="ideaTitle"><a	href="#">Idea 1</a></p>
-        <nav class="fr ideaBtns">
-          <ul>
-            <li><button type="button" name="" value="" class="grey share_btn">share</button></li>
-            <li class="idea_comments"><a href="#" title="You have no comments">0</a></li>
-            <li class="idea_likes"><a href="#" title="Number of times your idea has been seen">12</a></li>
-            <li class="idea_views"><a href="#" title="Number of times your ideas have been viewed">6</a></li>
-            <li class="idea_delete"><a href="#" title="This will delete the idea and it'll be lost for ever..." class="confirm">&nbsp;</a></li>
-          </ul>
-        </nav>
-        
-      </div> <!-- /idea -->
-      
-      <div class="idea">
-        <div id="thumbs">
-          <img src="imgs/idea_thumb2.png" alt="idea_thumb3" width="151" height="77">
-          <img src="imgs/idea_thumb1.png" alt="idea_thumb3" width="151" height="77">
-        </div>
-        <p class="ideaTitle"><a	href="#">Second Idea</a></p>
-        <nav class="fr ideaBtns">
-          <ul>
-            <li><button type="button" name="" value="" class="grey share_btn">share</button></li>
-            <li class="idea_comments hascomments"><a href="#" title="You have NEW comments!!">10</a></li>
-            <li class="idea_likes"><a href="#" title="Number of times your idea has been seen">2</a></li>
-            <li class="idea_views"><a href="#" title="Number of times your ideas have been viewed">8</a></li>
-            <li class="idea_delete"><a href="#" title="This will delete the idea and it'll be lost for ever..." class="confirm">&nbsp;</a></li>
-          </ul>
-        </nav>
-        <div class="ideaComments hidden">
-          <div class="left_comment fl"></div>
-          <div class="left_comment fl"></div>
-          <div class="left_comment fl"></div>
-          <div class="right_comment fl"></div>
-          <div class="right_comment fl"></div>
-          <div class="right_comment fl"></div>
-          <div class="left_comment fl"></div>
-          <div class="left_comment fl"></div>
-          <div class="left_comment fl"></div>
-        </div>
-      </div> <!-- /idea -->
-      
-      <div class="idea">
-        <div id="thumbs">
-          <img src="imgs/idea_thumb3.png" alt="idea_thumb3" width="151" height="77">
-          <img src="imgs/idea_thumb4.png" alt="idea_thumb3" width="151" height="77">
-        </div>
-        <p class="ideaTitle"><a	href="#">Another Idea</a></p>
-        <nav class="fr ideaBtns">
-          <ul>
-            <li><button type="button" name="" value="" class="grey share_btn">share</button></li>
-            <li class="idea_comments"><a href="#" title="You have no comments">0</a></li>
-            <li class="idea_likes"><a href="#" title="Number of times your idea has been seen">4</a></li>
-            <li class="idea_views"><a href="#" title="Number of times your ideas have been viewed">4</a></li>
-            <li class="idea_delete"><a href="#" title="This will delete the idea and it'll be lost for ever..." class="confirm">&nbsp;</a></li>
-          </ul>
-        </nav>
-        
-      </div> <!-- /idea -->
-      
-
-      
+      <% for idea in [{'id' => ['3', '4'], 'title' => 'Idea 1'}, {'id' => ['2', '1'], 'title' => 'Second Idea'}, {'id' => ['3', '4'], 'title' => 'Another Idea'}] %>
+        <div class="idea">
+          <div id="thumbs">
+            <%= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0], :width => 151, :height => 77 %>
+            <%= image_tag 'idea_thumb'+idea['id'][1]+'.png', :alt => 'idea_thumb'+idea['id'][1], :width => 151, :height => 77 %>
+          </div>
+          <p class="ideaTitle">
+            <%= link_to idea['title'], '#' %>
+          </p>
+          <nav class="fr ideaBtns">
+            <ul>
+              <li><button type="button" name="" value="" class="grey share_btn">share</button></li>
+              <li class="idea_comments">
+                <%= link_to '0', '#', :title => 'You have no comments' %>
+              </li>
+              <li class="idea_likes">
+                <%= link_to '12', '#', :title => 'Number of times your idea has been seen' %>
+              </li>
+              <li class="idea_views">
+                <%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %>
+              </li>
+              <li class="idea_delete">
+                <%= link_to ' ', '#', :title => "This will delete the idea and it'll be lost for ever...", :class => 'confirm' %>
+              </li>
+            </ul>
+          </nav>
+          <div class="ideaComments hidden">
+            <div class="left_comment fl"></div>
+            <div class="left_comment fl"></div>
+            <div class="left_comment fl"></div>
+            <div class="right_comment fl"></div>
+            <div class="right_comment fl"></div>
+            <div class="right_comment fl"></div>
+            <div class="left_comment fl"></div>
+            <div class="left_comment fl"></div>
+            <div class="left_comment fl"></div>
+          </div>
+        </div> <!-- /idea -->
+      <% end %>
     </div> <!-- /ideas -->
-    
   </div> <!-- /ideasList -->
-
 </section><!-- /main -->
-
 <a class="share" href="#sharebox"></a>
 <div id="sharebox">
   <header>

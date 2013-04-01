@@ -50,7 +50,11 @@
 <body>
 
   <div id="container" class="<%= @main_container or 'frontpage' %>">
-    <%= render :partial => 'header' %>
+    <% if defined? @user %>
+      <%= render :partial => 'user_header' %>
+    <% else %>
+      <%= render :partial => 'public_header' %>
+    <% end %>
     <%= yield %>
     <%= render :partial => 'footer' %>
   </div>

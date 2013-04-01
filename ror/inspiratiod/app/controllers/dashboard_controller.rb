@@ -4,5 +4,6 @@ class DashboardController < ApplicationController
 
   def set_template_constants
     @main_container = 'loggedin'
+    @user = true
   end
 end
