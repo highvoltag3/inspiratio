@@ -17,12 +17,12 @@
   </nav><!-- /nav  -->
   <div id="signinreg">
     <div>
-      <input type="email" name="username" value="" id="username" placeholder="username or email" />
+      <input type="email" name="username" value="" id="username" placeholder="email or screen name" />
       <input type="password" name="password"  value="" id="password" placeholder="password" />
       <span class="actions">
         <%= link_to '<button name="signin" id="sighin">Sign in</button>'.html_safe, dashboard_index_path %>
         - or -
-        <%= link_to '<button name="register" class="fr" id="register">Register</button>'.html_safe, sign_up_index_path %>
+        <%= link_to '<button name="register" class="fr" id="register">Register</button>'.html_safe, new_user_path %>
       </span>
       <div class="arrow_box">
         You can fill the form and click on register to create a new account is that easy!

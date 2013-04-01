@@ -1,4 +1,7 @@
 Inspiratiod::Application.routes.draw do
+  resources :users
+
+
   get "dashboard/index"
 
   get "idea/index"
