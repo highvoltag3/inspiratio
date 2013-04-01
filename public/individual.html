@@ -1,0 +1,153 @@
+<!DOCTYPE html>   
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<!--[if IE]><![endif]-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="keywords" content="" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<!-- !CSS -->
+	<link rel="stylesheet" href="styles.css?v=1">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
+	<!-- Uncomment if you are specifically targeting less enabled mobile browsers
+	<link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">  -->
+	
+	<!-- !Modernizr - All other JS at bottom -->
+	<script src="js/modernizr-1.5.min.js"></script>
+</head>
+<!-- !Body -->
+<body>
+	<div id="container" class="individual">
+		<header>
+			<div id="logo">
+				<a href="index.html">
+					<img src="imgs/logo.png" alt="logo" width="228" height="64">
+				</a>
+			</div>
+			
+			<nav>
+				<ul id="nav">
+					<li class="selected">
+						<a href="index.html" title="Home" id="home">Home</a>
+					</li>
+					<li>
+						<a href="#nowhere" title="Most Viewed" id="mv">Most&nbsp;Viewed</a>
+					</li>
+					<li>
+						<a href="#nowhere" title="Most Popular" id="mp">Most&nbsp;Popular</a>
+					</li>
+				</ul>
+			</nav><!-- /#nav  -->
+			
+			<div id="signinreg">
+				<div>Login: </div>
+				<div>
+					<input type="email" name="username" value="username or email" id="username">
+					<input type="password" name="password">
+					<span class="actions"><button name="signin" value="" id="signin">Sign in</button> - or - <button name="register" value="" id="register">Register</button></span>
+				</div>
+			</div>
+			
+		</header><!-- /header -->
+		
+		<section id="main" class="clearfix">
+		
+			<article>
+				<header>
+					<img src="imgs/avatar.png" alt="avatar" width="80" height="80">
+					<span class="username">User's Name</span>
+					<span class="location">San Francisco, CA</span>		
+					<button type="button" name="" value="" class="greenbtn fr follow">+ follow</button>				
+				</header>
+				<div class="preview"><img src="imgs/img_placeholder.jpg" alt="Image"></div>
+				
+				<footer class="clearfix">
+					<div>
+						<span class="number">1400</span>
+						<p>Comments</p>
+					</div>
+					<div>
+						<span class="number">40</span>
+						<p>Files</p>
+					</div>
+					<div>
+						<span class="number">200</span>
+						<p>Views</p>
+					</div>
+				</footer>
+			</article>
+			
+			<aside id="prevversions">
+				<div class="title">Older Versions <span class="fr"><strong>4</strong> Total <img src="imgs/icon_down_arrow.png" alt="icon_down_arrow" width="22" height="22"></div>
+				
+				<div class="prevthumb first"></div>
+				<div class="prevthumb"></div>
+				<div class="prevthumb"></div>
+				<div class="prevthumb"></div>
+			</aside>
+		
+			<aside id="sidebar">
+				<div id="details">
+					<span id="views"><strong>1200</strong> Views</span>
+					<span id="files"><strong>40</strong> Files</span>
+					<span id="likes"><strong>160</strong> Likes</span>						
+					<span id="palette"><img src="imgs/dummy_palette.jpg" alt="dummy_palette" width="122" height="18"></span>					
+					<span id="share"><h2>Share</h2></span>						
+					<div id="tags">
+						<h2>Tags</h2>
+						<span>Web Development</span>
+						<span>Infographics</span>
+					</div>						
+				</div>
+				<div id="similar">
+					<h2>Similar Projects</h2>
+					<figure>
+					  <img src="imgs/related1.jpg" alt="related1">
+					  <figcaption>Shadows App</figcaption>
+					</figure>
+					
+					<figure>
+					  <img src="imgs/related2.jpg" alt="related2">
+					  <figcaption>Not another shadow App</figcaption>
+					</figure>
+				</div>
+				
+				<div id="comments">
+					<div class="title">Comments <span class="fr"><strong>178</strong> Total 
+						<img src="imgs/icon_down_arrow.png" alt="icon_down_arrow" width="22" height="22">
+					</div>
+					
+					<div class="left_comment comment"></div>
+					<div class="right_comment comment"></div>
+					
+				</div>
+			</aside>
+			
+			
+		</section><!-- /main -->
+		
+		<footer>
+		
+		</footer><!-- /footer -->
+	</div><!--!/#container -->
+	<!-- !Javascript - at the bottom for fast page loading -->
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+	<script src="js/plugins.js?v=1"></script>
+	<script src="js/script.js?v=1"></script>
+	<script>
+					getClickedIMGSrc();
+				</script>
+</body>
+</html>

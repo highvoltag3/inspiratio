@@ -1,0 +1,28 @@
+<section id="main" class="clearfix home">
+  <div id="showIdeas">
+    <% for img in ['img_dummy_idea.jpeg', 'img_3_Eye_Toy.jpg', 'img_197075460.jpg', 'img_201030080404.jpg', 'img_Deep.jpg', 'img_Fractal_Lion.jpg'] %>
+      <article>
+        <header>
+          <%= image_tag 'avatar.png', :alt => 'avitar', :width => 80, :height => 80 %>
+          <span class="username">User's Name</span>
+          <span class="location">San Francisco, CA</span>     
+          <button type="button" name="" value="" class="follow"></button>             
+        </header>
+        <div class="preview">
+          <%= link_to image_tag(img, :alt => 'img_dummy_idea'), idea_index_path %>
+        </div>
+        <footer class="clearfix">
+          <div>
+            <span class="comments number">1400</span>
+          </div>
+          <div>
+            <span class="likes number">40</span>
+          </div>
+          <div>
+            <span class="views number">200</span>
+          </div>
+        </footer>
+      </article>
+    <% end %>
+  </div> <!-- /articlesContainer -->
+</section><!-- /main -->

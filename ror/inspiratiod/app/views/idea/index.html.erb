@@ -1,0 +1,93 @@
+<% content_for :js_includes do %>
+  <%= javascript_include_tag 'idea' %>
+<% end %>
+
+<section id="main" class="clearfix">
+  <article>
+    <header>
+      <%= image_tag 'avatar.png', :alt => 'avatar', :width => 80, :height => 80 %>
+      <span class="username">User's Name</span>
+      <span class="location">San Francisco, CA</span>		
+      <button type="button" name="" value="" class="greenbtn fr follow">+ follow</button>				
+    </header>
+    <div class="preview">
+      <%= image_tag 'img_placeholder.jpg', :alt => 'Image' %>
+    </div>
+    <footer class="clearfix">
+      <div>
+        <span class="number">1400</span>
+        <p>Comments</p>
+      </div>
+      <div>
+        <span class="number">40</span>
+        <p>Files</p>
+      </div>
+      <div>
+        <span class="number">200</span>
+        <p>Views</p>
+      </div>
+    </footer>
+  </article>
+  <aside id="prevversions">
+    <div class="title">
+      Older Versions
+      <span class="fr">
+        <strong>4</strong>
+        Total
+        <%= image_tag 'icon_down_arrow.png', :alt => 'icon_down_arrow', :width => 22, :height => 22 %>
+      </span>
+    </div>
+    <div class="prevthumb first"></div>
+    <div class="prevthumb"></div>
+    <div class="prevthumb"></div>
+    <div class="prevthumb"></div>
+  </aside>
+  <aside id="sidebar">
+    <div id="details">
+      <span id="views">
+        <strong>1200</strong>
+        Views
+      </span>
+      <span id="files">
+        <strong>40</strong>
+        Files
+      </span>
+      <span id="likes">
+        <strong>160</strong>
+        Likes
+      </span>						
+      <span id="palette">
+        <%= image_tag 'dummy_palette.jpg', :alt => 'dummy_palette', :width => 122, :height => 18 %>
+      </span>
+      <span id="share"><h2>Share</h2></span>						
+      <div id="tags">
+        <h2>Tags</h2>
+        <span>Web Development</span>
+        <span>Infographics</span>
+      </div>						
+    </div>
+    <div id="similar">
+      <h2>Similar Projects</h2>
+      <figure>
+        <%= image_tag 'related1.jpg', :alt => 'related1' %>
+        <figcaption>Shadows App</figcaption>
+      </figure>
+      <figure>
+        <%= image_tag 'related2.jpg', :alt => 'related2' %>
+        <figcaption>Not another shadow App</figcaption>
+      </figure>
+    </div>
+    <div id="comments">
+      <div class="title">
+        Comments
+        <span class="fr">
+          <strong>178</strong>
+          Total 
+          <%= image_tag 'icon_down_arrow.png', :alt => 'icon_down_arrow', :width => 22, :height => 22 %>
+        </span>
+      </div>
+      <div class="left_comment comment"></div>
+      <div class="right_comment comment"></div>
+    </div>
+  </aside>
+</section><!-- /main -->
