@@ -69,55 +69,6 @@ $(document).ready(function() {
     $('#uploads').append($panel);
   }
 
-/*
-  function loadFiles() {
-    dpd.files.get({$sort: {dateUploaded: 1}}, function(res) {
-      $('#files-table tbody').empty();
-      console.log("res:" + res);
-      res.forEach(function(file) {
-        $('#files-table tbody').append('<tr>' + 
-          '<td><a href="/s3bucket/' + file.fileName + '" target="_blank">' + file.fileName + '</a></td>' +
-          '<td>' + file.fileSize + ' bytes</td>' +
-          '<td><a href="#" class="delete-link" data-file-id="' + file.id + '">Delete</a></td>' +
-          '</tr>');
-      });
-    });
-  }
-
-  loadFiles();
-*/   
- 
-  dpd.on('files:changed', loadExistingIdeas);  //dpd.on('files:changed', loadFiles);
-
-  $('#files-table').on('click', '.delete-link', function() {
-    var id = $(this).attr('data-file-id');
-    dpd.files.del(id, function(res, err) {
-      if (err) alert(err.message);
-    });
-    return false;
-  });
-
-  //darios
-	function addidea(file) 
-	{
-		var idea = $("#ideaform").serializeObject();
-		console.log(fileName);
-		 
-		dpd.ideas.post(
-			{
-				"title":idea.ideatitle,
-				"description":idea.description,
-				"private":idea.publicidea,"idea":"https://s3.amazonaws.com/inspiratiod/" + fileName,
-				"tags":idea.tags
-			}, 			
-				function(result, err) {
-				  if(err) return console.log(err);
-				  console.log(result, result.id);
-				}
-		);
-	}
-	
-	loadExistingIdeas();
 	
 //masonry	
 	var $container = $('#ideas');
@@ -139,66 +90,11 @@ $(document).ready(function() {
 }); /* end on ready function */
 
 
-
-
-	//lets load only my ideas
-	function loadExistingIdeas() {
-		var whoami = "";
-		
-  		dpd.users.me(function(me) {
-			var query = {"ownerID":me.id};
 	
-			dpd.ideas.get(query, function (results) {
-			  console.log(results);
-			  loadIdeas(results);
-			});	
-		});
-	}
-  	
-  	
-	
-	var ideasContainer = $('#ideas');
-	
-	function loadIdeas(results) {
-		  ideasContainer.empty(); //Empty the list
-		    results.forEach(function(idea) { //Loop through the result
-		    addIdeas(idea); //Add it to the DOM.		    
-		  });
-	}
-
-	function addIdeas(idea) {
-	  
-	var html = '<article class="ideacontainer">'																		;
-		html +=		'<header>'																		   					;
-		html +=			'<span class="title">' + idea.title + '</span>'							   						;
-		html +=		'</header>				  '														   					;
-			   	
-		html +=		'<div class="preview">	  '														   					;
-		html +=			'<a href="individual.htm">'													   					;
-		html +=				'<img src="' + idea.idea + '" alt="img_dummy_idea">'				   						;
-		html +=			'</a>					  '													   					;
-		html +=		'</div>					  '														   					;
-			   	
-		html +=		'<footer class="clearfix">'														   					;
-		html +=			'<div>					  '													   					;
-		html +=				'<span class="comments number">' + userfriendlyresult(idea.comments) + '</span>'			;
-		html +=			'</div>					  '													   					;
-		html +=			'<div>					  '													   					;
-		html +=				'<span class="files number">' + userfriendlyresult(idea.likes) + '</span>'					;
-		html +=			'</div>					  '													   					;
-		html +=			'<div>					  '													   					;
-		html +=				'<span class="views number">' + userfriendlyresult(idea.views) + '</span>'					;
-		html +=			'</div>					  '													   					;
-		html +=		'</footer>'																		   					;
-		html += '</article>' 																		   					;
-	
-		ideasContainer.append(html);
-	}  
-	
-	function userfriendlyresult(what) {
-		response = (what == "undefined") ? what : "0";
-		return response;	
-	}
+function userfriendlyresult(what) {
+	response = (what == "undefined") ? what : "0";
+	return response;	
+}
 
 $.fn.serializeObject = function()
 {

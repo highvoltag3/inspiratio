@@ -30,7 +30,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <%= javascript_include_tag 'http://code.jquery.com/jquery-latest.min.js' %>
   <script>!window.jQuery && document.write('<script src="/assets/jquery-1.7.2.min.js"><\/script>')</script>
-  <%= javascript_include_tag 'dpd' %>
 
   <!-- !CSS -->
   <%= stylesheet_link_tag 'bootstrap.min', 'styles', 'jquery.fancybox' %>
@@ -39,7 +38,7 @@
   -->
 
   <!-- !Modernizr - All other JS at bottom -->
-  <%= javascript_include_tag 'modernizr-1.5.min' %>
+  <%= javascript_include_tag 'modernizr-2.5.min' %>
 
   <!-- template specific headers -->
   <%= yield(:more_headers) if content_for?(:more_headers) %>
@@ -60,7 +59,7 @@
   </div>
 
   <!-- !Javascript - at the bottom for fast page loading -->
-  <%= javascript_include_tag 'plugins', 'bootstrap.min', 'jquery.masonry', 'script' %>
+  <%= javascript_include_tag 'plugins', 'bootstrap.min' %>
   <!-- template specific js includes -->
   <%= yield(:js_includes) if content_for?(:js_includes) %>
 </body>
