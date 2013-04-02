@@ -76,21 +76,21 @@
     </div>
   </div> <!-- /ideabox -->
 </section>
-<section id="main" class="clearfix">
-  <div id="ideasList">
-    <header>
-      <h2>Your ideas</h2>
-      <ul class="breadcrumb">
-        <li>
-          <%= link_to 'Home', root_path %>
-          <span class="divider">/</span>
-        </li>
-        <li>
-          <%= link_to 'Dashboard', dashboard_index_path, :class => 'active' %>
-        </li>
-      </ul>
+<section id="main" class="clearfix dashboard">
+  <header>
+    <h2>Your ideas</h2>
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to 'Home', root_path %>
+        <span class="divider">/</span>
+      </li>
+      <li>
+        <%= link_to 'Dashboard', dashboard_index_path, :class => 'active' %>
+      </li>
+    </ul>
 
-    </header>
+  </header>
+  <div id="ideasList">
     <div id="ideas" class="clearfix">
       <% for idea in [{'id' => ['3', '4'], 'title' => 'Idea 1'}, {'id' => ['2', '1'], 'title' => 'Second Idea'}, {'id' => ['3', '4'], 'title' => 'Another Idea'}] %>
         <article class="idea">

@@ -33,26 +33,35 @@
 		            <h1>IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)</h1>         
 		          </header>
 		          <div class="preview">
-		            <%#= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0] %>
-		            <%#= link_to image_tag('idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0]), user_idea_index_path %>
+		            <%= link_to image_tag('img_201030080404.jpg', :alt => 'img_201030080404.jpg'), user_idea_index_path %>
 		          </div>
+		         
 		          <footer class="clearfix">
 		            <div>
-		              <span class="comments number"> <%#= link_to '0', '#', :title => 'You have no comments' %></span>
+		              <span class="comments number"> 
+		              	<%= link_to '0', '#', :title => 'You have no comments' %>
+		              </span>
 		            </div>
 		            <div>
-		              <span class="likes number"><%#= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
+		              <span class="likes number"> 
+		              	<%= link_to '12', '#', :title => 'Number of times your idea has been seen' %>
+		              </span>
 		            </div>
 		            <div>
-		              <span class="views number"><%#= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
+		              <span class="views number">
+		              	<%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %>
+		              </span>
 		            </div>
-		            <span class="idea_delete">
-		               <%#= link_to ' ', '#', :title => "This will delete the idea and it'll be lost for ever...", :class => 'confirm' %>
-		            </span>
 		          </footer>
 
 		        </article><!-- /idea -->
+		    </div> 
+
+		    <div id="ideadetailspanel" class="span6">
+				<h2> LASTEST COMMENTS </h2>
+				 <% for comment in [{'id' => ['3', '4'], 'content' => 'Idea 1'}, {'id' => ['2', '1'], 'title' => 'Second Idea'}, {'id' => ['3', '4'], 'title' => 'Another Idea'}] %>
 		    </div>
+
     	</section> <!-- /ideas -->
 	</div><!-- /useridea -->
 

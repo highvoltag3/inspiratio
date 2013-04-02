@@ -80,24 +80,6 @@ $(document).ready(function() {
     $('#uploads').append($panel);
   }
 
-	
-//masonry	
-	var $container = $('#ideas');
-
-	setTimeout(function() {
-		$container.imagesLoaded( function(){
-		  $container.masonry({
-		    	itemSelector : '.idea',
-		    	// set columnWidth a fraction of the container width
-				columnWidth: function( containerWidth ) {
-				console.log(containerWidth / 3);
-					return containerWidth / 3;
-				},
-				isResizable: true 
-		  });
-		});
-	}, 1300);
-
   //delete ideas
   $(".confirm").easyconfirm({
     locale: {
