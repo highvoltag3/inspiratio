@@ -1,3 +1,6 @@
+<% content_for :js_includes do %>
+  <% javascript_include_tag '_user_header' %>
+<% end %>
 <header>
   <div id="logo">
     <%= link_to image_tag('new/logo.png', :alt => 'logo', :width => 179, :height => 40), root_path %>
@@ -15,23 +18,27 @@
     </ul>
   </nav><!-- /nav  -->
  
-  <nav>
-    <ul id="subnav" class="navbar">
-      <li>
-       <%= link_to ' ', '#', :id => 'ni', :class => 'addidea', :title => 'New Idea', :'data-placement' => 'bottom' %>
-      </li>
-      <li>
-        <%= link_to ' ', '#', :id => 'st', :title => 'Settings', :'data-placement' => 'bottom' %>
-      </li>
-      <li class="divider-vertical"></li>
-      <li>
-        <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
-      </li>
-      <li>
-        <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
-      </li>
-    </ul>
-  </nav><!-- /nav  -->
+  <% if (!current_page?(:controller=>'user_idea')) %>
+    <nav>
+      <ul id="subnav" class="navbar">
+        <li>
+         <%= link_to ' ', '#', :id => 'ni', :class => 'addidea', :title => 'New Idea', :'data-placement' => 'bottom' %>
+        </li>
+        <li>
+          <%= link_to ' ', '#', :id => 'st', :title => 'Settings', :'data-placement' => 'bottom' %>
+        </li>
+        <li class="divider-vertical"></li>
+        <li>
+          <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+        </li>
+        <li>
+          <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+        </li>
+      </ul>
+    </nav><!-- /nav  -->
+    
+  <% end %>
+  
 
   <div id="signinreg">
     <%= image_tag 'avatar.png', :class => 'fl', :alt => 'avatar', :width => 60, :height => 60 %>

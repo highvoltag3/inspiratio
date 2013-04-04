@@ -9,7 +9,6 @@
   
   	<div id="useridea">
 	    <header>
-	      <h2>Your ideas</h2>
 	      <ul class="breadcrumb">
 	        <li>
 	          <%= link_to 'Home', root_path %>
@@ -23,17 +22,15 @@
 	          <%= link_to 'IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)', dashboard_index_path, :class => 'active' %>
 	        </li>
 	      </ul>
-
 	    </header>
-	   
-       <section class="mainidea row-fluid">
-	   		<div class="span6">
-		        <article>
-		          <header>
-		            <h1>IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)</h1>         
-		          </header>
+		
+	   <% #This is probably not semantic at all but hell for the layout needs it's good enough for now. %>
+	   <h1 class="inv_idea_title">IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)</h1>
+       <section class="mainidea row-fluid">     
+	   		<div class="span6 ideaside">
+		        <article id="idea">
 		          <div class="preview">
-		            <%= link_to image_tag('img_201030080404.jpg', :alt => 'img_201030080404.jpg'), user_idea_index_path %>
+		            <%= image_tag('img_201030080404.jpg', :alt => 'img_201030080404.jpg') %>
 		          </div>
 		         
 		          <footer class="clearfix">
@@ -55,24 +52,59 @@
 		          </footer>
 
 		        </article><!-- /idea -->
+				
+				<div class="lastestcomments">
+					<h2> LASTEST COMMENTS </h2>
+					 <% for comments in [{'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['2', '1'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}] 
+					 %>
+
+					 <aside class="inv_idea_comment">
+					 	<p><%= comments['content'] %></p>
+					 </aside>
+					 <% end %>
+				</div> <!-- end latest comments -->
 		    </div> 
 
-		    <div id="ideadetailspanel" class="span6">
-				<h2> LASTEST COMMENTS </h2>
-				 <% for comment in [{'id' => ['3', '4'], 'content' => 'Idea 1'}, {'id' => ['2', '1'], 'title' => 'Second Idea'}, {'id' => ['3', '4'], 'title' => 'Another Idea'}] %>
+		    <div id="ideadetailspanel" class="span6 ideadetailarrow_box">
+				
+				<div class="viewsbar">
+					<span>
+						<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip">
+							<%= image_tag('new/grid_view_icon.png') %>
+						</a>
+					</span>
+					<span>
+						<a href="#" data-placement="bottom" data-title="List View" class="tooltip">
+							<%= image_tag('new/list_view_icon.png') %>
+						</a>
+					</span>
+				</div>
+				
+				<div id="relatedimages">
+					<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
+					<p>In felis eros, luctus et rhoncus tempor, interdum in ipsum. Etiam rhoncus nisi vel dolor tempor sodales. Suspendisse euismod accumsan velit sit amet posuere. Duis vel odio eget dui laoreet cursus. Pellentesque quis dolor eget nisi tincidunt posuere et sed arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum varius elit dignissim nibh congue dignissim et sit amet lacus. Aenean fermentum varius elit, sit amet molestie turpis malesuada ac. Donec sapien sem, vehicula viverra accumsan at, accumsan at mi. Duis fermentum ornare sem.
+					</p>
+				</div>
+				
+				<hr>
+
+				<div id="relatedarticles">
+					<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES & LINKS</h2>
+					<p>In felis eros, luctus et rhoncus tempor, interdum in ipsum. Etiam rhoncus nisi vel dolor tempor sodales. Suspendisse euismod accumsan velit sit amet posuere. Duis vel odio eget dui laoreet cursus. Pellentesque quis dolor eget nisi tincidunt posuere et sed arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum varius elit dignissim nibh congue dignissim et sit amet lacus. Aenean fermentum varius elit, sit amet molestie turpis malesuada ac. Donec sapien sem, vehicula viverra accumsan at, accumsan at mi. Duis fermentum ornare sem.
+					</p>
+				</div>
+
+				<hr>
+
+				<div id="relatedcolors">
+					<h2>Color Palette</h2>
+					<p>In felis eros, luctus et rhoncus tempor, interdum in ipsum. Etiam rhoncus nisi vel dolor tempor sodales. Suspendisse euismod accumsan velit sit amet posuere. Duis vel odio eget dui laoreet cursus. Pellentesque quis dolor eget nisi tincidunt posuere et sed arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum varius elit dignissim nibh congue dignissim et sit amet lacus. Aenean fermentum varius elit, sit amet molestie turpis malesuada ac. Donec sapien sem, vehicula viverra accumsan at, accumsan at mi. Duis fermentum ornare sem.
+					</p>
+				</div>
+
 		    </div>
 
     	</section> <!-- /ideas -->
 	</div><!-- /useridea -->
 
 </section><!-- /main -->
-
-
- <!--  keep this we will need it.
-      <li class="divider-vertical"></li>
-      <li>
-        <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
-      </li>
-      <li>
-        <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
-      </li> -->

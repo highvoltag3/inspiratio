@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
 	$('#subnav a').tooltip();
+	$('#ideadetailspanel h2').tooltip();
+	$('.tooltip').tooltip();
 
 	//masonry	
 	var $container = $('#ideas');

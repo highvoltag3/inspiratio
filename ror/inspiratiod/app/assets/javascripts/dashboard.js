@@ -8,22 +8,6 @@ $(document).ready(function() {
       $('.controls').css('height', '0'); 
     }      
 	});
-
-  $('#main, header a').click(function() {
-    if ($('#notificationsWrapper').is(':visible')) {
-      $('#notificationsWrapper').fadeOut('normal');
-    }
-  })
-
-  $('#notificationsCircle').click(function(e) {
-    if ($('#notificationsWrapper').is(':visible')) {
-      $('#notificationsWrapper').fadeOut('normal');
-    } else {
-      $('#notificationsWrapper').fadeIn('fast');
-    }
-    $(this).css('background', '#999');
-    e.stopPropagation();
-  });
 	
 	$('#tags_p').tagsInput();
 
@@ -100,28 +84,6 @@ function userfriendlyresult(what) {
 	response = (what == "undefined") ? what : "0";
 	return response;	
 }
-
-function runFunctionIfEnter(e, fnName) {
-  var keynum;
-  if (window.event) {
-    keynum = e.keyCode;
-  } else if (e.which) {
-    keynum = e.which;
-  }
-  if (keynum == 13) {
-    eval(fnName)();
-  }
-}
-
-function makeComment() {
-  var inputFiled = $('input.reply');
-  var commentText = inputFiled.val();
-  $('.triangle_top_notInput').before('<p class="response"><img class="fl" src="imgs/avatar.png" alt="avatar" width="40" height="40">' + commentText + '</p>');
-}
-
-jQuery(document).keypress(function(e) {
-  runFunctionIfEnter(e, 'makeComment');
-});
 
 $.fn.serializeObject = function()
 {
