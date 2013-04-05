@@ -285,7 +285,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 	span.tagline {
 
-		left: 18%;
+		left: 265px;
 		position: absolute;
 		display: block;
 		top: 49%;
@@ -307,7 +307,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	#signinreg {
 		position: absolute;
 		top: .8em;
-		right: 12em;
+		left: 75%;
 		width: 170px;
 		color: #fff;
 		
@@ -1017,13 +1017,17 @@ article div.preview img {
 	}
 
  /* Registered User Individual idea */
- .inv_idea_title {
+  .inv_idea_title {
 	font-family: 'HelveticaNeueUltraLight';
 	font-weight: 200;
 	font-size: 2.5em;
 	letter-spacing: .1em;
 	margin-bottom: .5em;
- }
+  }
+
+  .mainidea {
+  	position: relative;
+  }
 
   .ideaside {
   	background: rgba(255,255,255,.85);
@@ -1124,6 +1128,72 @@ article div.preview img {
 			height: 25px;
 			opacity: 1;
 		}
+
+	#relatedarticles .relatedlink {
+		padding: 0 1em;
+	}
+
+		#relatedarticles .relatedlink hr {
+			background: #fff;
+			margin-bottom: 0;
+		}
+		
+		#relatedarticles #dropper {
+			background: rgba(255, 255, 255, 0.6);
+			border-radius: .3em;
+			border:1px solid #ccc;
+			padding: 1em;
+			margin-top: 1em;
+		}
+			#dropper > input {
+				background: none;
+				border: none;
+				box-shadow: none;
+				width: 100%;
+				text-align: center;
+				padding-top: 1em;
+			}
+
+	#bubbleView {
+		width: 100%;
+		height: 100%;
+		background: rgba(204, 204, 204, 1);
+		position: absolute;
+		z-index: 99;
+	}
+
+	.map {width: 900px;
+		height: 100%;}
+
+		.js-mindmap-active div.node {
+		  background: rgba(100, 100, 100, 0.8);
+		  border: 1px solid #fff;
+		  -webkit-border-radius:  5px;
+		  -moz-border-radius:     5px;
+		  border-radius:          5px;
+		  color: #fff;
+		}
+		.js-mindmap-active div.node.active {
+		  padding:5px 10px !important;
+		  border-width:2px !important;
+		}
+		.js-mindmap-active div.node.activeparent {
+		  padding:5px 10px !important;
+		  border-width:2px !important;
+		  background:#8B0000;
+		}
+		
+		#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  		#droppable { 
+  			position: absolute;
+  			top: 0;
+  			right: 0;
+	  		width: 150px; 
+	  		min-height: 100px; 
+	  		padding: 0.5em;  
+	  		margin: 10px; 
+	  		background: rgba(255,255,255,.3); 
+  		}
 
 
 /* END OF THE SITE */	
