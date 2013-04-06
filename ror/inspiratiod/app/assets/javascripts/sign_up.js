@@ -6,4 +6,8 @@ $(document).ready(function(){
       name: $('#name').val()
     };
   });
+
+  $('.mainnav').find('.selected').removeClass('selected');
+  $('.mainnav #lg').parent().addClass('selected');
+
 });
