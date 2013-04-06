@@ -1,5 +1,6 @@
 <% content_for :js_includes do %>
   <%= javascript_include_tag 'idea' %>
+  <%= javascript_include_tag 'holder' %>
 <% end %>
 
 <section id="main" class="clearfix">
@@ -54,10 +55,7 @@
               </footer>
 
             </article><!-- /idea -->
-        
-            <div class="lastestcomments">
-              
-            </div> <!-- end latest comments -->
+
         </div> 
 
         <div id="ideadetailspanel" class="span3 ideadetailarrow_box">
@@ -99,6 +97,57 @@
                 </aside>
                 <% end %>
             </div> <!-- end relatedarticles -->
+
+        </div>
+
+        <div class="row-fluid clearfix" style="clear:both; padding-top: 2em;">
+
+          <div id="myCarouselT" class="carousel slide">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              
+              <div class="active item">
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+              </div>
+              <div class="item">
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+                  
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+              </div>
+
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarouselT" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarouselT" data-slide="next">&rsaquo;</a>
+          </div>
+            
+            
 
         </div>
 

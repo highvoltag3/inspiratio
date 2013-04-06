@@ -443,6 +443,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		border-bottom-left-radius: 	3px;
 		top: 80px;
 		padding-top: .7%;
+
+		max-width: 200px;
+		max-width: 230px;
 	}
 
 	#subnav li { 
@@ -459,15 +462,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			height: 25px;
 		}
 
-	.slide {
+	#mainCarousel.slide {
 		margin-top: 4%;
 		background: rgba(255,255,255,.5);
 	}
 
-	.carousel-inner > .item {
+	#mainCarousel .carousel-inner > .item {
 		text-align: center;
 	}
-	.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+	#mainCarousel .carousel-inner > .item > img, .carousel-inner > .item > a > img {
 		width: 80%;
 		display: inline-block;
 	}
