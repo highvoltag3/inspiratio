@@ -65,16 +65,16 @@ $(document).ready(function() {
   }
 
   //delete ideas
-  $(".confirm").easyconfirm({
-    locale: {
-      title: 'Are you sure?',
-      button: ['No', 'Yes']
-    }
-  });
+  // $(".confirm").easyconfirm({
+  //   locale: {
+  //     title: 'Are you sure?',
+  //     button: ['No', 'Yes']
+  //   }
+  // });
 
-  $(".confirm").click(function() {
-    $(this).closest('.idea').fadeOut('slow');
-  });
+  // $(".confirm").click(function() {
+  //   $(this).closest('.idea').fadeOut('slow');
+  // });
 
 }); /* end on ready function */
 
