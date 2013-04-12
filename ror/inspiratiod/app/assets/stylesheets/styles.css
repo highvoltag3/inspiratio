@@ -531,8 +531,8 @@ article header button.greenbtn {
 	padding: 10px;
 }
 article header > img {
-	width: 80px;
-	height: 80px;
+	width: 55px;
+	height: 55px;
 	border-radius: 8px;
 	float: left;
 	margin-right: .5em;
@@ -540,15 +540,21 @@ article header > img {
 article header > span {
 	display: block;
 }
-article header > span.username {
+article header > span.projectname {
 	font-family: 'HelveticaRegular';
 	color: #4889AF;
 	font-size: 1.3em;
-	padding: 2.4em 0 0 105px;
+	padding-top: .3em;
+}
+article header > span.username {
+	padding-top: .9em;
+	height: 30px;
+	margin-top: -13px;
+	
+	font-family: 'HelveticaLight';
 }
 article header > span.location {
-	padding: 0.9em 0 0 105px;
-	background: url(/assets/new/location_icon.png) 90px 14px no-repeat;
+	padding-top: 0;
 	height: 30px;
 	margin-top: -13px;
 	
@@ -563,7 +569,8 @@ article header > .follow {
 	background: url(/assets/new/follow_icon.png) 15px 0 no-repeat;
 	
 	bottom: 15%;
-	right: 1em;	
+	right: 0;	
+	top: 2.2em;
 	opacity: 1; /*because of the tooltip not sure why*/
 }
 
@@ -585,18 +592,12 @@ article footer {
 }
 article footer > div {
 	float: left;
-	width: 30%;
-	text-align: center;
 	box-sizing: border-box;
 }
 article footer > div:nth-child(2) {
-	border-left: 1px solid #666;
-	border-right: 1px solid #666;
-	width: 40%;
-	padding: 0 15%;
+	padding: 0 1em;
 }
 article footer > div:nth-child(3) {
-	padding-left: 23%;
 }
 
 .number {
@@ -605,21 +606,18 @@ article footer > div:nth-child(3) {
 }
 
 .comments {
-	width: 22px; 
 	height: 22px;
 	display: block;
 	background: url(/assets/new/comment_icon.png) 0 0 no-repeat;
 }
 
 .likes {
-	width: 22px; 
 	height: 22px;
 	display: block;
 	background: url(/assets/new/heart_icon.png) 0 0 no-repeat;
 }
 
 .views {
-	width: 22px; 
 	height: 22px;
 	display: block;
 	background: url(/assets/new/eye_icon.png) 0 0 no-repeat;
@@ -758,6 +756,9 @@ h2 {
 article div.preview img {
 	width: 100%;
 	height: auto;
+	margin-top: .9em;
+	border: 3px dotted rgba(200,200,200, .8);
+	box-sizing: border-box;
 }
 
 #ideainfo span a {
