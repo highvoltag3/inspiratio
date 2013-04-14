@@ -1,0 +1,158 @@
+<% content_for :js_includes do %>
+  <%= javascript_include_tag 'idea' %>
+  <%= javascript_include_tag 'holder' %>
+<% end %>
+
+<section id="main" class="clearfix">
+  
+    <div id="useridea">
+      <header>
+        <ul class="breadcrumb">
+          <li>
+            <%= link_to 'Home', root_path %>
+            <span class="divider">/</span>
+          </li>
+          <li>
+            <%= link_to 'IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)', dashboard_index_path, :class => 'active' %>
+          </li>
+        </ul>
+      </header>
+    
+     <% #This is probably not semantic at all but hell for the layout needs it's good enough for now. %>
+     <h1 class="inv_idea_title">IDEA TITLE MUST GET REPLACED BY TITLE BACKEND</h1>
+       <section class="mainidea row-fluid">    
+        
+        <div class="span8 ideaside">
+            <article id="idea">
+
+              <header>
+                <%= image_tag 'avatar.png', :alt => 'avatar', :width => 80, :height => 80 %>
+                <span class="projectname">Project Name</span>
+                <span class="username">User's name</span>   
+                <span class="location">San Francisco, CA</span>    
+                <button type="button" name="" value="" class="follow tooltip" data-placement="left" data-title="Follow {{ USERNAME }}"></button>             
+              </header>
+
+              <div class="preview">
+                <%= image_tag('img_201030080404.jpg', :alt => 'img_201030080404.jpg') %>
+              </div>
+             
+              <footer id="ideainfo" class="clearfix">
+                <div>
+                  <span class="comments number"> 
+                    <%= link_to '0', '#', :title => 'You have no comments' %>
+                  </span>
+                </div>
+                <div>
+                  <span class="likes number"> 
+                    <%= link_to '12', '#', :title => 'Number of times your idea has been seen' %>
+                  </span>
+                </div>
+                <div>
+                  <span class="views number">
+                    <%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %>
+                  </span>
+                </div>
+              </footer>
+
+            </article><!-- /idea -->
+
+        </div> 
+
+        <div id="ideadetailspanel" class="span4 ideadetailarrow_box">
+
+
+            <div id="relatedcolors">
+              <h2>Color Palette</h2>
+              <span class="label label-success">&nbsp;&nbsp;</span>
+              <span class="label label-warning">&nbsp;&nbsp;</span>
+              <span class="label label-important">&nbsp;&nbsp;</span>
+            </div> <!-- end relatedcolors -->
+
+            <hr>
+        
+        
+            <div id="relatedtags">
+              <h2>Tags</h2>
+              <span class="label">Web Development&nbsp;&nbsp;</span>
+              <span class="label">Web Design&nbsp;&nbsp;</span>
+              <span class="label">Vectors&nbsp;&nbsp;</span>
+            </div>
+            
+            <hr>
+
+            <div id="relateduri">
+                <h2>Short URL</h2>
+                <input type="text" class="input-xlarge" id="disabledInput" placeholder="http://inspiratio.me/DMCXH" disabled />
+            </div> <!-- end relatedarticles -->
+
+            <hr>
+
+            <div id="relatedcomments">
+                <h2> LASTEST COMMENTS </h2>
+                <% for comments in [{'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['2', '1'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}] 
+                %>
+
+                <aside class="inv_idea_comment">
+                  <p><%= comments['content'] %></p>
+                </aside>
+                <% end %>
+            </div> <!-- end relatedarticles -->
+
+        </div>
+
+        <div class="row-fluid clearfix" style="clear:both; padding-top: 2em;">
+         <h2>Previous Versions</h2>
+          <div id="myCarouselT" class="carousel slide">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              
+              <div class="active item">
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+              </div>
+              <div class="item">
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+                  
+                  <a href="#" class="thumbnail span3">
+                   <img data-src="holder.js/300x200" alt="">
+                  </a>
+              </div>
+
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarouselT" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarouselT" data-slide="next">&rsaquo;</a>
+          </div>
+            
+            
+
+        </div>
+
+      </section> <!-- /ideas -->
+  </div><!-- /useridea -->
+
+</section><!-- /main -->

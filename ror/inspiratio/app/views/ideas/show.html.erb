@@ -1,0 +1,12 @@
+<% title "Idea" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @idea.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_idea_path(@idea) %> |
+  <%= button_to "Destroy", @idea, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ideas_path %>
+</p>
