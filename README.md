@@ -1,6 +1,8 @@
 inspiratio
 ==========
 
+**The most working to date branch is newhope!!**
+
 **New server details:**<br/>
 host: inspiratio.me<br/>
 login: inspirat<br/>
