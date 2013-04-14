@@ -1,7 +1,7 @@
 inspiratio
 ==========
 
-**The most working to date branch is newhope!!**
+**The most working to date branch is "newhope" branch!!**
 
 **New server details:**<br/>
 host: inspiratio.me<br/>
