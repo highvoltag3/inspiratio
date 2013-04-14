@@ -1,17 +1,17 @@
 inspiratio
 ==========
 
-**New server details:**
-host: inspiratio.me
-login: inspirat
-pass: RJ}QC(#37OGB
+**New server details:**<br/>
+host: inspiratio.me<br/>
+login: inspirat<br/>
+pass: RJ}QC(#37OGB<br/>
 
 CPANEL link: inspiratio.me/cpanel
 
-**FTP:**
-host: inspiratio.me
-login: inspirat
-pass: RJ}QC(#37OGB
+**FTP:**<br/>
+host: inspiratio.me<br/>
+login: inspirat<br/><br/>
+pass: RJ}QC(#37OGB<br/>
 
-**RoR path**
+**RoR path**<br/>
 /rails_apps/inspiratio
