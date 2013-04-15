@@ -1,28 +1,19 @@
-<%#= form_for @idea do |f| %>
-  <%#= f.error_messages %>
-  <p>
-    <%#= f.label :user_id %><br />
-    <%#= f.number_field :user_id %>
-  </p>
-  <p><%#= f.submit %></p>
-<%# end %>
-
-<%= form_for @idea, :html => {:multipart => true} do |f| %> 
-  <%= f.error_messages %> 
-    <p> <%= f.label :title %><br /> 
+<%= form_for @idea, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+    <p> <%= f.label :title %><br />
         <%= f.text_field :title %>
-        
-        <%= f.label :description %><br /> 
+
+        <%= f.label :description %><br />
         <%= f.text_area :description %>
 
-        <%= f.label :tags %><br /> 
-        <%= f.text_field :tags %>
+        <%= f.label :tag_list %><br />
+        <%= f.text_field :tag_list %>
 
-        <%= f.label :public %>
-        <%= f.check_box :public %>
+        <%#= f.label :public %>
+        <%#= f.check_box :public %>
 
-        <%= f.label :uploaded_file, "File" %><br /> 
-        <%= f.file_field :uploaded_file %> 
-      </p> 
-  <p><%= f.submit "Upload" %></p> 
+        <%#= f.label :uploaded_file, "File" %><br />
+        <%#= f.file_field :uploaded_file %>
+      </p>
+  <p><%= f.submit "Upload" %></p>
 <% end %>
