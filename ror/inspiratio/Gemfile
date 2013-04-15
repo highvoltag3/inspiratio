@@ -2,10 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'mysql2' # database
-
 gem 'devise' # authentication
-
 gem "paperclip", "~> 3.4.1" # uploads
 
 # Gems used only for assets and not required
@@ -22,7 +19,12 @@ end
 
 gem 'jquery-rails'
 
+group :production do
+  gem 'pg' # postgresql db
+end
+
 group :development do
+  gem 'mysql2' # database
   gem "nifty-generators" # layout/helpers generators
   gem 'thin'  # web server: it might be used in production (nginx + thin), don't know what deploy we're going to do
               # if we'll use nginx/apache + pasenger, we don't need it.
