@@ -85,225 +85,227 @@
 
 		    <div id="ideadetailspanel" class="span6 ideadetailarrow_box">
 				
-				<div class="viewsbar">
-					<span class="lvinv">
-						<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip">
-							<%= image_tag('new/grid_view_icon.png') %>
-						</a>
-					</span>
-					<span class="bvinv">
-						<a href="#" data-placement="bottom" data-title="Bubble View" class="tooltip">
-							<%= image_tag('new/bubble_view_icon.png') %>
-						</a>
-					</span>
-				</div>
-				
-				<div id="relatedimages">
-					<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
-					<script src="https://www.google.com/jsapi"></script>
-				    <script type="text/javascript">
-
-				      google.load('search', '1');
-
-				      var imageSearch;
-
-				      function addPaginationLinks() {
-				      
-				        // To paginate search results, use the cursor function.
-				        var cursor = imageSearch.cursor;
-				        var curPage = cursor.currentPageIndex; // check what page the app is on
-				        var pagesDiv = document.createElement('div');
-				        for (var i = 0; i < cursor.pages.length; i++) {
-				          var page = cursor.pages[i];
-				          if (curPage == i) { 
-
-				          // If we are on the current page, then don't make a link.
-				            var label = document.createTextNode(' ' + page.label + ' ');
-				            pagesDiv.appendChild(label);
-				          } else {
-
-				            // Create links to other pages using gotoPage() on the searcher.
-				            var link = document.createElement('a');
-				            link.href="/image-search/v1/javascript:imageSearch.gotoPage("+i+');';
-				            link.innerHTML = page.label;
-				            link.style.marginRight = '2px';
-				            pagesDiv.appendChild(link);
-				          }
-				        }
-
-				        var contentDiv = document.getElementById('content');
-				        contentDiv.appendChild(pagesDiv);
-				      }
-
-				      function searchComplete() {
-
-				        // Check that we got results
-				        if (imageSearch.results && imageSearch.results.length > 0) {
-
-				          // Grab our content div, clear it.
-				          var contentDiv = document.getElementById('content');
-				          contentDiv.innerHTML = '';
-
-				          // Loop through our results, printing them to the page.
-				          var results = imageSearch.results;
-				          //for (var i = 0; i < results.length; i++) {
-				          for (var i = 0; i < 12; i++) {
-				            // For each result write it's title and image to the screen
-				            var result = results[i];
-				            var imgContainer = document.createElement('div');
-				            imgContainer.className = "google-thumb";
-				            //var title = document.createElement('div');
-				            
-				            // We use titleNoFormatting so that no HTML tags are left in the 
-				            // title
-				            //title.innerHTML = result.titleNoFormatting;
-				            var newImg = document.createElement('img');
-
-				            // There is also a result.url property which has the escaped version
-				            newImg.src = result.tbUrl;
-				           // imgContainer.appendChild(title);
-				            imgContainer.appendChild(newImg);
-
-				            // Put our title + image in the content
-				            contentDiv.appendChild(imgContainer);
-				          }
-
-				          // Now add links to additional pages of search results.
-				          //addPaginationLinks(imageSearch);
-				        }
-				      }
-
-				      function OnLoad() {
-				      
-				        // Create an Image Search instance.
-				        imageSearch = new google.search.ImageSearch();
-				        imageSearch.setResultSetSize(8);
-				        imageSearch.setRestriction(google.search.ImageSearch.RIGHTS_REUSE);
-				        imageSearch.setRestriction(
-						google.search.ImageSearch.RESTRICT_IMAGESIZE,
-						google.search.ImageSearch.IMAGESIZE_EXTRA_LARGE);
-
-				        // Set searchComplete as the callback function when a search is 
-				        // complete.  The imageSearch object will have results in it.
-				        imageSearch.setSearchCompleteCallback(this, searchComplete, null);
-
-				        // Find me a beautiful car.
-				        var lookfor = '<%= @idea.title %>'
-				        imageSearch.execute(lookfor);
-				        
-				        // Include the required Google branding
-				        google.search.Search.getBranding('branding');
-				      }
-				      google.setOnLoadCallback(OnLoad);
-				    </script>
-
-
-				    <div id="branding"  style="float: left;"></div><br />
-				    <div id="content">Loading...</div>
-
-
-
-				    <%
+				<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
+					<div class="viewsbar">
+						<span class="lvinv">
+							<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip">
+								<%= image_tag('new/grid_view_icon.png') %>
+							</a>
+						</span>
+						<span class="bvinv">
+							<a href="#" data-placement="bottom" data-title="Bubble View" class="tooltip">
+								<%= image_tag('new/bubble_view_icon.png') %>
+							</a>
+						</span>
+					</div>
 					
-					flickr = Flickr.new('config/flickr.yml')
+					<div id="relatedimages">
+						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
+						<script src="https://www.google.com/jsapi"></script>
+					    <script type="text/javascript">
 
-					photos = flickr.photos.search(:text => @idea.title, :per_page => 10 )
+					      google.load('search', '1');
 
-					puts "found #{photos.size} photo(s)"
+					      var imageSearch;
 
-					photos.each do |photo|
-					    puts photo.title
-					    puts photo.description unless [nil, ''].include?(photo.description)
-					    [:square, :thumbnail, :small, :medium, :large, :original].each do |size| 
-					    	puts "#{size}: #{photo.url(size)}"
-					
+					      function addPaginationLinks() {
+					      
+					        // To paginate search results, use the cursor function.
+					        var cursor = imageSearch.cursor;
+					        var curPage = cursor.currentPageIndex; // check what page the app is on
+					        var pagesDiv = document.createElement('div');
+					        for (var i = 0; i < cursor.pages.length; i++) {
+					          var page = cursor.pages[i];
+					          if (curPage == i) { 
+
+					          // If we are on the current page, then don't make a link.
+					            var label = document.createTextNode(' ' + page.label + ' ');
+					            pagesDiv.appendChild(label);
+					          } else {
+
+					            // Create links to other pages using gotoPage() on the searcher.
+					            var link = document.createElement('a');
+					            link.href="/image-search/v1/javascript:imageSearch.gotoPage("+i+');';
+					            link.innerHTML = page.label;
+					            link.style.marginRight = '2px';
+					            pagesDiv.appendChild(link);
+					          }
+					        }
+
+					        var contentDiv = document.getElementById('content');
+					        contentDiv.appendChild(pagesDiv);
+					      }
+
+					      function searchComplete() {
+
+					        // Check that we got results
+					        if (imageSearch.results && imageSearch.results.length > 0) {
+
+					          // Grab our content div, clear it.
+					          var contentDiv = document.getElementById('content');
+					          contentDiv.innerHTML = '';
+
+					          // Loop through our results, printing them to the page.
+					          var results = imageSearch.results;
+					          //for (var i = 0; i < results.length; i++) {
+					          for (var i = 0; i < 12; i++) {
+					            // For each result write it's title and image to the screen
+					            var result = results[i];
+					            var imgContainer = document.createElement('div');
+					            imgContainer.className = "google-thumb";
+					            //var title = document.createElement('div');
+					            
+					            // We use titleNoFormatting so that no HTML tags are left in the 
+					            // title
+					            //title.innerHTML = result.titleNoFormatting;
+					            var newImg = document.createElement('img');
+
+					            // There is also a result.url property which has the escaped version
+					            newImg.src = result.tbUrl;
+					           // imgContainer.appendChild(title);
+					            imgContainer.appendChild(newImg);
+
+					            // Put our title + image in the content
+					            contentDiv.appendChild(imgContainer);
+					          }
+
+					          // Now add links to additional pages of search results.
+					          //addPaginationLinks(imageSearch);
+					        }
+					      }
+
+					      function OnLoad() {
+					      
+					        // Create an Image Search instance.
+					        imageSearch = new google.search.ImageSearch();
+					        imageSearch.setResultSetSize(8);
+					        imageSearch.setRestriction(google.search.ImageSearch.RIGHTS_REUSE);
+					        imageSearch.setRestriction(
+							google.search.ImageSearch.RESTRICT_IMAGESIZE,
+							google.search.ImageSearch.IMAGESIZE_EXTRA_LARGE);
+
+					        // Set searchComplete as the callback function when a search is 
+					        // complete.  The imageSearch object will have results in it.
+					        imageSearch.setSearchCompleteCallback(this, searchComplete, null);
+
+					        // Find me a beautiful car.
+					        var lookfor = '<%= @idea.title %>'
+					        imageSearch.execute(lookfor);
+					        
+					        // Include the required Google branding
+					        google.search.Search.getBranding('branding');
+					      }
+					      google.setOnLoadCallback(OnLoad);
+					    </script>
+
+
+					    <div id="branding"  style="float: left;"></div><br />
+					    <div id="content">Loading...</div>
+
+
+
+					    <%
+						
+						flickr = Flickr.new('config/flickr.yml')
+
+						photos = flickr.photos.search(:text => @idea.title, :per_page => 10 )
+
+						puts "found #{photos.size} photo(s)"
+
+						photos.each do |photo|
+						    puts photo.title
+						    puts photo.description unless [nil, ''].include?(photo.description)
+						    [:square, :thumbnail, :small, :medium, :large, :original].each do |size| 
+						    	puts "#{size}: #{photo.url(size)}"
+						
+							end
+						    %>
+						      
+						       <%= link_to(image_tag(photo.url(:square), :class => 'thumb', :title => photo.title, :border => 0, :size => '150x90'), photo.url_photopage) %>
+						<%
 						end
 					    %>
-					      
-					       <%= link_to(image_tag(photo.url(:square), :class => 'thumb', :title => photo.title, :border => 0, :size => '150x90'), photo.url_photopage) %>
+					</div> <!-- end related images -->
+					
+					<hr>
+
+					<div id="relatedarticles">
+						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES & LINKS</h2>
+						<%# words = Wordnik.word.get_related('hysterical')					%>
+						
+						<script language="Javascript" type="text/javascript">
+					    //<!
+					    google.load('search', '1');
+
+					    function OnLoad() {
+					      // Create a search control
+					      var searchControl = new google.search.SearchControl();
+
+					      // Add in a full set of searchers
+					      //var localSearch = new google.search.LocalSearch();
+					      //searchControl.addSearcher(localSearch);
+					      options = new google.search.SearcherOptions();
+						  options.setExpandMode(google.search.SearchControl.EXPAND_MODE_PARTIAL);
+						  searchControl.addSearcher(new google.search.BlogSearch(), options);
+						  searchControl.addSearcher(new google.search.WebSearch(), options);
+					      //searchControl.addSearcher(new google.search.NewsSearch());
+					      //searchControl.addSearcher(new google.search.ImageSearch());
+					     
+					      options = new google.search.SearcherOptions();
+					      options.setExpandMode(google.search.SearchControl.EXPAND_MODE_CLOSED);
+						  searchControl.addSearcher(new google.search.VideoSearch(), options);
+						  searchControl.addSearcher(new google.search.BookSearch(), options);
+						  searchControl.addSearcher(new google.search.PatentSearch(), options);
+
+					      // Set the Local Search center point
+					      //localSearch.setCenterPoint("New York, NY");
+
+					      // tell the searcher to draw itself and tell it where to attach
+					      searchControl.draw(document.getElementById("searchcontrol"));
+
+					      // execute an inital search
+					      searchControl.execute('<%= @idea.title %>');
+					    }
+					    google.setOnLoadCallback(OnLoad);
+
+					    //]]>
+					    </script>
+
+
+					  	<div id="searchcontrol">Loading</div>
+
+
+						 <div id="dropper">
+						 	<input type="text" placeholder="Drop any text file or paste a URL to upload" />
+						 </div>
+					</div>
+
+					<hr>
+
+					<div id="relatedcolors">
+						
 					<%
-					end
-				    %>
+						# client = Imagga::Client.new(
+						#   base_uri:   '0.0.0.0',                # IP of the Imagga server
+						#   api_key:    '12345678',               # Your api key
+						#   api_secret: '1234567890123456789'     # Your api secret
+						# )
 
-				</div>
-				
-				<hr>
+						# results = client.extract(@idea.uploaded_file.url)
 
-				<div id="relatedarticles">
-					<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES & LINKS</h2>
-					<%# words = Wordnik.word.get_related('hysterical')					%>
-					
-					<script language="Javascript" type="text/javascript">
-				    //<!
-				    google.load('search', '1');
+						# results.each do |info|                   # iterate over all input image infos
+						#   puts info.object_percentage            # percentage of the central object on image
+						#   info.image_colors.each do |color|      # iterate over all significant colors
+						#     puts color.info                      # 85.89%, rgb: (246,246,246), hex: #f6f6f6 
+						#   end
+						# end
+					%>
 
-				    function OnLoad() {
-				      // Create a search control
-				      var searchControl = new google.search.SearchControl();
-
-				      // Add in a full set of searchers
-				      //var localSearch = new google.search.LocalSearch();
-				      //searchControl.addSearcher(localSearch);
-				      options = new google.search.SearcherOptions();
-					  options.setExpandMode(google.search.SearchControl.EXPAND_MODE_PARTIAL);
-					  searchControl.addSearcher(new google.search.BlogSearch(), options);
-					  searchControl.addSearcher(new google.search.WebSearch(), options);
-				      //searchControl.addSearcher(new google.search.NewsSearch());
-				      //searchControl.addSearcher(new google.search.ImageSearch());
-				     
-				      options = new google.search.SearcherOptions();
-				      options.setExpandMode(google.search.SearchControl.EXPAND_MODE_CLOSED);
-					  searchControl.addSearcher(new google.search.VideoSearch(), options);
-					  searchControl.addSearcher(new google.search.BookSearch(), options);
-					  searchControl.addSearcher(new google.search.PatentSearch(), options);
-
-				      // Set the Local Search center point
-				      //localSearch.setCenterPoint("New York, NY");
-
-				      // tell the searcher to draw itself and tell it where to attach
-				      searchControl.draw(document.getElementById("searchcontrol"));
-
-				      // execute an inital search
-				      searchControl.execute('<%= @idea.title %>');
-				    }
-				    google.setOnLoadCallback(OnLoad);
-
-				    //]]>
-				    </script>
-
-
-				  	<div id="searchcontrol">Loading</div>
-
-
-					 <div id="dropper">
-					 	<input type="text" placeholder="Drop any text file or paste a URL to upload" />
-					 </div>
-				</div>
-
-				<hr>
-
-				<div id="relatedcolors">
-					
-				<%
-					# client = Imagga::Client.new(
-					#   base_uri:   '0.0.0.0',                # IP of the Imagga server
-					#   api_key:    '12345678',               # Your api key
-					#   api_secret: '1234567890123456789'     # Your api secret
-					# )
-
-					# results = client.extract(@idea.uploaded_file.url)
-
-					# results.each do |info|                   # iterate over all input image infos
-					#   puts info.object_percentage            # percentage of the central object on image
-					#   info.image_colors.each do |color|      # iterate over all significant colors
-					#     puts color.info                      # 85.89%, rgb: (246,246,246), hex: #f6f6f6 
-					#   end
-					# end
-				%>
-
-				</div>
-
-		    </div>
+					</div>
+				<% else %>
+				  <!-- what public can see -->
+				<% end %>
+		    </div> <!-- end ideapanel -->
 
     	</section> <!-- /ideas -->
 	</div><!-- /useridea -->
