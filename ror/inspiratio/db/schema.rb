@@ -11,26 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414020956) do
+ActiveRecord::Schema.define(:version => 20130415154521) do
 
   create_table "ideas", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
     t.string   "title"
     t.string   "description"
-    t.string   "uploaded_file_file_name"
-    t.string   "uploaded_file_content_type"
-    t.integer  "uploaded_file_file_size"
-    t.datetime "uploaded_file_updated_at"
-    t.boolean  "public"
-    t.string   "tags"
-    t.integer  "views"
-    t.integer  "likes"
-    t.string   "colors"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "ideas", ["user_id"], :name => "index_ideas_on_user_id"
+
+  create_table "uploads", :force => true do |t|
+    t.integer  "idea_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -46,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20130414020956) do
     t.string   "name"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "location"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
