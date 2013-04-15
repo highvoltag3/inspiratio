@@ -5,6 +5,8 @@ gem 'rails', '3.2.13'
 gem 'devise' # authentication
 gem "paperclip", "~> 3.4.1" # uploads
 
+gem 'acts-as-taggable-on' # tags
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
