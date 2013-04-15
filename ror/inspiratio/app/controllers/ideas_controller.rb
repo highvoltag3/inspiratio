@@ -1,14 +1,15 @@
 class IdeasController < ApplicationController
-  #before_filter :authenticate_user!  #authenticate for users before any methods is called
-
-
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :find_idea, only: [:edit, :update, :destroy]
 
   def index
-    @ideas = Idea.find(:all, :conditions => ["user_id = ?", current_user.id])
+    @ideas = current_user.ideas
   end
 
   def show
-    @idea = Idea.find(params[:id])
+    unless @idea = Idea.where(id: params[:id]).first
+      redirect_to :back, :notice  => "Idea not found."
+    end
   end
 
   def new
@@ -16,7 +17,8 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.new(params[:idea].merge(:user_id => current_user.id))
+    @idea = current_user.ideas.build(params[:idea])
+
     if @idea.save
       redirect_to @idea, :notice => "Successfully created idea."
     else
@@ -25,15 +27,9 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    if( current_user )
-      @idea = Idea.find(params[:id])
-    else 
-      redirect_to :back, :notice  => "Sorry you can't edit an idea that's not yours."
-    end
   end
 
   def update
-    @idea = Idea.find(params[:id])
     if @idea.update_attributes(params[:idea])
       redirect_to @idea, :notice  => "Successfully updated idea."
     else
@@ -42,18 +38,15 @@ class IdeasController < ApplicationController
   end
 
   def destroy
-    @idea = Idea.find(params[:id])
     @idea.destroy
     redirect_to ideas_url, :notice => "Successfully destroyed idea."
   end
 
-  #this action will let the users download the files (after a simple authorization check) 
-  def get 
-    idea = Idea.find_by_id(params[:id]) 
-    if idea 
-      send_file idea.uploaded_file.path, :type => idea.uploaded_file_content_type 
+  private
+  def find_idea
+    unless @idea = current_user.ideas.where(id: params[:id]).first
+      redirect_to :back, :notice  => "Sorry you can't modify an idea that's not yours."
     end
   end
-
 
 end

@@ -35,9 +35,9 @@
             <%= gravatar_image_tag(idea.user.email, :gravatar => { :size => 55 }, :alt =>  idea.user.name, :class => 'fl') %>
             <span class="projectname"><%= idea.title %></span>
             <span class="username"><%= idea.user.name %></span>
-            <span class="location"><%= idea.user.location %></span>     
+            <span class="location"><%#= idea.user.location %></span>
             <%#=Todo get a simple follow system working (this is low priority) %>
-            <button type="button" name="" value="" class="follow"></button>             
+            <button type="button" name="" value="" class="follow"></button>
           </header>
           <div class="preview">
             <%= link_to image_tag(idea.uploaded_file.url, :alt => idea.title), idea %>
@@ -56,7 +56,7 @@
         </article><!-- /idea -->
 
           <%#= idea.user_id %>
-          <%#= link_to idea.uploaded_file_file_name, idea.uploaded_file.url %> 
+          <%#= link_to idea.uploaded_file_file_name, idea.uploaded_file.url %>
           <%#= link_to "Show", idea %>
           <%#= link_to "Edit", edit_idea_path(idea) %>
           <%#= button_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %>
