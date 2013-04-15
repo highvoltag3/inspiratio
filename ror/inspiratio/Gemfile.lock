@@ -32,6 +32,10 @@ GEM
       rails (~> 3.0)
     addressable (2.3.3)
     arel (3.0.2)
+    aws-sdk (1.8.5)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     climate_control (0.0.3)
@@ -57,12 +61,24 @@ GEM
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
     eventmachine (1.0.3)
+    excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.7.0)
     flickr_fu (0.3.2)
       mime-types
       xml-magic
+    fog (1.5.0)
+      builder
+      excon (~> 0.14)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.4)
     gravatar_image_tag (1.1.3)
     hike (1.2.2)
     htmlentities (4.3.1)
@@ -87,6 +103,9 @@ GEM
     multi_json (1.7.2)
     multi_xml (0.5.3)
     mysql2 (0.3.11)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.6.6)
     nifty-generators (0.4.6)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
@@ -123,6 +142,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    ruby-hmac (0.4.0)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -148,6 +168,7 @@ GEM
     uglifier (2.0.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.3)
     warden (1.2.1)
       rack (>= 1.0)
     wordnik (4.12)
@@ -164,9 +185,11 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  aws-sdk
   coffee-rails (~> 3.2.1)
   devise
   flickr_fu
+  fog (~> 1.5.0)
   gravatar_image_tag
   imagga
   jquery-rails
