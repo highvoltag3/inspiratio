@@ -17,7 +17,6 @@
       <%#= render 'form' %>
       <%#= render 'form' %>
     </div>
-    </div>
   </div> <!-- /ideabox -->
 </section>
 <section id="main" class="clearfix dashboard">
@@ -29,8 +28,7 @@
         <span class="divider">/</span>
       </li>
       <li>
-        <%#=Todo change the # in the line below to point to the ideas/index (this page) ideas_index_path does not work %>
-        <%= link_to 'Dashboard', "#", :class => 'active' %>
+        <%= link_to 'Dashboard', ideas_path, :class => 'active' %>
       </li>
     </ul>
 
@@ -48,7 +46,6 @@
             <button type="button" name="" value="" class="follow"></button>             
           </header>
           <div class="preview">
-            <%#= image_tag 'idea_thumb'+idea['id'][0]+'.png', :alt => 'idea_thumb'+idea['id'][0] %>
             <%= link_to image_tag(idea.uploaded_file.url, :alt => idea.title), idea %>
           </div>
           <footer class="clearfix">

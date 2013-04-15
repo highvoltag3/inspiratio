@@ -1,11 +1,10 @@
 class IdeasController < ApplicationController
-  before_filter :authenticate_user!  #authenticate for users before any methods is called
+  #before_filter :authenticate_user!  #authenticate for users before any methods is called
 
 
 
   def index
-    #@ideas = Idea.find(:all, :conditions => ["user_id != ?", current_user.id])
-     @ideas = Idea.where(:user_id => current_user.id)
+    @ideas = Idea.find(:all, :conditions => ["user_id = ?", current_user.id])
   end
 
   def show
@@ -26,7 +25,11 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    @idea = Idea.find(params[:id])
+    if( current_user )
+      @idea = Idea.find(params[:id])
+    else 
+      redirect_to :back, :notice  => "Sorry you can't edit an idea that's not yours."
+    end
   end
 
   def update
@@ -51,7 +54,6 @@ class IdeasController < ApplicationController
       send_file idea.uploaded_file.path, :type => idea.uploaded_file_content_type 
     end
   end
-
 
 
 end

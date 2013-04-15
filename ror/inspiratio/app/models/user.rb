@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   #dario added validation
   validates :email, :presence => true, :uniqueness => true
 
-  has_many :ideas
+  has_many :ideas, :inverse_of => :users
   
   #paperclip
   attr_accessible :user_id, :location

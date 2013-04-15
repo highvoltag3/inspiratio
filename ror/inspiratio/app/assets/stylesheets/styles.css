@@ -544,7 +544,10 @@ article header > span.projectname {
 	font-family: 'HelveticaRegular';
 	color: #4889AF;
 	font-size: 1.3em;
-	padding-top: .3em;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	overflow: hidden;
 }
 article header > span.username {
 	padding-top: .9em;
@@ -825,6 +828,7 @@ article div.preview img {
 	}
 	#notificationsWindow h1 {
 		padding: .4em 0 .8em 40px;
+		line-height: 1em;
 		background: url(/assets/icon_inbox.png) 0 0 no-repeat;
 		border-bottom: 1px solid #666;
 		color: #555;
@@ -1022,7 +1026,10 @@ article div.preview img {
   .mainidea {
   	position: relative;
   }
-
+	
+  .span6.ideaside {
+	margin-left: 0 !important;
+  }
   .ideaside {
   	background: rgba(255,255,255,.85);
 	border-top-left-radius: 	.3em;
@@ -1405,4 +1412,48 @@ button.grey:hover {
 .breadcrumb {
 	background: #fff;
 	margin-top: 2em;
+}
+
+
+/*Additional just to test might get removed*/
+div.gsc-control {
+	width: 100%;
+}
+.gsc-resultsRoot {
+	overflow: hidden;
+}
+div.gs-title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	overflow: hidden;
+}
+div.gsc-twiddle, 
+div.gs-title, 
+div.gs-title > a.gs-title, 
+div.gs-title > a.gs-title b {
+	font-family: 'HelveticaNeue-BoldCond';
+	font-size: 1.2em;
+	letter-spacing: .15em;
+	font-weight: normal;
+	color: #4d4d4d;
+
+	text-decoration: none;
+}
+
+div.gsc-twiddle,
+table.gsc-resultsHeader div.gsc-stats {
+	font-size: 1.5em;
+}
+
+div.gs-publishedDate,
+div.gs-relativePublishedDate,
+div.gs-visibleUrl {
+	display: none !important;
+}
+
+div.gsc-blogResult .gsc-result {
+	margin: 0;
+	padding: .5em 0;
+	border-bottom: 1px solid #ebebeb;
 }

@@ -1,6 +1,5 @@
 class Home < ActiveRecord::Base
-	attr_accessible :ideas, :user_id, :title, :description, :tags, :public, :uploaded_file
-
+	attr_accessible :ideas, :user_id, :title, :description, :tags, :public, :uploaded_file, :users
 
 	#set up "uploaded_file" field as attached_file (using Paperclip) 
 	has_attached_file :uploaded_file, 

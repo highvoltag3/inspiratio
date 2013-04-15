@@ -40,4 +40,13 @@ jQuery(document).ready(function($) {
 	    }, 500);
 	});
 
+	//lets give the container a min-height so it always pushes footer to bottom
+	var viewportheihgt = $(window).height();
+	var cheight = (viewportheihgt - $('#container + header').height() ) - $('body > footer').height();
+	$('#container').css('min-height', cheight);
+
+	//auto dismiss alert of success
+	$('.alert-success').delay(1500).fadeOut();
+	//auto dismiss alert of error
+	$('.alert-success').delay(3000).fadeOut();
 });

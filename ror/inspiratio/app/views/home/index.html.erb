@@ -32,18 +32,14 @@
     <% for idea in @ideas %>
         <article class="idea">
           <header>
-          	<%#=Todo Need to get the idea owners email %>
-            <%#= gravatar_image_tag(current_user.email, :gravatar => { :size => 55 }, :alt => current_user.name, :class => 'fl') %>
+            <%= gravatar_image_tag(idea.user.email, :gravatar => { :size => 55 }, :alt =>  idea.user.name, :class => 'fl') %>
             <span class="projectname"><%= idea.title %></span>
-            <%#=Todo Need to get the idea owners name %>
-            <span class="username"><%#= current_user.name %></span>
-            <%#=Todo Need to get the idea owners location %>
-            <span class="location"><%#= current_user.location %></span>     
+            <span class="username"><%= idea.user.name %></span>
+            <span class="location"><%= idea.user.location %></span>     
             <%#=Todo get a simple follow system working (this is low priority) %>
             <button type="button" name="" value="" class="follow"></button>             
           </header>
           <div class="preview">
-            <%#=Todo Need to be able to access this guys..%>
             <%= link_to image_tag(idea.uploaded_file.url, :alt => idea.title), idea %>
           </div>
           <footer class="clearfix">
@@ -56,10 +52,6 @@
             <div>
               <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
             </div>
-            <%= link_to "Edit", edit_idea_path(idea) %>
-            <span class="idea_delete">
-               <%= button_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %>
-            </span>
           </footer>
         </article><!-- /idea -->
 

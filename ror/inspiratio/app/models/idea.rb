@@ -1,7 +1,7 @@
 class Idea < ActiveRecord::Base
 	attr_accessible :user_id, :title, :description, :tags, :public
 
-	belongs_to :user
+	belongs_to :user, :inverse_of => :ideas
 
 	attr_accessible :uploaded_file
 	#set up "uploaded_file" field as attached_file (using Paperclip) 

@@ -11,6 +11,8 @@ Inspiratio::Application.routes.draw do
 
   get "home/index"
 
+  get "ideas/index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
