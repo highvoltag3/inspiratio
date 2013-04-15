@@ -4,8 +4,8 @@ class Idea < ActiveRecord::Base
 
 	attr_accessible :user_id, :title, :description
 
-  validates user_id: presence: true
-  validates title: presence: true
-  validates description: presence: true
+  validates :user_id, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
 
 end
