@@ -2,12 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'mysql2' # database
 
-gem 'mysql2'
-gem 'ruby-mysql'
-gem "paperclip", "~> 2.3"
+gem 'devise' # authentication
+
+gem "paperclip", "~> 3.4.1" # uploads
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,34 +22,17 @@ end
 
 gem 'jquery-rails'
 
-#for user authentication 
-gem 'devise'
-  
-#for layout and helpers generations 
-gem "nifty-generators", :group => :development
+group :development do
+  gem "nifty-generators" # layout/helpers generators
+  gem 'thin'  # web server: it might be used in production (nginx + thin), don't know what deploy we're going to do
+              # if we'll use nginx/apache + pasenger, we don't need it.
+end
 
- gem 'gravatar_image_tag'
+gem 'gravatar_image_tag' # gravatar support
 
-#to extract color palette
- gem 'imagga'
+gem 'imagga' # extract color palette
 
- gem 'wordnik'
+# TODO: when to use these?
+gem 'wordnik'
+gem 'flickr_fu'
 
- gem 'flickr_fu'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-gem "mocha", :group => :test
