@@ -13,7 +13,7 @@
 -->
 
 <% content_for :more_headers do %>
-  <%#= stylesheet_link_tag 'jquery.tagsinput' %>
+  <%= stylesheet_link_tag 'jquery.tagsinput' %>
 <% end %>
 <% content_for :js_includes do %>
   <% javascript_include_tag 'user_idea' %>
@@ -73,21 +73,21 @@
 		        </article><!-- /idea -->
 
 				<div class="lastestcomments">
-          <h2>LEAVE A COMMENT</h2>
-          <%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
-            <%= f.text_area :body %><br/>
-            <%= f.submit  %>
-          <% end %>
-          <% if @idea.comments.any? %>
-            <h2> LASTEST COMMENTS </h2>
-            <% @idea.comments.each do |comment| %>
-              <div>
-                <p><%= comment.user.name %></p>
-                <p><%= comment.body %></p>
-                <p><%= comment.created_at %></p>
-              </div>
-            <% end %>
-          <% end %>
+		          <h2>LEAVE A COMMENT</h2>
+		          <%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
+		            <%= f.text_area :body %><br/>
+		            <%= f.submit  %>
+		          <% end %>
+		          <% if @idea.comments.any? %>
+		            <h2> LASTEST COMMENTS </h2>
+		            <% @idea.comments.each do |comment| %>
+		              <div>
+		                <p><%= comment.user.name %></p>
+		                <p><%= comment.body %></p>
+		                <p><%= comment.created_at %></p>
+		              </div>
+		            <% end %>
+		          <% end %>
 				</div> <!-- end latest comments -->
 		    </div>
 
@@ -211,17 +211,13 @@
 					    <div id="content">Loading...</div>
 
 
-              <%= "found #{@idea.flickr_photos.size} photo(s)" %>
+						<%#= "found #{@idea.flickr_photos.size} photo(s)" %>
 
-              <% @idea.flickr_photos.each do |photo| %>
-                <%= photo.title %>
-                <%= photo.try :description %>
-                <% [:square, :thumbnail, :small, :medium, :large, :original].each do |size| %>
-                  <%= "#{size}: #{photo.url(size)}" %>
-                <% end %>
+						<% @idea.flickr_photos.each do |photo| %>
+						
 
-                <%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
-              <% end %>
+						<%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
+						<% end %>
 
 					</div> <!-- end related images -->
 

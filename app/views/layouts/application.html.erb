@@ -33,7 +33,7 @@
   <%= javascript_include_tag 'application' %>
 
   <!-- !CSS -->
-  <%#= stylesheet_link_tag 'bootstrap.min', 'styles', 'jquery.fancybox' %>
+  <%= stylesheet_link_tag 'bootstrap.min', 'styles', 'jquery.fancybox' %>
   <%= stylesheet_link_tag 'application' %>
   <!-- Uncomment if you are specifically targeting less enabled mobile browsers
   <%= stylesheet_link_tag 'handheld', :media => 'handheld' %>
@@ -77,6 +77,6 @@
     <!-- !Javascript - at the bottom for fast page loading -->
     <%= javascript_include_tag 'plugins', 'bootstrap.min', 'global.js' %>
     <!-- template specific js includes -->
-    <%#= yield(:js_includes) if content_for?(:js_includes) %>
+    <%= yield(:js_includes) if content_for?(:js_includes) %>
   </body>
 </html>
