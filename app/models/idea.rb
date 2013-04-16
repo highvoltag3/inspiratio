@@ -27,4 +27,8 @@ class Idea < ActiveRecord::Base
     images
   end
 
+  def flickr_photos
+    @flickr_photos ||= FLICKR_CLIENT.photos.search(text: self.title, per_page: 10)
+  end
+
 end

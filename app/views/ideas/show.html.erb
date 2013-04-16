@@ -203,28 +203,18 @@
 					    <div id="content">Loading...</div>
 
 
+              <%= "found #{@idea.flickr_photos.size} photo(s)" %>
 
-					    <%
+              <% @idea.flickr_photos.each do |photo| %>
+                <%= photo.title %>
+                <%= photo.try :description %>
+                <% [:square, :thumbnail, :small, :medium, :large, :original].each do |size| %>
+                  <%= "#{size}: #{photo.url(size)}" %>
+                <% end %>
 
-						flickr = Flickr.new('config/flickr.yml')
+                <%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
+              <% end %>
 
-						photos = flickr.photos.search(:text => @idea.title, :per_page => 10 )
-
-						puts "found #{photos.size} photo(s)"
-
-						photos.each do |photo|
-						    puts photo.title
-						    puts photo.description unless [nil, ''].include?(photo.description)
-						    [:square, :thumbnail, :small, :medium, :large, :original].each do |size|
-						    	puts "#{size}: #{photo.url(size)}"
-
-							end
-						    %>
-
-						       <%= link_to(image_tag(photo.url(:square), :class => 'thumb', :title => photo.title, :border => 0, :size => '150x90'), photo.url_photopage) %>
-						<%
-						end
-					    %>
 					</div> <!-- end related images -->
 
 					<hr>
