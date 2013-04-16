@@ -14,12 +14,12 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
-}									
+}
 
 article, aside, figure, footer, header, hgroup, nav, section {display: block;}
 
 /* Responsive images and other embedded objects
-   Note: keeping IMG here will cause problems if you're using foreground images as sprites, like, say for Google Maps custom placemarkers. 
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites, like, say for Google Maps custom placemarkers.
    There has been a report of problems with standard Google maps as well, but we haven't been able to duplicate or diagnose the issue. */
 /* img, */
 object,
@@ -28,15 +28,15 @@ embed {max-width: 100%;}
 /* force a vertical scrollbar to prevent a jumpy page */
 html {overflow-y: scroll;}
 
-/* we use a lot of ULs that aren't bulleted. 
+/* we use a lot of ULs that aren't bulleted.
 	don't forget to restore the bullets within content. */
 ul {list-style: none;}
 
 blockquote, q {quotes: none;}
 
-blockquote:before, 
-blockquote:after, 
-q:before, 
+blockquote:before,
+blockquote:after,
+q:before,
 q:after {content: ''; content: none;}
 
 a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
@@ -68,7 +68,7 @@ input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
 select, input, textarea {font: 99% sans-serif;}
 
 table {font-size: inherit; font: 100%;}
- 
+
 /* Accessible focus treatment
 	people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active {outline: none;}
@@ -77,7 +77,7 @@ small {font-size: 100%;}
 
 strong, th {font-weight: bold;}
 
-td, td img {vertical-align: top;} 
+td, td img {vertical-align: top;}
 
 /* Make sure sup and sub don't screw with your line-heights
 	gist.github.com/413930 */
@@ -90,9 +90,9 @@ pre, code, kbd, samp {font-family: monospace, sans-serif;}
 
 /* hand cursor on clickable elements */
 .clickable,
-label, 
-input[type=button], 
-input[type=submit], 
+label,
+input[type=button],
+input[type=submit],
 button {cursor: pointer;}
 
 /* Webkit browsers add a 2px margin outside the chrome of form elements */
@@ -100,7 +100,7 @@ button, input, select, textarea {margin: 0;}
 
 /* make buttons play nice in IE */
 button {width: auto; overflow: visible;}
- 
+
 /* scale images in IE7 more attractively */
 .ie7 img {-ms-interpolation-mode: bicubic;}
 
@@ -108,9 +108,9 @@ button {width: auto; overflow: visible;}
 .ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 
 /* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }  
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
 
 
 
@@ -120,7 +120,7 @@ button {width: auto; overflow: visible;}
 /* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
 body {font: 13px Helmet, Freesans, sans-serif;}
 
-/* using local fonts? make sure to read up on Paul Irish's 
+/* using local fonts? make sure to read up on Paul Irish's
 	Bulletproof @font-face syntax: http://mky.be/font-face/bulletproof/ */
 
 /* we like off-black for text */
@@ -138,10 +138,10 @@ a:active { color: #69f; }
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
-::selection {background: #fcd700; color: #fff; text-shadow: none;} 
+::selection {background: #fcd700; color: #fff; text-shadow: none;}
 
 /*	j.mp/webkit-tap-highlight-color */
-a:link {-webkit-tap-highlight-color: #fcd700;} 
+a:link {-webkit-tap-highlight-color: #fcd700;}
 
 ins {background-color: #fcd700; color: #000; text-decoration: none;}
 mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
@@ -153,11 +153,11 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 /* <%#=Todo: Get the fonts to work currently they are 404'ed %> */
 @font-face {
     font-family: 'DroidSerifRegular';
-    src: url('/assets/fonts/DroidSerifRegularwebfont.eot');
-    src: url('/assets/fonts/DroidSerifRegularwebfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/DroidSerifRegularwebfont.woff') format('woff'),
-         url('/assets/fonts/DroidSerifRegularwebfont.ttf') format('truetype'),
-         url('/assets/fonts/DroidSerifRegularwebfont.svg#DroidSerifRegular') format('svg');
+    src: url('/assets/DroidSerifRegularwebfont.eot');
+    src: url('/assets/DroidSerifRegularwebfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/DroidSerifRegularwebfont.woff') format('woff'),
+         url('/assets/DroidSerifRegularwebfont.ttf') format('truetype'),
+         url('/assets/DroidSerifRegularwebfont.svg#DroidSerifRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -165,11 +165,11 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 
 @font-face {
     font-family: 'DroidSerifBold';
-    src: url('/assets/fonts/DroidSerifBoldwebfont.eot');
-    src: url('/assets/fonts/DroidSerifBoldwebfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/DroidSerifBoldwebfont.woff') format('woff'),
-         url('/assets/fonts/DroidSerifBoldwebfont.ttf') format('truetype'),
-         url('/assets/fonts/DroidSerifBoldwebfont.svg#DroidSerifBold') format('svg');
+    src: url('/assets/DroidSerifBoldwebfont.eot');
+    src: url('/assets/DroidSerifBoldwebfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/DroidSerifBoldwebfont.woff') format('woff'),
+         url('/assets/DroidSerifBoldwebfont.ttf') format('truetype'),
+         url('/assets/DroidSerifBoldwebfont.svg#DroidSerifBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -177,33 +177,33 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 
 @font-face {
 		font-family: 'HelveticaNeue-BoldCond';
-		src: url('/assets/fonts/helveticaneuboldcond.eot');
-		src: url('/assets/fonts/helveticaneuboldcond.eot?#iefix') format('embedded-opentype'),
-			 url('/assets/fonts/helveticaneuboldcond.woff') format('woff'),
-			 url('/assets/fonts/helveticaneuboldcond.ttf') format('truetype'),
-			 url('/assets/fonts/helveticaneuboldcond.svg#helveticaneue-boldcond') format('svg');
+		src: url('/assets/helveticaneueboldcond.eot');
+		src: url('/assets/helveticaneueboldcond.eot?#iefix') format('embedded-opentype'),
+			 url('/assets/helveticaneueboldcond.woff') format('woff'),
+			 url('/assets/helveticaneueboldcond.ttf') format('truetype'),
+			 url('/assets/helveticaneueboldcond.svg#helveticaneue-boldcond') format('svg');
 		font-weight: normal;
 		font-style: normal;
 }
 
 @font-face {
 	font-family: 'HelveticaRegular';
-	src: url('/assets/fonts/HelveticaRegular.eot');
-	src: url('/assets/fonts/HelveticaRegular.eot?#iefix') format('embedded-opentype'),
-		 url('/assets/fonts/HelveticaRegular.woff') format('woff'),
-		 url('/assets/fonts/HelveticaRegular.ttf') format('truetype'),
-		 url('/assets/fonts/HelveticaRegular.svg#4864') format('svg');
+	src: url('/assets/HelveticaRegular.eot');
+	src: url('/assets/HelveticaRegular.eot?#iefix') format('embedded-opentype'),
+		 url('/assets/HelveticaRegular.woff') format('woff'),
+		 url('/assets/HelveticaRegular.ttf') format('truetype'),
+		 url('/assets/HelveticaRegular.svg#4864') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-    font-family: 'HelveticaLight';
-    src: url('/assets/fonts/helveticalighwebfont.eot');
-    src: url('/assets/fonts/helveticalighwebfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/helveticalighwebfont.woff') format('woff'),
-         url('/assets/fonts/helveticalighwebfont.ttf') format('truetype'),
-         url('/assets/fonts/helveticalighwebfont.svg#HelveticaLight') format('svg');
+    font-family: 'HelveticaNeueLight';
+    src: url('/assets/HelveticaNeueLight.eot');
+    src: url('/assets/HelveticaNeueLight.eot?#iefix') format('embedded-opentype'),
+         url('/assets/HelveticaNeueLight.woff') format('woff'),
+         url('/assets/HelveticaNeueLight.ttf') format('truetype'),
+         url('/assets/HelveticaNeueLight.svg#HelveticaLight') format('svg');
     font-weight:  200;
     font-style: normal;
 
@@ -211,12 +211,12 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 
 @font-face {
   font-family: 'HelveticaNeueUltraLight';
-  src: url('/assets/fonts/HelveticaNeueUltraLight.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/HelveticaNeueUltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/HelveticaNeueUltraLight.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/HelveticaNeueUltraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/HelveticaNeueUltraLight.svg#svg') format('svg'); /* Legacy iOS */
-       
+  src: url('/assets/HelveticaNeueUltraLight.eot'); /* IE9 Compat Modes */
+  src: url('/assets/HelveticaNeueUltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/assets/HelveticaNeueUltraLight.woff') format('woff'), /* Modern Browsers */
+       url('/assets/HelveticaNeueUltraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/HelveticaNeueUltraLight.svg#svg') format('svg'); /* Legacy iOS */
+
   font-style:   normal;
   font-weight:  200;
 }
@@ -234,11 +234,11 @@ body {
 	min-width: 1055px;
 }
 
-a { 
-	text-decoration: none; 
+a {
+	text-decoration: none;
 }
-a:hover { 
-	color: #666; 
+a:hover {
+	color: #666;
 }
 
 
@@ -258,7 +258,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		position: relative;
 		height: 80px;
 		width: 100%;
-		
+
 		background: rgb(255,255,255);
 		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNGY0ZjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 		background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
@@ -268,13 +268,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(244,244,244,1) 100%);
 		background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(244,244,244,1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
-		
+
 		box-shadow: 1px 1px 10px #333;
 		z-index: 99;
-		
-		
+
+
 	}
-	
+
 	header a {
 		color: #303136;
 	}
@@ -292,7 +292,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		font-size: .8em;
 		letter-spacing: 0.1em;
 	}
-	
+
 	header ul#nav li {
 		width: 76px;
 		margin: 0 1.5em;
@@ -303,24 +303,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	header ul#nav li:first-child {
 		margin-right: 0;
 	}
-	
+
 	#signinreg {
 		position: absolute;
 		top: .8em;
 		left: 75%;
 		width: 170px;
 		color: #fff;
-		
+
 	}
 	#signinreg .username {
 		margin-left: .6em;
 		display: block;
 		color: #303136;
 	}
-	#signinreg > div, 
+	#signinreg > div,
 	#signinreg input {
 		position: relative;
-		display: block;	
+		display: block;
 		margin-bottom: .3em;
 		padding: .4em;
 		width: 94%;
@@ -331,7 +331,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		margin-top: -.5em;
 		width: auto;
 	}
-		
+
 		#signinreg button {
 			font-family: 'DroidSerifRegular';
 			color: #fff;
@@ -340,7 +340,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			border: none;
 			padding: 2% 5%;
 		}
-	
+
 	#signinreg a {
 		margin-top: 25px;
 	}
@@ -354,9 +354,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	.logout {
 		margin-left: 1em;
 	}
-	
+
 	#signinreg .actions { text-align: center; }
-	
+
 	#nav {
 		width: 50%;
 		height: 59px;
@@ -366,18 +366,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	#nav li {
 		height: 100%;
 	}
-	
-	nav .selected { 
+
+	nav .selected {
 		background: url('/assets/new/bg.png') 0 0 repeat;
 	}
 	#nav li a {
 		height: 15px;
 		padding-top: 25px;
 		display: block;
-		
+
 		font-family: 'HelveticaNeue-BoldCond';
 	}
-	
+
 	nav #home {
 		background: url(/assets/new/home_icon.png) center 0 no-repeat;
 	}
@@ -390,7 +390,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	nav #mp {
 		background: url(/assets/new/heart_icon.png) center 0 no-repeat;
 	}
-	
+
 	nav #yi {
 		background: url(/assets/new/your_idea_icon.png) center 0 no-repeat;
 	}
@@ -406,7 +406,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	nav #lv {
 		background: url(/assets/new/list_view_icon.png) center 0 no-repeat;
 	}
-	
+
 	nav .selected #home,
 	nav #home:hover {
 
@@ -419,7 +419,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	nav #mp:hover {
 
 	}
-	
+
 	nav .selected #youridea,
 	nav #youridea:hover {
 
@@ -430,8 +430,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	nav #addidea:hover {
 
 	}
-	
-	#subnav { 
+
+	#subnav {
 		display: block;
 		width: 15%;
 		position: absolute;
@@ -448,15 +448,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		max-width: 230px;
 	}
 
-	#subnav li { 
+	#subnav li {
 		float: left;
 		margin-left: 8%;
 	}
-	#subnav li.divider-vertical { 
+	#subnav li.divider-vertical {
 		height: 30px;
 		border-left: 1px solid #b9b9b9;
 	}
-		#subnav li a { 
+		#subnav li a {
 			display: block;
 			width: 25px;
 			height: 25px;
@@ -487,15 +487,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			background: none;
 			box-shadow: none;
 			height: auto;
-		}	
-	
+		}
+
 /* Home */
 #main.home {
 	padding-top: 0;
-	padding-left: 4.3%;	
+	padding-left: 4.3%;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box; 
+	box-sizing: border-box;
 }
 
 #showIdeas {
@@ -507,13 +507,13 @@ article {
 	background: #fff;
 	margin-top: 1em;
 	padding: .5em;
-	
-					
+
+
 	-moz-background-clip: padding;     /* Firefox 3.6 */
 	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
 	background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
-				
-	
+
+
 	border: 10px solid rgba(255,255,255,.85);
 	border-radius: 5px;
 }
@@ -553,14 +553,14 @@ article header > span.username {
 	padding-top: .9em;
 	height: 30px;
 	margin-top: -13px;
-	
+
 	font-family: 'HelveticaLight';
 }
 article header > span.location {
 	padding-top: 0;
 	height: 30px;
 	margin-top: -13px;
-	
+
 	font-family: 'HelveticaLight';
 }
 
@@ -570,9 +570,9 @@ article header > .follow {
 	height: 22px;
 	border: none;
 	background: url(/assets/new/follow_icon.png) 15px 0 no-repeat;
-	
+
 	bottom: 15%;
-	right: 0;	
+	right: 0;
 	top: 2.2em;
 	opacity: 1; /*because of the tooltip not sure why*/
 }
@@ -587,7 +587,7 @@ article div.preview {
 		width: auto;
 		height: 100%;
 	}
-	
+
 
 article footer {
 	text-align: center;
@@ -637,7 +637,7 @@ article footer > div:nth-child(3) {
 */
 
 /* individual item */
-h2 { 
+h2 {
 	font-size: 1.1em;
 	color: #666;
 }
@@ -674,15 +674,15 @@ h2 {
 		margin-right: 0;
 	}
 
-#sidebar { 
+#sidebar {
 	width: 45%;
 	float: right;
 	position: absolute;
 	right: 0;
-	top: 5em; 
+	top: 5em;
 }
 
-	#sidebar #details { 
+	#sidebar #details {
 		width: 50%;
 		float: left;
 	}
@@ -690,7 +690,7 @@ h2 {
 		display: block;
 		padding: 1em 0 1em 3em;
 	}
-	
+
 	#views {
 		background: url(/assets/icon_idea_eye.png) 0 0 no-repeat;
 	}
@@ -698,7 +698,7 @@ h2 {
 		background: url(/assets/icon_idea_folder.png) 0 0 no-repeat;
 	}
 	#likes {
-		background: url(/assets/icon_idea_love.png) 0 0 no-repeat; 
+		background: url(/assets/icon_idea_love.png) 0 0 no-repeat;
 	}
 	#palette {
 		background: url(/assets/icon_idea_palette.png) 0 0 no-repeat;
@@ -706,7 +706,7 @@ h2 {
 	#share {
 		background: url(/assets/icon_idea_link.png) 0 0 no-repeat;
 	}
-	
+
 	#tags {
 		margin-top: 1.5em;
 	}
@@ -718,8 +718,8 @@ h2 {
 		font-size: .7em;
 		float: left;
 		border-radius: 5px;
-	} 
-	
+	}
+
 	#sidebar #similar {
 		width: 50%;
 		float: right;
@@ -735,26 +735,26 @@ h2 {
 		margin-bottom: 1em;
 		text-align: center;
 	}
-	
+
 	#sidebar #comments {
 		width: 95%;
 		clear: both;
 		padding-top: 1.5em;
 	}
-	
+
 		#comments > .comment {
 			width: 100%;
 			height: 60px;
 			margin: .8em 0;
 		}
-		
+
 		.left_comment {
 			background: url(/assets/left_comment.png) 0 0 no-repeat;
 		}
 		.right_comment {
 			background: url(/assets/right_comment.png) 5em 0 no-repeat;
 		}
-		
+
 /* individual */
 article div.preview img {
 	width: 100%;
@@ -768,7 +768,7 @@ article div.preview img {
 	font-size: 1.5em;
 	color: #4d4d4d;
 }
-	
+
 /* Dashboard */
 
 .loggedin #signinreg { }
@@ -778,21 +778,21 @@ article div.preview img {
 }
 
 #ideasList {
-	padding-left: 4.3%;	
+	padding-left: 4.3%;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box; 
+	box-sizing: border-box;
 }
-	
+
 	#ideas {
 		display: block;
 		width: 96%;
 		padding: 1em;
-		margin-top: 1em;	
+		margin-top: 1em;
 	}
-	
-	
-			
+
+
+
 /* Notifications */
 #signinreg > div#notificationsCircle {
 	position: absolute;
@@ -822,9 +822,9 @@ article div.preview img {
 		width: 300px;
 		left: -100px;
 		padding: .5em;
-		
+
 		box-shadow: 1px 1px 15px 3px rgba(100,100,100,.5);
-	
+
 	}
 	#notificationsWindow h1 {
 		padding: .4em 0 .8em 40px;
@@ -833,8 +833,8 @@ article div.preview img {
 		border-bottom: 1px solid #666;
 		color: #555;
 	}
-	.notification { 
-		position: relative; 
+	.notification {
+		position: relative;
 		margin: .5em 0;
 		background: #f2f2f2;
 		padding: .5em;
@@ -865,13 +865,13 @@ article div.preview img {
 			background: rgba(71,112,141,0.83);
 			margin-top: 1.7em;
 		}
-	
-	
 
-/* Share */	
+
+
+/* Share */
 #sharebox {
 	display: none;
-}	
+}
 
 	#sharebox header {
 		background: #8F99A8;
@@ -879,7 +879,7 @@ article div.preview img {
 		height: auto;
 		box-shadow: none;
 	}
-	
+
 	#sharebox header h1 {
 		font-size: 2em;
 		font-weight: lighter;
@@ -891,7 +891,7 @@ article div.preview img {
 	#bigpic {
 		margin-top: 1.5em;
 	}
-	
+
 	#share_text {
 		width: 45%;
 		height: 70%;
@@ -908,7 +908,7 @@ article div.preview img {
 			margin-left: 3em;
 		}
 
-	
+
 	#bigpic {
 		width: 40%;
 		height: auto;
@@ -922,26 +922,26 @@ article div.preview img {
 	#bigpic img {
 		max-width: auto;
 	}
-	
+
 /* New idea */
 
 .controls {
 	height: 0;
 	overflow: hidden;
-	
+
 	-webkit-transition:	 all .2s ease-in-out;
 	-moz-transition: 	 all .2s ease-in-out;
 	-ms-transition:	 	 all .2s ease-in-out;
 	-o-transition:		 all .2s ease-in-out;
 	transition:			 all .2s ease-in-out;
-	
+
 	background: rgba(255, 255, 255, .9);
 	box-shadow: inset 0px 0px 10px 0px #1F1F1F;
 }
 
 #newideabox {
-	
-}	
+
+}
 	#files-table thead {
 		background: #fff;
 	}
@@ -952,12 +952,12 @@ article div.preview img {
 		height: auto;
 		box-shadow: none;
 	}
-	
+
 	#newideabox header h1 {
 		font-family: 'HelveticaNeue-BoldCond';
 		font-size: 1.5em;
 		font-weight: normal;
-		
+
 		color: #fff;
 		padding: .2em;
 	}
@@ -966,7 +966,7 @@ article div.preview img {
 	#newideaupload {
 		margin-top: 1.5em;
 	}
-	
+
 	#newidea_text {
 		width: 45%;
 		height: 70%;
@@ -989,27 +989,27 @@ article div.preview img {
 
 	#newidea_text div {
 		margin: 1em 2em;
-	}	
-	
+	}
+
 	#newideaupload {
 		width: 40%;
 		margin-right: 2em;
 	}
-	
+
 	#newideabox textarea {
 		width: 100%;
 	}
-	
+
 	#newideaupload h1 {
 	  margin-bottom: 20px;
 	}
-	
+
 	#upload-panel {
 	  text-align: center;
 	  padding-top: 50px;
 	  padding-bottom: 50px;
 	}
-	
+
 	#upload-panel.hover {
 	  background-color: #ffffcc;
 	}
@@ -1026,7 +1026,7 @@ article div.preview img {
   .mainidea {
   	position: relative;
   }
-	
+
   .span6.ideaside {
 	margin-left: 0 !important;
   }
@@ -1071,7 +1071,7 @@ article div.preview img {
 		background-image:      -o-linear-gradient(top, #f4f4f4, #fff);
 		background-image:         linear-gradient(top, #f4f4f4, #fff);
 	}
-	
+
 	#ideadetailspanel {
 		position: relative;
 		background: rgba(204, 204, 204, .9);
@@ -1080,7 +1080,7 @@ article div.preview img {
 		border-top-right-radius: 	.3em;
 		border-bottom-right-radius: .3em;
 	}
-	
+
 	#ideadetailspanel hr {
 		background: #000;
 		height: 2px;
@@ -1124,7 +1124,7 @@ article div.preview img {
 			float: left;
 			margin: .1em .5em;
 		}
-		.viewsbar span, 
+		.viewsbar span,
 		.viewsbar a {
 			display: block;
 			width: 25px;
@@ -1140,7 +1140,7 @@ article div.preview img {
 			background: #fff;
 			margin-bottom: 0;
 		}
-		
+
 		#relatedarticles #dropper {
 			background: rgba(255, 255, 255, 0.6);
 			border-radius: .3em;
@@ -1185,21 +1185,21 @@ article div.preview img {
 		  border-width:2px !important;
 		  background:#8B0000;
 		}
-		
+
 		#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-  		#droppable { 
+  		#droppable {
   			position: absolute;
   			top: 0;
   			right: 0;
-	  		width: 150px; 
-	  		min-height: 100px; 
-	  		padding: 0.5em;  
-	  		margin: 10px; 
-	  		background: rgba(255,255,255,.3); 
+	  		width: 150px;
+	  		min-height: 100px;
+	  		padding: 0.5em;
+	  		margin: 10px;
+	  		background: rgba(255,255,255,.3);
   		}
 
 
-/* END OF THE SITE */	
+/* END OF THE SITE */
 footer.endofsite {
 	padding: 1em 7em;
 	min-height: 150px;
@@ -1216,8 +1216,8 @@ footer.endofsite {
 
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;   
-	    	
+	box-sizing: border-box;
+
 }
 
 footer.endofsite h2 {
@@ -1230,7 +1230,7 @@ footer.endofsite p {
 	padding: 0.3em 0;
 	color: #e9e9e9;
 }
-	
+
 /* Classes */
 .fr { float: right; }
 .fl { float: left; }
@@ -1246,7 +1246,7 @@ footer.endofsite p {
 	color: #303136;
 	padding: .9em;
 	font-size: .8em;
-		
+
 	background: rgb(255,255,255);
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNGY0ZjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(244,244,244,1) 100%);
@@ -1314,7 +1314,7 @@ footer.endofsite p {
 	position: relative;
 	margin: 15px 0 0 10px;
 
-		
+
 }
 
 
@@ -1329,7 +1329,7 @@ button.greenbtn {
 		#459716 50%,
 		#459716);
 	background: -webkit-gradient(
-		linear, left top, left bottom, 
+		linear, left top, left bottom,
 		from(#64bf2f),
 		color-stop(0.50, #459716),
 		to(#459716));
@@ -1361,7 +1361,7 @@ button.grey {
 		#ffffff 0%,
 		#e7e7e7);
 	background: -webkit-gradient(
-		linear, left top, left bottom, 
+		linear, left top, left bottom,
 		from(#ffffff),
 		to(#e7e7e7));
 	-moz-border-radius: 6px;
@@ -1388,7 +1388,7 @@ button.grey:hover {
 		#e7e7e7 0%,
 		#ffffff);
 	background: -webkit-gradient(
-		linear, left top, left bottom, 
+		linear, left top, left bottom,
 		from(#e7e7e7),
 		to(#ffffff));
 	-moz-border-radius: 6px;
@@ -1428,9 +1428,9 @@ div.gs-title {
 	display: block;
 	overflow: hidden;
 }
-div.gsc-twiddle, 
-div.gs-title, 
-div.gs-title > a.gs-title, 
+div.gsc-twiddle,
+div.gs-title,
+div.gs-title > a.gs-title,
 div.gs-title > a.gs-title b {
 	font-family: 'HelveticaNeue-BoldCond';
 	font-size: 1.2em;

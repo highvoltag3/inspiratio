@@ -1,4 +1,4 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>
 <!--[if lt IE 7 ]>
   <html lang="en" class="no-js ie6">
 <![endif]-->
@@ -28,11 +28,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <%= javascript_include_tag 'http://code.jquery.com/jquery-latest.min.js' %>
-  <script>!window.jQuery && document.write('<script src="/assets/jquery-1.7.2.min.js"><\/script>')</script>
+  <%#= javascript_include_tag 'http://code.jquery.com/jquery-latest.min.js' %>
+  <%# <script>!window.jQuery && document.write('<script src="/assets/jquery-1.7.2.min.js"><\/script>')</script>%>
+  <%= javascript_include_tag 'application' %>
 
   <!-- !CSS -->
-  <%= stylesheet_link_tag 'bootstrap.min', 'styles', 'jquery.fancybox' %>
+  <%#= stylesheet_link_tag 'bootstrap.min', 'styles', 'jquery.fancybox' %>
+  <%= stylesheet_link_tag 'application' %>
   <!-- Uncomment if you are specifically targeting less enabled mobile browsers
   <%= stylesheet_link_tag 'handheld', :media => 'handheld' %>
   -->
@@ -55,14 +57,14 @@
 </head>
 <!-- !Body -->
     <div id="container" class="<%= @main_container or 'frontpage' %>">
-      <% if user_signed_in? %> 
+      <% if user_signed_in? %>
         <%= render :partial => 'user_header' %>
-        <%#= link_to "Sign out", destroy_user_session_path %> 
-    <% else %> 
+        <%#= link_to "Sign out", destroy_user_session_path %>
+    <% else %>
         <%= render :partial => 'public_header' %>
-        <%#= link_to 'Sign in', new_user_session_path%> 
-        <%#= link_to 'Sign up', new_user_registration_path%> 
-    <% end %> 
+        <%#= link_to 'Sign in', new_user_session_path%>
+        <%#= link_to 'Sign up', new_user_registration_path%>
+    <% end %>
 
       <%= render :partial => 'layouts/messages' %>
 
@@ -73,8 +75,8 @@
     <%= render :partial => 'footer' %>
 
     <!-- !Javascript - at the bottom for fast page loading -->
-    <%= javascript_include_tag 'plugins', 'bootstrap.min', 'global.js' %>
+    <%#= javascript_include_tag 'plugins', 'bootstrap.min', 'global.js' %>
     <!-- template specific js includes -->
-    <%= yield(:js_includes) if content_for?(:js_includes) %>
+    <%#= yield(:js_includes) if content_for?(:js_includes) %>
   </body>
 </html>
