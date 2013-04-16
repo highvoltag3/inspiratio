@@ -52,8 +52,10 @@ class IdeasController < ApplicationController
   end
 
   def comment
-    comment = current_user.comments.build(idea_id: @idea.id)
-    if comment.save?
+    comment = current_user.comments.build(params[:comment])
+    comment.idea_id = @idea.id
+
+    if comment.save
       flash[:notice] = "Successfully added comment."
     end
     redirect_to @idea

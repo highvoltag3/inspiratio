@@ -33,8 +33,9 @@ class Idea < ActiveRecord::Base
   end
 
   def old_images
-    images = self.uploads
+    images = self.uploads.dup
     images.pop
+    self.reload
     images
   end
 

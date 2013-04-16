@@ -3,6 +3,7 @@ Inspiratio::Application.routes.draw do
   resources :ideas do
     member do
       get :like # NOTE: choose either a "post"
+      post :comment
     end
   end
 

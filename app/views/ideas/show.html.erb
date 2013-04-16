@@ -54,12 +54,12 @@
 		          <footer id="ideainfo" class="clearfix">
 		            <div>
 		              <span class="comments number">
-		              	<%= link_to '0', '#', :title => 'You have no comments' %>
+                    <%= @idea.comments.size %>
 		              </span>
 		            </div>
 		            <div>
 		              <span class="likes number">
-		              	<%= link_to '12', '#', :title => 'Number of times your idea has been seen' %>
+		              	<%= link_to @idea.likes_users_count, like_idea_path(@idea), :title => 'Number of times your idea has been liked' %>
 		              </span>
 		            </div>
 		            <div>
@@ -72,14 +72,21 @@
 		        </article><!-- /idea -->
 
 				<div class="lastestcomments">
-					<h2> LASTEST COMMENTS </h2>
-					 <% for comments in [{'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['2', '1'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}]
-					 %>
-
-					 <aside class="inv_idea_comment">
-					 	<p><%= comments['content'] %></p>
-					 </aside>
-					 <% end %>
+          <h2>LEAVE A COMMENT</h2>
+          <%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
+            <%= f.text_area :body %><br/>
+            <%= f.submit  %>
+          <% end %>
+          <% if @idea.comments.any? %>
+            <h2> LASTEST COMMENTS </h2>
+            <% @idea.comments.each do |comment| %>
+              <div>
+                <p><%= comment.user.name %></p>
+                <p><%= comment.body %></p>
+                <p><%= comment.created_at %></p>
+              </div>
+            <% end %>
+          <% end %>
 				</div> <!-- end latest comments -->
 		    </div>
 
