@@ -46,6 +46,7 @@ end
 group :development do
   gem 'mysql2' # database
   gem "nifty-generators" # layout/helpers generators
+  gem "quiet_assets"
 end
 
 
