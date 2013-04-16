@@ -35,7 +35,7 @@
   </header>
   <div id="ideasList">
     <div id="ideas" class="clearfix">
-      <% for idea in @ideas %>
+      <% @ideas.each do |idea| %>
         <article class="idea">
           <header>
             <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 55 }, :alt => current_user.name, :class => 'fl') %>
