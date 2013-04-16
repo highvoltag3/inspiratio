@@ -1,4 +1,6 @@
 class Idea < ActiveRecord::Base
+  include LikesTracker
+
 	belongs_to :user
   has_many :uploads, dependent: :destroy
 
@@ -10,12 +12,20 @@ class Idea < ActiveRecord::Base
     :location
 
   acts_as_taggable # add tags
+  acts_as_liked_by :users
 
   accepts_nested_attributes_for :uploads, allow_destroy: true
 
   validates :user_id, presence: true
   validates :title, presence: true
   validates :description, presence: true
+
+  scope :order_by_likes, ->(limit=10, offset=0) {
+    most_liked(limit, offset) do |model, ids|
+      model.limit(limit).offset(offset).order(ids.map {|id| "id = #{id} DESC"}.join(',')) #if !ids.empty?
+    end
+  }
+
 
   def current_image
     self.uploads.last
