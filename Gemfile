@@ -9,6 +9,7 @@ gem "paperclip", "~> 3.4.1" # uploads
 gem 'aws-sdk' # access s3 with paperclip
 gem 'fog', '~> 1.5.0' # access s3 files
 gem 'acts-as-taggable-on' # tags
+gem 'likes_tracker' # track likes
 
 # deploy on heroku
 #
