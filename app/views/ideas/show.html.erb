@@ -59,6 +59,7 @@
 		            </div>
 		            <div>
 		              <span class="likes number">
+		              	<%#= commenting this out until we figure out the timeout issue (Github issue #10)
 		              	<%= link_to @idea.likes_users_count, like_idea_path(@idea), :title => 'Number of times your idea has been liked' %>
 		              </span>
 		            </div>
