@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   #
   def get
     if idea = Idea.where(id: params[:id]).first
-      send_file idea.uploaded_file.path, type: idea.uploaded_file_content_type
+      send_file idea.current_image.path, type: idea.current_image_content_type
     end
   end
 
