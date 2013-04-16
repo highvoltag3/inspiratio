@@ -17,8 +17,8 @@
       </li>
     </ul>
   </nav><!-- /nav  -->
- 
-  <% if (current_page?(:controller=>'ideas')) %>
+
+  <% if (current_page?(ideas_path)) %>
     <nav>
       <ul id="subnav" class="navbar">
         <li>
@@ -36,15 +36,14 @@
         </li>
       </ul>
     </nav><!-- /nav  -->
-    
+
   <% end %>
-  
+
 
   <div id="signinreg">
     <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 60 }, :alt => current_user.name, :class => 'fl') %>
     <span class="username"><%= current_user.name %></span>
-    <%#=Todo: Make my profile go to /users/edit %>
-    <%= link_to 'My Profile', '#', :class => 'fl c2as' %>
+    <%= link_to 'My Profile', edit_user_registration_path, :class => 'fl c2as' %>
     <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'fl c2as logout' %>
 
 
@@ -52,14 +51,14 @@
       <p>1</p>
     </div>
     <div id="notificationsWrapper">
-      <div class="triangle_top_notifications"></div>	
+      <div class="triangle_top_notifications"></div>
       <div id="notificationsWindow">
         <h1>Notifications</h1>
         <div class="notification">
           <% image_tag 'avatar_jane_doe.jpeg', :alt => 'avatar_jane_doe', :width => 40, :height => 40 %>
           <span class="notificationTitle"></span>
           <p class="notificationContent">Excellent Job, great chromatic use.</p>
-          <div class="triangle_top_notInput"></div>	
+          <div class="triangle_top_notInput"></div>
           <input type="text" name="reply" class="reply" value="" placeholder="Type your reply here" />
         </div><!-- /notification -->
       </div> <!-- /notificationsWindow -->
