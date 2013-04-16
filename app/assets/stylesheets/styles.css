@@ -588,6 +588,11 @@ article div.preview {
 		height: 100%;
 	}
 
+	article div.preview a:hover {
+		color: rbga(255,255,255, 0);
+	}
+
+
 
 article footer {
 	text-align: center;
@@ -1221,7 +1226,7 @@ footer.endofsite {
 }
 
 footer.endofsite h2 {
-	font-family: 'HelveticaLight';
+	font-family: 'HelveticaNeueLight';
 	font-size: 1.3em;
 	color: rgba(255,255,255,0.3);
 }
