@@ -12,8 +12,10 @@
         <%#= f.label :public %>
         <%#= f.check_box :public %>
 
-        <%#= f.label :uploaded_file, "File" %><br />
-        <%#= f.file_field :uploaded_file %>
-      </p>
-  <p><%= f.submit "Upload" %></p>
+        <%= f.fields_for :uploads, @idea.uploads do |b| %><br />
+          <%= b.label :image, "Image" %><br />
+          <%= b.file_field :image %>
+        <% end %>
+    </p>
+      <p><%= f.submit "Upload" %></p>
 <% end %>
