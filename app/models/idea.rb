@@ -2,7 +2,12 @@ class Idea < ActiveRecord::Base
 	belongs_to :user
   has_many :uploads, dependent: :destroy
 
-	attr_accessible :user_id, :title, :description, :tag_list, :uploads_attributes
+	attr_accessible :user_id,
+    :title,
+    :description,
+    :tag_list,
+    :uploads_attributes,
+    :location
 
   acts_as_taggable # add tags
 
