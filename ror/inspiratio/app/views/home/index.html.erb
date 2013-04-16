@@ -1,0 +1,67 @@
+<% content_for :js_includes do %>
+  <% javascript_include_tag 'home' %>
+<% end %>
+
+<section class="carousel row-flow">
+  <div id="mainCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#mainCarousel" data-slide-to="1"></li>
+      <li data-target="#mainCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item">
+        <%= image_tag 'new_slider_test.png', :alt => 'Carousel 1' %>
+      </div>
+      <div class="item">
+        <%= image_tag 'new/fake_carousel2.png', :alt => 'Carousel 1' %>
+      </div>
+      <div class="item">
+        <%= image_tag 'new/fake_carousel.png', :alt => 'Carousel 1' %>
+      </div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+</section>
+
+<section id="main" class="clearfix home">
+  <div id="ideas">
+    <% for idea in @ideas %>
+        <article class="idea">
+          <header>
+            <%= gravatar_image_tag(idea.user.email, :gravatar => { :size => 55 }, :alt =>  idea.user.name, :class => 'fl') %>
+            <span class="projectname"><%= idea.title %></span>
+            <span class="username"><%= idea.user.name %></span>
+            <span class="location"><%#= idea.user.location %></span>
+            <%#=Todo get a simple follow system working (this is low priority) %>
+            <button type="button" name="" value="" class="follow"></button>
+          </header>
+          <div class="preview">
+            <%= link_to image_tag(idea.uploaded_file.url, :alt => idea.title), idea %>
+          </div>
+          <footer class="clearfix">
+            <div>
+              <span class="comments number"> <%= link_to '0', '#', :title => 'You have no comments' %></span>
+            </div>
+            <div>
+              <span class="likes number"><%= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
+            </div>
+            <div>
+              <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
+            </div>
+          </footer>
+        </article><!-- /idea -->
+
+          <%#= idea.user_id %>
+          <%#= link_to idea.uploaded_file_file_name, idea.uploaded_file.url %>
+          <%#= link_to "Show", idea %>
+          <%#= link_to "Edit", edit_idea_path(idea) %>
+          <%#= button_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %>
+          <%#= link_to "New Idea", new_idea_path %>
+
+      <% end %>
+  </div> <!-- /articlesContainer -->
+</section><!-- /main -->

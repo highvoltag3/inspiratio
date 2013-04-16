@@ -1,0 +1,68 @@
+<% content_for :js_includes do %>
+  <% javascript_include_tag '_user_header' %>
+<% end %>
+<header>
+  <div id="logo">
+    <%= link_to image_tag('new/logo.png', :alt => 'logo', :width => 179, :height => 40), root_path %>
+  </div>
+  <span class="tagline"><em>Files and inspiration in one place</em></span>
+
+  <nav>
+    <ul id="nav" class="mainnav">
+      <li>
+        <%= link_to 'Home', root_path, :id => 'home', :title => 'Browse the gallery' %>
+      </li>
+      <li class="selected">
+        <%= link_to 'Your Ideas', '#', :id => 'yi', :title => 'Your ideas' %>
+      </li>
+    </ul>
+  </nav><!-- /nav  -->
+ 
+  <% if (current_page?(:controller=>'ideas')) %>
+    <nav>
+      <ul id="subnav" class="navbar">
+        <li>
+         <%= link_to ' ', '#', :id => 'ni', :class => 'addidea', :title => 'New Idea', :'data-placement' => 'bottom' %>
+        </li>
+        <li>
+          <%= link_to ' ', '#', :id => 'st', :title => 'Settings', :'data-placement' => 'bottom' %>
+        </li>
+        <li class="divider-vertical"></li>
+        <li>
+          <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+        </li>
+        <li>
+          <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+        </li>
+      </ul>
+    </nav><!-- /nav  -->
+    
+  <% end %>
+  
+
+  <div id="signinreg">
+    <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 60 }, :alt => current_user.name, :class => 'fl') %>
+    <span class="username"><%= current_user.name %></span>
+    <%#=Todo: Make my profile go to /users/edit %>
+    <%= link_to 'My Profile', '#', :class => 'fl c2as' %>
+    <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'fl c2as logout' %>
+
+
+    <div id="notificationsCircle">
+      <p>1</p>
+    </div>
+    <div id="notificationsWrapper">
+      <div class="triangle_top_notifications"></div>	
+      <div id="notificationsWindow">
+        <h1>Notifications</h1>
+        <div class="notification">
+          <% image_tag 'avatar_jane_doe.jpeg', :alt => 'avatar_jane_doe', :width => 40, :height => 40 %>
+          <span class="notificationTitle"></span>
+          <p class="notificationContent">Excellent Job, great chromatic use.</p>
+          <div class="triangle_top_notInput"></div>	
+          <input type="text" name="reply" class="reply" value="" placeholder="Type your reply here" />
+        </div><!-- /notification -->
+      </div> <!-- /notificationsWindow -->
+    </div> <!-- /notificationsWrapper -->
+  </div>
+</header><!-- /header -->

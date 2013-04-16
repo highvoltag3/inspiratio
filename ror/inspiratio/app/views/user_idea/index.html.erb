@@ -1,0 +1,126 @@
+<% content_for :more_headers do %>
+  <%#= stylesheet_link_tag 'jquery.tagsinput' %>
+<% end %>
+<% content_for :js_includes do %>
+  <% javascript_include_tag 'user_idea' %>
+<% end %>
+
+<section id="main" class="clearfix">
+  
+  	<div id="useridea">
+	    <header>
+	      <ul class="breadcrumb">
+	        <li>
+	          <%= link_to 'Home', root_path %>
+	          <span class="divider">/</span>
+	        </li>
+	        <li>
+	          <%= link_to 'Dashboard', dashboard_index_path %>
+	          <span class="divider">/</span>
+	        </li>
+	        <li>
+	          <%= link_to 'IDEA TITLE MUST GET REPLACED BY TITLE (BACKEND)', dashboard_index_path, :class => 'active' %>
+	        </li>
+	      </ul>
+	    </header>
+		
+	   <% #This is probably not semantic at all but hell for the layout needs it's good enough for now. %>
+	   <h1 class="inv_idea_title">IDEA TITLE MUST GET REPLACED BY TITLE BACKEND</h1>
+       <section class="mainidea row-fluid">  
+       		<div id="bubbleView" style="display: none;">
+       			<%= render :template => '/user_idea/_bubble_view' %>
+       		</div>   
+	   		<div class="span6 ideaside">
+		        <article id="idea">
+		          <div class="preview">
+		            <%= image_tag('img_201030080404.jpg', :alt => 'img_201030080404.jpg') %>
+		          </div>
+		         
+		          <footer id="ideainfo" class="clearfix">
+		            <div>
+		              <span class="comments number"> 
+		              	<%= link_to '0', '#', :title => 'You have no comments' %>
+		              </span>
+		            </div>
+		            <div>
+		              <span class="likes number"> 
+		              	<%= link_to '12', '#', :title => 'Number of times your idea has been seen' %>
+		              </span>
+		            </div>
+		            <div>
+		              <span class="views number">
+		              	<%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %>
+		              </span>
+		            </div>
+		          </footer>
+
+		        </article><!-- /idea -->
+				
+				<div class="lastestcomments">
+					<h2> LASTEST COMMENTS </h2>
+					 <% for comments in [{'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['2', '1'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['3', '4'], 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}] 
+					 %>
+
+					 <aside class="inv_idea_comment">
+					 	<p><%= comments['content'] %></p>
+					 </aside>
+					 <% end %>
+				</div> <!-- end latest comments -->
+		    </div> 
+
+		    <div id="ideadetailspanel" class="span6 ideadetailarrow_box">
+				
+				<div class="viewsbar">
+					<span class="lvinv">
+						<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip">
+							<%= image_tag('new/grid_view_icon.png') %>
+						</a>
+					</span>
+					<span class="bvinv">
+						<a href="#" data-placement="bottom" data-title="Bubble View" class="tooltip">
+							<%= image_tag('new/bubble_view_icon.png') %>
+						</a>
+					</span>
+				</div>
+				
+				<div id="relatedimages">
+					<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
+					<p>In felis eros, luctus et rhoncus tempor, interdum in ipsum. Etiam rhoncus nisi vel dolor tempor sodales. Suspendisse euismod accumsan velit sit amet posuere. Duis vel odio eget dui laoreet cursus. Pellentesque quis dolor eget nisi tincidunt posuere et sed arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum varius elit dignissim nibh congue dignissim et sit amet lacus. Aenean fermentum varius elit, sit amet molestie turpis malesuada ac. Donec sapien sem, vehicula viverra accumsan at, accumsan at mi. Duis fermentum ornare sem.
+					</p>
+				</div>
+				
+				<hr>
+
+				<div id="relatedarticles">
+					<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES & LINKS</h2>
+					
+					<% for linkArticle in [{'id' => ['3', '4'], 'title' => 'Link or article 1', 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['2', '1'], 'title' => 'Link or article 2', 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}, {'id' => ['3', '4'], 'title' => 'Link or article 3', 'content' => 'Phasellus consequat tincidunt risus, cursus volutpat velit lobortis ut. Duis ut egestas nisl. Nulla ut orci elit. Aliquam quis erat nisi. Proin tortor leo, luctus eget volutpat eget, gravida ut.'}] 
+					 %>
+
+					 <div class="relatedlink">
+					 	<h3><%= linkArticle['title'] %></h3>
+					 	<p><%= linkArticle['content'] %></p>
+
+					 	<hr />
+					 </div>
+					 <% end %>
+
+					 <div id="dropper">
+					 	<input type="text" placeholder="Drop any text file or paste a URL to upload" />
+					 </div>
+				</div>
+
+				<hr>
+
+				<div id="relatedcolors">
+					<h2>Color Palette</h2>
+					<p>In felis eros, luctus et rhoncus tempor, interdum in ipsum. Etiam rhoncus nisi vel dolor tempor sodales. Suspendisse euismod accumsan velit sit amet posuere. Duis vel odio eget dui laoreet cursus. Pellentesque quis dolor eget nisi tincidunt posuere et sed arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum varius elit dignissim nibh congue dignissim et sit amet lacus. Aenean fermentum varius elit, sit amet molestie turpis malesuada ac. Donec sapien sem, vehicula viverra accumsan at, accumsan at mi. Duis fermentum ornare sem.
+					</p>
+				</div>
+
+		    </div>
+
+    	</section> <!-- /ideas -->
+	</div><!-- /useridea -->
+
+</section><!-- /main -->

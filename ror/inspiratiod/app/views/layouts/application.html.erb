@@ -40,6 +40,12 @@
   <!-- !Modernizr - All other JS at bottom -->
   <%= javascript_include_tag 'modernizr-2.5.min' %>
 
+  <script src="http://cdn.slingpic.com/js/slingpic.plugin.js"></script><script>
+  jQuery(window).load(function(){
+    jQuery(".preview img").slingPic({ theme: "subtle" });
+  });
+  </script>
+
   <!-- template specific headers -->
   <%= yield(:more_headers) if content_for?(:more_headers) %>
 
