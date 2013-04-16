@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
   before_filter :authenticate_user!, except: [:show]
   before_filter :find_user_idea, only: [:edit, :update, :destroy]
-  before_filter :find_idea, only: [:show, :like]
+  before_filter :find_idea, only: [:show, :like, :comment]
 
   def index
     @ideas = current_user.ideas
@@ -40,18 +40,24 @@ class IdeasController < ApplicationController
     redirect_to ideas_url, :notice => "Successfully destroyed idea."
   end
 
-    def like
-      action, verb = current_user.likes_idea?(@idea) ? [:unlike_idea!, 'unliked'] : [:like_idea!, 'liked']
+  def like
+    action, verb = current_user.likes_idea?(@idea) ? [:unlike_idea!, 'unliked'] : [:like_idea!, 'liked']
+    current_user.send(action, @idea)
 
-      current_user.send(action, @idea)
-
-      if request.xhr?
-        render json: { idea: { id: @idea.id, likes: @idea.likes_users_count } }
-      else
-        redirect_to @idea, notice: "Successfully #{verb} idea."
-      end
+    if request.xhr?
+      render json: { idea: { id: @idea.id, likes: @idea.likes_users_count } }
+    else
+      redirect_to @idea, notice: "Successfully #{verb} idea."
     end
+  end
 
+  def comment
+    comment = current_user.comments.build(idea_id: @idea.id)
+    if comment.save?
+      flash[:notice] = "Successfully added comment."
+    end
+    redirect_to @idea
+  end
 
   private
   def find_user_idea

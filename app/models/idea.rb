@@ -3,6 +3,7 @@ class Idea < ActiveRecord::Base
 
 	belongs_to :user
   has_many :uploads, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
 	attr_accessible :user_id,
     :title,

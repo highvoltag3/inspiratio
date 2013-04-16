@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   include LikesTracker
 
-  has_many :ideas
+  has_many :ideas, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
