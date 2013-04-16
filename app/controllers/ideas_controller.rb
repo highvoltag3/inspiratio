@@ -1,15 +1,13 @@
 class IdeasController < ApplicationController
   before_filter :authenticate_user!, except: [:show]
-  before_filter :find_idea, only: [:edit, :update, :destroy]
+  before_filter :find_user_idea, only: [:edit, :update, :destroy]
+  before_filter :find_idea, only: [:show, :like]
 
   def index
     @ideas = current_user.ideas
   end
 
   def show
-    unless @idea = Idea.where(id: params[:id]).first
-      redirect_to :back, :notice  => "Idea not found."
-    end
   end
 
   def new
@@ -42,10 +40,29 @@ class IdeasController < ApplicationController
     redirect_to ideas_url, :notice => "Successfully destroyed idea."
   end
 
+    def like
+      action, verb = current_user.likes_idea?(@idea) ? [:unlike_idea!, 'unliked'] : [:like_idea!, 'liked']
+
+      current_user.send(action, @idea)
+
+      if request.xhr?
+        render json: { idea: { id: @idea.id, likes: @idea.likes_users_count } }
+      else
+        redirect_to @idea, notice: "Successfully #{verb} idea."
+      end
+    end
+
+
   private
-  def find_idea
+  def find_user_idea
     unless @idea = current_user.ideas.where(id: params[:id]).first
       redirect_to :back, :notice  => "Sorry you can't modify an idea that's not yours."
+    end
+  end
+
+  def find_idea
+    unless @idea = Idea.where(id: params[:id]).first
+      redirect_to :back, :notice  => "Idea not found."
     end
   end
 

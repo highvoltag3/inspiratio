@@ -1,6 +1,11 @@
 Inspiratio::Application.routes.draw do
 
-  resources :ideas
+  resources :ideas do
+    member do
+      get :like # NOTE: choose either a "post"
+    end
+  end
+
   devise_for :users
 
   root :to => "home#index"
