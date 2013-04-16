@@ -2,13 +2,30 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+# main features
+#
 gem 'devise' # authentication
-
 gem "paperclip", "~> 3.4.1" # uploads
 gem 'aws-sdk' # access s3 with paperclip
 gem 'fog', '~> 1.5.0' # access s3 files
-
 gem 'acts-as-taggable-on' # tags
+
+# deploy on heroku
+#
+gem 'thin'  # web server
+gem 'heroku'
+gem 'foreman' # launcher (mainly for heroku)
+
+# external APIs
+#
+gem 'gravatar_image_tag' # gravatar support
+gem 'imagga' # extract color palette from images
+gem 'wordnik' # wordnik (fetch meaning of words)
+gem 'flickr_fu' # flickr
+
+# etc...
+#
+gem 'jquery-rails' # jQuery bindings for rails actions
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,8 +39,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
 group :production do
   gem 'pg' # postgresql db
 end
@@ -31,15 +46,7 @@ end
 group :development do
   gem 'mysql2' # database
   gem "nifty-generators" # layout/helpers generators
-  gem 'thin'  # web server: it might be used in production (nginx + thin), don't know what deploy we're going to do
-              # if we'll use nginx/apache + pasenger, we don't need it.
 end
 
-gem 'gravatar_image_tag' # gravatar support
 
-gem 'imagga' # extract color palette
-
-# TODO: when to use these?
-gem 'wordnik'
-gem 'flickr_fu'
 
