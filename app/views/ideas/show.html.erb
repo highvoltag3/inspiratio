@@ -237,8 +237,6 @@
 					    <div id="content">Loading...</div>
 
 
-						<%#= "found #{@idea.flickr_photos.size} photo(s)" %>
-
 						<% @idea.flickr_photos.each do |photo| %>
               <%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
 						<% end %>
@@ -335,8 +333,8 @@
 					 <div class="publictags">
 					 	<h2> Tags </h2>
 						<% if @idea.tags.any? %>
-					 		<% @idea.tags.each do |tag| %>
-				              <span class="label"><%= tag %></span>
+					 		<% @idea.tags.each do |tag_name| %>
+				              <span class="label"><%= tag_name %></span>
 				            <% end %>
 					 	<% end %>
 					 </div>
