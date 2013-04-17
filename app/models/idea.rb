@@ -28,7 +28,7 @@ class Idea < ActiveRecord::Base
   }
 
   def current_image
-    self.uploads.last
+    self.uploads.first
   end
 
   def old_images

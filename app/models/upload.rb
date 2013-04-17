@@ -17,4 +17,6 @@ class Upload < ActiveRecord::Base
   # validates :idea_id, presence: true
   validates :image, presence: true
 
+  default_scope order('id DESC') # order by last entry
+
 end

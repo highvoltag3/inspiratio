@@ -7,4 +7,7 @@ class Comment < ActiveRecord::Base
   validates :user_id, presence: true
   validates :idea, presence: true
   validates :body, presence: true
+
+  default_scope order('id DESC') # order by last entry
+
 end
