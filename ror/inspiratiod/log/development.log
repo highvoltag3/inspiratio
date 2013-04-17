@@ -1,0 +1,524 @@
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Processing by HomeController#index as HTML
+Compiled home.js  (0ms)  (pid 7864)
+  Rendered home/index.html.erb within layouts/application (8.9ms)
+Compiled bootstrap.min.css  (0ms)  (pid 7864)
+Compiled styles.css  (0ms)  (pid 7864)
+Compiled jquery.fancybox.css  (0ms)  (pid 7864)
+Compiled modernizr-2.5.min.js  (0ms)  (pid 7864)
+  Rendered application/_public_header.html.erb (1.7ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Compiled plugins.js  (0ms)  (pid 7864)
+Compiled bootstrap.min.js  (0ms)  (pid 7864)
+Compiled global.js  (0ms)  (pid 7864)
+Completed 200 OK in 122ms (Views: 121.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /bootstrap.min.css - 200 OK (3ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /styles.css - 200 OK (3ms)
+
+
+Started GET "/assets/plugins.js?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /plugins.js - 200 OK (20ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /jquery.fancybox.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /bootstrap.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/modernizr-2.5.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /modernizr-2.5.min.js - 200 OK (1ms)
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /global.js - 200 OK (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /home.js - 200 OK (1ms)
+
+
+Started GET "/assets/new/heart_icon.png" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /new/heart_icon.png - 200 OK (6ms)
+
+
+Started GET "/assets/new/bg.png" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /new/bg.png - 200 OK (3ms)
+
+
+Started GET "/assets/new/home_icon.png" for 127.0.0.1 at 2013-04-13 10:18:44 -0700
+Served asset /new/home_icon.png - 200 OK (3ms)
+
+
+Started GET "/assets/new/logo.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/logo.png - 200 OK (2ms)
+
+
+Started GET "/assets/new/login_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/login_icon.png - 200 OK (5ms)
+
+
+Started GET "/assets/helveticaneue-boldcond.woff" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /helveticaneue-boldcond.woff - 200 OK (4ms)
+
+
+Started GET "/assets/HelveticaRegular.woff" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /HelveticaRegular.woff - 200 OK (6ms)
+
+
+Started GET "/assets/helveticalight-webfont.woff" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /helveticalight-webfont.woff - 200 OK (3ms)
+
+
+Started GET "/assets/new/eye_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/eye_icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/new/grid_view_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/grid_view_icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/new/list_view_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/list_view_icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/new/fake_carousel.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/fake_carousel.png - 200 OK (3ms)
+
+
+Started GET "/assets/avatar.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /avatar.png - 200 OK (7ms)
+
+
+Started GET "/assets/new/fake_carousel2.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/fake_carousel2.png - 200 OK (4ms)
+
+
+Started GET "/assets/img_dummy_idea.jpeg" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /img_dummy_idea.jpeg - 200 OK (10ms)
+
+
+Started GET "/assets/new/location_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/location_icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/new/follow_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/follow_icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/new/comment_icon.png" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /new/comment_icon.png - 200 OK (2ms)
+
+
+Started GET "/assets/img_197075460.jpg" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /img_197075460.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/img_3_Eye_Toy.jpg" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /img_3_Eye_Toy.jpg - 200 OK (10ms)
+
+
+Started GET "/assets/img_201030080404.jpg" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /img_201030080404.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/img_Fractal_Lion.jpg" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /img_Fractal_Lion.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/img_Deep.jpg" for 127.0.0.1 at 2013-04-13 10:18:45 -0700
+Served asset /img_Deep.jpg - 200 OK (6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Compiled styles.css  (17ms)  (pid 7864)
+  Rendered application/_public_header.html.erb (0.7ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plugins.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /plugins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr-2.5.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /modernizr-2.5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /styles.css - 200 OK (1ms)
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /global.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/logo.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/login_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/login_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/bg.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/heart_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/heart_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/home_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/home_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/eye_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/eye_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/helveticaneue-boldcond.woff" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /helveticaneue-boldcond.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/HelveticaRegular.woff" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /HelveticaRegular.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/grid_view_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/grid_view_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/fake_carousel2.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/fake_carousel2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/list_view_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/list_view_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/helveticalight-webfont.woff" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /helveticalight-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new_slider_test.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new_slider_test.png - 200 OK (6ms)
+
+
+Started GET "/assets/new/fake_carousel.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/fake_carousel.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /avatar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/follow_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/follow_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_dummy_idea.jpeg" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /img_dummy_idea.jpeg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/comment_icon.png" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /new/comment_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_3_Eye_Toy.jpg" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /img_3_Eye_Toy.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_197075460.jpg" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /img_197075460.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_201030080404.jpg" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /img_201030080404.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_Deep.jpg" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /img_Deep.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_Fractal_Lion.jpg" for 127.0.0.1 at 2013-04-13 10:19:13 -0700
+Served asset /img_Fractal_Lion.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/idea/index" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Processing by IdeaController#index as HTML
+Compiled idea.js  (0ms)  (pid 7864)
+Compiled holder.js  (0ms)  (pid 7864)
+  Rendered idea/index.html.erb within layouts/application (13.4ms)
+  Rendered application/_public_header.html.erb (0.6ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plugins.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /plugins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr-2.5.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /modernizr-2.5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /global.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/idea.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /idea.js - 200 OK (1ms)
+
+
+Started GET "/assets/holder.js?body=1" for 127.0.0.1 at 2013-04-13 10:19:21 -0700
+Served asset /holder.js - 200 OK (1ms)
+
+
+Started GET "/assets/img_201030080404.jpg" for 127.0.0.1 at 2013-04-13 10:19:22 -0700
+Served asset /img_201030080404.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/logo.png" for 127.0.0.1 at 2013-04-13 10:19:22 -0700
+Served asset /new/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar.png" for 127.0.0.1 at 2013-04-13 10:19:22 -0700
+Served asset /avatar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/HelveticaNeueUltraLight.woff" for 127.0.0.1 at 2013-04-13 10:19:22 -0700
+Served asset /HelveticaNeueUltraLight.woff - 200 OK (5ms)
+
+
+Started GET "/idea/index" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Processing by IdeaController#index as HTML
+  Rendered idea/index.html.erb within layouts/application (1.4ms)
+  Rendered application/_public_header.html.erb (0.8ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plugins.js?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /plugins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr-2.5.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /modernizr-2.5.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /global.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/idea.js?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /idea.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/holder.js?body=1" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /holder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar.png" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /avatar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/logo.png" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /new/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_201030080404.jpg" for 127.0.0.1 at 2013-04-13 10:22:00 -0700
+Served asset /img_201030080404.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+  Rendered application/_public_header.html.erb (0.6ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /bootstrap.min.css - 200 OK (0ms)
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /styles.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /jquery.fancybox.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /bootstrap.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr-2.5.min.js?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /modernizr-2.5.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/plugins.js?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /plugins.js - 200 OK (0ms)
+
+
+Started GET "/assets/global.js?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /global.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/bg.png" for 127.0.0.1 at 2013-04-13 11:20:43 -0700
+Served asset /new/bg.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/login_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/login_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/new/heart_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/heart_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/new/home_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/home_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/new/eye_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/eye_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/new/grid_view_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/grid_view_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/new/logo.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/helveticaneue-boldcond.woff" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /helveticaneue-boldcond.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/HelveticaRegular.woff" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /HelveticaRegular.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/helveticalight-webfont.woff" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /helveticalight-webfont.woff - 200 OK (0ms)
+
+
+Started GET "/assets/new_slider_test.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new_slider_test.png - 200 OK (0ms)
+
+
+Started GET "/assets/new/list_view_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/list_view_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/fake_carousel2.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/fake_carousel2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/fake_carousel.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/fake_carousel.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /avatar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/new/follow_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/follow_icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_Deep.jpg" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /img_Deep.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/img_197075460.jpg" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /img_197075460.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/new/comment_icon.png" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /new/comment_icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/img_3_Eye_Toy.jpg" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /img_3_Eye_Toy.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/img_201030080404.jpg" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /img_201030080404.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/img_dummy_idea.jpeg" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /img_dummy_idea.jpeg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/img_Fractal_Lion.jpg" for 127.0.0.1 at 2013-04-13 11:20:44 -0700
+Served asset /img_Fractal_Lion.jpg - 304 Not Modified (0ms)
