@@ -15,13 +15,14 @@ gem 'likes_tracker' # track likes
 # deploy on heroku
 #
 gem 'thin'  # web server
-gem 'heroku'
+#gem 'heroku' #this is now heroku toolbet, so Gem is deprecated.
 gem 'foreman' # launcher (mainly for heroku)
 
 # external APIs
 #
 gem 'gravatar_image_tag' # gravatar support
 gem 'imagga' # extract color palette from images
+gem 'cloudinary' # extract color palette from images
 gem 'wordnik' # wordnik (fetch meaning of words)
 gem 'flickr_fu' # flickr
 

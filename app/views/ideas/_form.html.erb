@@ -1,25 +1,35 @@
-<%= form_for @idea, :html => {:multipart => true} do |f| %>
-  <%= f.error_messages %>
-    <p> <%= f.label :title %><br />
-        <%= f.text_field :title %>
+<div class="row-fluid">
+  <%= form_for @idea, :html => {:multipart => true} do |f| %>
+      <%= f.error_messages %>
+  <div class="span6 offset2">
 
-        <%= f.label :description %><br />
-        <%= f.text_area :description %>
+    
+        <p> <%= f.label :title %><br />
+            <%= f.text_field :title %>
 
-        <%= f.label :tag_list %><br />
-        <%= f.text_field :tag_list %>
+            <%= f.label :description %><br />
+            <%= f.text_area :description %>
+  </div>
+  
+  <div class="span4">
 
-        <%#= f.label :public %>
-        <%#= f.check_box :public %>
+            <%#= f.label :public %>
+            <%#= f.check_box :public %>
 
-        <%= f.fields_for :uploads, @idea.uploads.build do |b| %>
-          <%= b.label :image, "Image" %><br />
-          <%= b.file_field :image %>
-        <% end %>
+            <%= f.fields_for :uploads, @idea.uploads.build do |b| %>
+              <%= b.label :image, "Image" %><br />
+              <%= b.file_field :image %>
+            <% end %>
 
-        <%= f.fields_for :uploads do |b| %>
-          <%= render partial: 'upload', locals: {f: b} %>
-        <% end %>
-    </p>
-      <p><%= f.submit "Upload" %></p>
-<% end %>
+            <%= f.fields_for :uploads do |b| %>
+              <%= render partial: 'upload', locals: {f: b} %>
+            <% end %>
+
+            <%= f.label :tag_list %><br />
+            <%= f.text_field :tag_list %>
+        </p>
+          <p><%= f.submit "Create", :class => 'btn btn-success' %> <button class="btn btn-danger cancelnewidea">Cancel</button></p>
+  </div>
+    <% end %>
+
+</div>

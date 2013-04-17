@@ -12,7 +12,7 @@
     <header>
       <h1>New Idea</h1>
     </header>
-    <div id="newidea_text" class="fl">
+    <div id="newidea_text">
       <%#=Todo render the new template or the form here (none of the two lines above worked for me) :( help! ) %>
       <%= render partial: 'form' %>
     </div>
@@ -52,10 +52,14 @@
               <span class="comments number"> <%= idea.comments.size %> </span>
             </div>
             <div>
-              <span class="likes number"><%= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
+              <span class="likes number">
+                  <%= idea.likes_users_count %>
+              </span>
             </div>
             <div>
-              <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
+              <span class="views number">
+                <%= idea.views_count %>
+              </span>
             </div>
             <%= link_to "Edit", edit_idea_path(idea), :class => 'editidea' %>
             <span class="idea_delete">

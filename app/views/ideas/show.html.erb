@@ -64,11 +64,13 @@
 		              </span>
 		            </div>
 		            <div>
-                  <%= link_to @idea.likes_users_count, like_idea_path(@idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
+		            	<span class="likes number">
+                  		<%= link_to @idea.likes_users_count, like_idea_path(@idea), :title => 'Number of times this idea has been liked' %>
+                  		</span>
 		            </div>
 		            <div>
 		              <span class="views number">
-		              	<%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %>
+		              	<%= link_to @idea.views_count, '#', :title => 'Number of times your idea has been viewed' %>
 		              </span>
 		            </div>
 		          </footer>
@@ -235,7 +237,7 @@
 
 
 						<% @idea.flickr_photos.each do |photo| %>
-              <%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
+              				<%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
 						<% end %>
 
 					</div> <!-- end related images -->
@@ -303,29 +305,39 @@
 
 					<div id="relatedcolors">
 
-					<%
-						# client = Imagga::Client.new(
-						#   base_uri:   '0.0.0.0',                # IP of the Imagga server
-						#   api_key:    '12345678',               # Your api key
-						#   api_secret: '1234567890123456789'     # Your api secret
-						# )
-
-						# results = client.extract(@idea.current_image.url)
-
-						# results.each do |info|                   # iterate over all input image infos
-						#   puts info.object_percentage            # percentage of the central object on image
-						#   info.image_colors.each do |color|      # iterate over all significant colors
-						#     puts color.info                      # 85.89%, rgb: (246,246,246), hex: #f6f6f6
-						#   end
-						# end
-					%>
+						<h2> Color Palette </h2>
+					 	<div class="colors clearfix">
+					 	<% 
+					 		Cloudinary::Uploader.upload(@idea.current_image.image.url, :public_id => @idea.id )
+					 	 	results = Cloudinary::Api.resource(@idea.id, :colors => true) 
+							
+							  results['colors'].each do |color|      # iterate over all significant colors
+							    puts color                      #color[0] =  hex value, color[1] = percentage
+					 	%>
+					 			<span class="colorhex label" style="background: <%= color[0] %>; width: <%= color[1] %>%;" >&nbsp;</span>
+					 	<%end %>
+					 	</div>
 
 					</div>
 				<% else %>
+				
 				  	<%# what public can see %>
+
 					 <div class="colorpalette">
 					 	<h2> Color Palette </h2>
-					 </div>
+					 	<div class="colors clearfix">
+					 	<% 
+					 		Cloudinary::Uploader.upload(@idea.current_image.image.url, :public_id => @idea.id )
+					 	 	results = Cloudinary::Api.resource(@idea.id, :colors => true) 
+							
+							  results['colors'].each do |color|      # iterate over all significant colors
+							    puts color                      #color[0] =  hex value, color[1] = percentage
+					 	%>
+					 			<span class="colorhex label" style="background: <%= color[0] %>; width: <%= color[1] %>%;" >&nbsp;</span>
+					 	<%end %>
+					 	</div>
+
+					 </div> <!-- end color palette -->
 
 					 <div class="publictags">
 					 	<h2> Tags </h2>
@@ -338,7 +350,7 @@
 
 					 <div class="shorturl">
 					 	<h2> Short URL </h2>
-					 	<input id="shorturl" class="input-xlarge" type="text" >
+					 	<input id="shorturl" class="input-xlarge" type="text" placeholder="Shortening..." >
 					 </div>
 
 					 <div class="lastestcommentspub">
@@ -354,7 +366,7 @@
 
 							}
 
-							CompressURL("http://www.twitter.com/highvoltag3", function(shorturl) {
+							CompressURL('<%= request.url %>', function(shorturl) {
 
 							$('#shorturl').val(shorturl);
 

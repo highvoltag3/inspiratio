@@ -41,7 +41,9 @@
 
 
   <div id="signinreg">
-    <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 60 }, :alt => current_user.name, :class => 'fl') %>
+    <div class="useravatar">
+      <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 60 }, :alt => current_user.name, :class => 'fl') %>
+    </div>
     <span class="username"><%= current_user.name %></span>
     <%= link_to 'My Profile', edit_user_registration_path, :class => 'fl c2as' %>
     <%= link_to 'Sign Out', destroy_user_session_path, :class => 'fl c2as logout' %>

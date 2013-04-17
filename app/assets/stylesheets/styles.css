@@ -308,9 +308,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		position: absolute;
 		top: .8em;
 		left: 75%;
-		width: 170px;
+		width: 10%;
 		color: #fff;
-
+		min-width: 240px;
+	}
+	#signinreg .useravatar {
+		width: 60px;
+		overflow: hidden;
+		float: left;
+		margin: .5% 8% 0 0;
+		border-radius: .3rem;
 	}
 	#signinreg .username {
 		margin-left: .6em;
@@ -732,6 +739,16 @@ h2 {
 		float: left;
 		border-radius: 5px;
 	}
+	
+	#idea_tag_list_tag {
+
+	}
+	#idea_tag_list_addTag {
+		border: 1px solid #666;
+		border-radius: .2rem;
+		background: rgba(255, 255, 255, 0.8);
+		height: 1.9rem;
+	}
 
 	#sidebar #similar {
 		width: 50%;
@@ -982,7 +999,6 @@ article div.preview img {
 	}
 
 	#newidea_text {
-		width: 45%;
 		height: 70%;
 	}
 	#newidea_text label {
@@ -1048,6 +1064,7 @@ article div.preview img {
   	background: rgba(255,255,255,.85);
 	border-top-left-radius: 	.3em;
 	border-bottom-left-radius: 	.3em;
+	padding-bottom: 1rem;
   }
 
   #useridea article {
@@ -1283,9 +1300,44 @@ article div.preview img {
 	  		background: rgba(255,255,255,.3);
   		}
 /* Public view */
+		.colorpalette,
+		.publictags,
+		.shorturl,
+		.lastestcommentspub {
+			margin-bottom: 2rem;
+		}
+
+		.colorpalette h2 {
+			background: url(/assets/new/color_palette_icon.png) 0 10px no-repeat;
+			padding-left: 30px;
+		}
+
+		.colors {
+			width: 100%;
+		}
+		.colors .colorhex {
+			display: block;
+			float: left;
+			padding: 1% .2%;
+		}
+
+		.publictags h2 {
+			background: url(/assets/new/tags_icon.png) 0 10px no-repeat;
+			padding-left: 30px;
+		}
 
 		.publictags .label {
 			padding: .3rem;
+		}
+
+		.shorturl h2 {
+			background: url(/assets/new/short_url_icon.png) 0 10px no-repeat;
+			padding-left: 30px;
+		}
+
+		.lastestcommentspub h2 {
+			background: url(/assets/new/comment_icon.png) 0 10px no-repeat;
+			padding-left: 30px;
 		}
 
 /* END OF THE SITE */

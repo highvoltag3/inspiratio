@@ -9,9 +9,23 @@ $(document).ready(function() {
     }      
 	});
 	
-	$('#tags_p').tagsInput();
+	$('#idea_tag_list').tagsInput({
+      defaultText:'add a tag and press enter or use commas',
+      minChars:2,
+      width:'100%',
+      autosize: false
+  });
 
+  //set the with for the tag input field.
+  $('#idea_tag_list_addTag').addClass('span12');
 
+  $('.cancelnewidea').click(function(e){
+    e.preventDefault;
+    $('.controls form').find("input[type=text], textarea").val("");
+    $('.controls').delay(600).css('height', '0'); 
+    $('.tagsinput > .tag').remove();
+    return false;
+  })
   
 //  delete ideas
   $(".confirm").click(function (e) {

@@ -18,10 +18,18 @@
   <nav>
     <ul id="subnav" class="navbar">
       <li>
-        <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom' %>
+        <% if( vfilter = params[:f] == "likes" ) %>
+          <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom', :class => 'icon_active' %>
+        <% else %>
+          <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom' %>
+        <% end %>
       </li>
       <li>
-        <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
+        <% if( vfilter = params[:f] == "views" ) %>
+          <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom', :class => 'icon_active' %>
+        <% else %>
+          <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
+        <% end %>
       </li>
       <li class="divider-vertical"></li>
       <li>
