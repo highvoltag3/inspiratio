@@ -60,6 +60,7 @@ module Inspiratio
     config.assets.version = '1.0'
 
     # Prevents the Rails environment to be loaded when the assets:precompile task is executed
-    config.assets.initialize_on_precompile = false
+    # TODO: it should be excellent to use asset pipeline instead of splitted files :-/
+    # config.assets.initialize_on_precompile = false
   end
 end
