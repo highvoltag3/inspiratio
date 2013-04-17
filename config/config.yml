@@ -25,7 +25,7 @@ test:
 production:
   aws:
     key: 'AKIAIDAN3TTMHQNLIPSA'
-    secret: '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'
+    secret: 'VjF51k53pQCUQSiZ+g6gc/lFY7xjm4Y/wRb+OQMV'
     bucket: 'inspiratio'
     region: 'eu-west-1'
 
