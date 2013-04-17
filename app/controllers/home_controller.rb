@@ -4,7 +4,9 @@ class HomeController < ApplicationController
   end
 
   def show
-    @idea = Idea.where(id: params[:id]).first
+    unless @idea = Idea.where(id: params[:id]).first
+      redirect_to root_path
+    end
   end
 
 end
