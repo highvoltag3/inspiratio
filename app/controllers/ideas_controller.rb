@@ -9,6 +9,11 @@ class IdeasController < ApplicationController
   end
 
   def show
+    # track page views from logged in users
+    # unless the user is the author ;-)
+    if current_user && @idea.user_id != current_user.id
+      @idea.viewed!
+    end
   end
 
   def new
