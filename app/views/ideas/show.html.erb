@@ -64,9 +64,7 @@
 		              </span>
 		            </div>
 		            <div>
-		              <span class="likes number">
-		              	<%= link_to @idea.likes_users_count, like_idea_path(@idea), :title => 'Number of times your idea has been liked' %>
-		              </span>
+                  <%= link_to @idea.likes_users_count, like_idea_path(@idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
 		            </div>
 		            <div>
 		              <span class="views number">
