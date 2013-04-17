@@ -27,6 +27,14 @@ class Idea < ActiveRecord::Base
     end
   }
 
+  scope :order_by_views, ->(limit=10, offset=0) {
+    unless (ids = $redis.zrevrange 'ideas:views', offset, limit).empty?
+      self.where(id: ids).order(ids.map {|id| "id = #{id} DESC"}.join(','))
+    end
+  }
+
+  scope :order_by_recents, order("ideas.id DESC")
+
   def current_image
     self.uploads.first
   end
@@ -37,6 +45,15 @@ class Idea < ActiveRecord::Base
 
   def flickr_photos
     @flickr_photos ||= FLICKR_CLIENT.photos.search(text: self.title, per_page: 10)
+  end
+
+  # views feature
+  def viewed!
+    $redis.zincrby('ideas:views', 1, self.id).to_i
+  end
+
+  def views_count
+    $redis.zscore('ideas:views', self.id).to_i
   end
 
 end
