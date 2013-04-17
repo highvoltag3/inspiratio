@@ -43,7 +43,7 @@
               <span class="comments number"> <%= idea.comments.size %> </span>
             </div>
             <div>
-              <span class="likes number"><%= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
+              <%= link_to @idea.likes_users_count, like_idea_path(@idea), :title => 'Number of times this idea has been liked' %>
             </div>
             <div>
               <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
