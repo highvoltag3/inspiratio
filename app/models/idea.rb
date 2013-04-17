@@ -27,16 +27,12 @@ class Idea < ActiveRecord::Base
     end
   }
 
-
   def current_image
     self.uploads.last
   end
 
   def old_images
-    images = self.uploads.dup
-    images.pop
-    self.reload
-    images
+    self.uploads.where(Upload.arel_table[:id].not_eq(self.current_image.id))
   end
 
   def flickr_photos

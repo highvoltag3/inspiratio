@@ -49,7 +49,7 @@ class IdeasController < ApplicationController
     else
       redirect_to @idea, notice: "Successfully #{verb} idea."
     end
-    
+
   end
 
   def comment
