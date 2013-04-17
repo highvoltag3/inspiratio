@@ -3,7 +3,7 @@
     <%= link_to image_tag('new/logo.png', :alt => 'logo', :width => 179, :height => 40), root_path %>
   </div>
   <span class="tagline"><em>Files and inspiration in one place</em></span>
-  
+
   <nav>
     <ul id="nav" class="mainnav">
       <li class="selected">
@@ -14,14 +14,14 @@
       </li>
     </ul>
   </nav><!-- /nav  -->
- 
+
   <nav>
     <ul id="subnav" class="navbar">
       <li>
-        <%= link_to '', '#', :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom' %>
+        <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom' %>
       </li>
       <li>
-        <%= link_to '', '#', :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
+        <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
       </li>
       <li class="divider-vertical"></li>
       <li>
