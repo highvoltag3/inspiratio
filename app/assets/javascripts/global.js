@@ -21,7 +21,9 @@ jQuery(document).ready(function($) {
 		});
 	}
 	//trigger on load 
-	masonry();
+	if ( typeof $container.imagesLoaded != 'undefined' ) {
+		masonry();
+	}
 
 	//now triger for the resize with a delay so it wont fire constanly while resizing.
 	var delay = (function(){

@@ -1,14 +1,23 @@
 $(document).ready(function() {
 
   $('#main, header a').click(function() {
-    if ($('#notificationsWrapper').is(':visible')) {
-      $('#notificationsWrapper').fadeOut('normal');
+    if ( $('#notificationsWrapper').is(':visible') ) {
+         $('#notificationsWrapper').fadeOut('normal');
     }
   });
 
+
+
   $('#notificationsCircle').click(function(e) {
-    if ($('#notificationsWrapper').is(':visible')) {
-      $('#notificationsWrapper').fadeOut('normal');
+    if ( $('#notificationsWrapper').is(':visible') ) {
+        var hideTimer = null;
+        $('#notificationsWrapper').bind('mouseleave', function() {
+            hideTimer = setTimeout(function() {
+                $('#notificationsWrapper').fadeOut('normal');
+            }, 1000);
+        });
+
+        
     } else {
       $('#notificationsWrapper').fadeIn('fast');
     }

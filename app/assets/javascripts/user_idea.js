@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
 		$('#bubbleView').fadeIn();
 
 	});
+	
 	$('.lvinv').click(function(){
 		$('#bubbleView').fadeOut();
 	});

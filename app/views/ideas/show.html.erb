@@ -29,7 +29,7 @@
 	          <span class="divider">/</span>
 	        </li>
 	        <li>
-	          <%= link_to 'Dashboard', ideas_path %>
+	          <%= link_to 'My ideas', ideas_path %>
 	          <span class="divider">/</span>
 	        </li>
 	        <li>
@@ -47,14 +47,13 @@
 	   		<div class="span6 ideaside">
 		        <article id="idea">
 		          <div class="preview">
-		          	<%#= debug  %>
 		            <%= image_tag(@idea.current_image.image.url, :alt => @idea.title) %>
 		          </div>
 
 		          <footer id="ideainfo" class="clearfix">
 		            <div>
 		              <span class="comments number">
-                    <%= @idea.comments.size %>
+                    	<%= @idea.comments.size %>
 		              </span>
 		            </div>
 		            <div>
@@ -74,20 +73,34 @@
 
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
-		          <%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
-		            <%= f.text_area :body %><br/>
-		            <%= f.submit  %>
-		          <% end %>
-		          <% if @idea.comments.any? %>
-		            <h2> LASTEST COMMENTS </h2>
-		            <% @idea.comments.each do |comment| %>
-		              <div>
-		                <p><%= comment.user.name %></p>
-		                <p><%= comment.body %></p>
-		                <p><%= comment.created_at %></p>
-		              </div>
-		            <% end %>
-		          <% end %>
+					<%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
+						<%= f.text_area :body, :rows => '10' %><br/><br/>
+						<%= f.submit  :class => 'btn btn btn-primary pull-right' %>
+					<% end %>
+		          	
+			          <% if @idea.comments.any? %>
+			            <h2> LASTEST COMMENTS </h2>
+			           
+			            <div class="inv_comments clearfix">
+			            <% @idea.comments.each do |comment| %>
+			              <div>
+			                <header>
+			                	<div class="commenter"><%= gravatar_image_tag(comment.user.email, :gravatar => { :size => 60 }, :alt => current_user.name, :class => 'fl commenterAvatar') %>
+			                	</div>
+			                	<span class="commenterName"><strong><%= comment.user.name %></strong>&nbsp;said:<span class="pubdate HelveticaNeueUltraLight">
+			                		<%= l comment.created_at, :format => :long %>
+			                	</span></span>
+			                	
+			                </header>
+			                <p>
+			                	<span class="commentbody"><%= comment.body %></span>
+			                </p>
+			              </div>
+			            <% end %>
+			            </div> <!-- end inv_comments -->
+
+			          <% end %>
+
 				</div> <!-- end latest comments -->
 		    </div>
 
@@ -240,8 +253,8 @@
 					      //searchControl.addSearcher(localSearch);
 					      options = new google.search.SearcherOptions();
 						  options.setExpandMode(google.search.SearchControl.EXPAND_MODE_PARTIAL);
-						  searchControl.addSearcher(new google.search.BlogSearch(), options);
 						  searchControl.addSearcher(new google.search.WebSearch(), options);
+						  searchControl.addSearcher(new google.search.BlogSearch(), options);
 					      //searchControl.addSearcher(new google.search.NewsSearch());
 					      //searchControl.addSearcher(new google.search.ImageSearch());
 
@@ -253,9 +266,15 @@
 
 					      // Set the Local Search center point
 					      //localSearch.setCenterPoint("New York, NY");
+					      
+					      //draw mode
+					      // create a drawOptions object
+					      var drawOptions = new google.search.DrawOptions();
+					      // tell the searcher to draw itself in tabbed mode
+					      drawOptions.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
 
 					      // tell the searcher to draw itself and tell it where to attach
-					      searchControl.draw(document.getElementById("searchcontrol"));
+					      searchControl.draw(document.getElementById("searchcontrol"), drawOptions);
 
 					      // execute an inital search
 					      searchControl.execute('<%= @idea.title %>');

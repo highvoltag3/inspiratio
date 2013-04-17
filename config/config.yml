@@ -7,7 +7,7 @@ development:
 
   redis:
     host: 'localhost'
-    port: '3000'
+    port: '6379'
     db: '1'
 
 test:
@@ -19,7 +19,7 @@ test:
 
   redis:
     host: 'localhost'
-    port: '3000'
+    port: '6379'
     db: '2'
 
 production:
@@ -31,5 +31,5 @@ production:
 
   redis:
     host: 'localhost'
-    port: '3000'
+    port: '6379'
     db: '3'

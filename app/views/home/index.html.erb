@@ -1,5 +1,5 @@
 <% content_for :js_includes do %>
-  <% javascript_include_tag 'home' %>
+  <% javascript_include_tag '' %>
 <% end %>
 
 <section class="carousel row-flow">
@@ -44,7 +44,7 @@
           </div>
           <footer class="clearfix">
             <div>
-              <span class="comments number"> <%= link_to '0', '#', :title => 'You have no comments' %></span>
+              <span class="comments number"> <%= idea.comments.size %> </span>
             </div>
             <div>
               <span class="likes number"><%= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>

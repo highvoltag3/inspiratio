@@ -28,7 +28,7 @@
         <span class="divider">/</span>
       </li>
       <li>
-        <%= link_to 'Dashboard', ideas_path, :class => 'active' %>
+        <%= link_to 'My Ideas', ideas_path, :class => 'active' %>
       </li>
     </ul>
 
@@ -50,7 +50,7 @@
           </div>
           <footer class="clearfix">
             <div>
-              <span class="comments number"> <%= link_to '0', '#', :title => 'You have no comments' %></span>
+              <span class="comments number"> <%= idea.comments.size %> </span>
             </div>
             <div>
               <span class="likes number"><%= link_to '12', '#', :title => 'Number of times your idea has been seen' %></span>
@@ -58,9 +58,10 @@
             <div>
               <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
             </div>
-            <%= link_to "Edit", edit_idea_path(idea) %>
+            <%= link_to "Edit", edit_idea_path(idea), :class => 'editidea' %>
             <span class="idea_delete">
-               <%= button_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %>
+               <%= button_to "", idea, :class => 'destroy_idea confirm' %>
+               <%= link_to "", idea, :method => :delete, :class => 'yesdelete hide' %>
             </span>
           </footer>
         </article><!-- /idea -->
@@ -77,3 +78,4 @@
     </div> <!-- /ideas -->
   </div> <!-- /ideasList -->
 </section><!-- /main -->
+<div id="confirmDiv"><!-- this empty div is for the modal controlled by JS --></div>
