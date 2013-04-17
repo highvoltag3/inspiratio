@@ -25,7 +25,7 @@
 
 <section id="main" class="clearfix home">
   <div id="ideas">
-    <% for idea in @ideas %>
+    <% @ideas.each do |idea| %>
         <article class="idea">
           <header>
             <%= gravatar_image_tag(idea.user.email, :gravatar => { :size => 55 }, :alt =>  idea.user.name, :class => 'fl') %>
@@ -46,7 +46,7 @@
               <%= link_to idea.likes_users_count, like_idea_path(idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
             </div>
             <div>
-              <span class="views number"><%= link_to '6', '#', :title => 'Number of times your idea has been viewed' %></span>
+              <span class="views number"><%= link_to idea.views_count, '#', :title => 'Number of times your idea has been viewed' %></span>
             </div>
           </footer>
         </article><!-- /idea -->
