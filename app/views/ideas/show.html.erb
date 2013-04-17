@@ -44,7 +44,12 @@
        		<div id="bubbleView" style="display: none;">
        			<%= render :partial => 'bubble_view' %>
        		</div>
+	   		
+	   		<% if ( user_signed_in? ) %>
 	   		<div class="span6 ideaside">
+	   		<% else %>
+			<div class="span8 ideaside">
+	   		<% end %>
 		        <article id="idea">
 		          <div class="preview">
 		            <%= image_tag(@idea.current_image.image.url, :alt => @idea.title) %>
@@ -70,22 +75,24 @@
 		          </footer>
 
 		        </article><!-- /idea -->
-
+				
+				<% if ( user_signed_in? ) %>
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
 					<%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
-						<%= f.text_area :body, :rows => '10' %><br/><br/>
+						<%= f.text_area :body, :rows => '10', :placeholder => 'Share your thoughts...' %><br/><br/>
 						<%= f.submit  :class => 'btn btn btn-primary pull-right' %>
 					<% end %>
 		          	
 			          <% if @idea.comments.any? %>
+
 			            <h2> LASTEST COMMENTS </h2>
 			           
 			            <div class="inv_comments clearfix">
 			            <% @idea.comments.each do |comment| %>
 			              <div>
 			                <header>
-			                	<div class="commenter"><%= gravatar_image_tag(comment.user.email, :gravatar => { :size => 60 }, :alt => current_user.name, :class => 'fl commenterAvatar') %>
+			                	<div class="commenter"><%= gravatar_image_tag(comment.user.email, :gravatar => { :size => 60 }, :alt => comment.user.name, :class => 'fl commenterAvatar') %>
 			                	</div>
 			                	<span class="commenterName"><strong><%= comment.user.name %></strong>&nbsp;said:<span class="pubdate HelveticaNeueUltraLight">
 			                		<%= l comment.created_at, :format => :long %>
@@ -102,10 +109,14 @@
 			          <% end %>
 
 				</div> <!-- end latest comments -->
+				<% end %>
 		    </div>
-
+			
+			<% if ( user_signed_in? ) %>
 		    <div id="ideadetailspanel" class="span6 ideadetailarrow_box">
-
+			<% else %>
+			 <div id="ideadetailspanel" class="span4 ideadetailarrow_box">
+			<% end %>
 				<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
 					<div class="viewsbar">
 						<span class="lvinv">
@@ -316,8 +327,75 @@
 
 					</div>
 				<% else %>
-				  <!-- what public can see -->
-				<% end %>
+				  	<%# what public can see %>
+					 <div class="colorpalette">
+					 	<h2> Color Palette </h2>
+					 </div>
+
+					 <div class="publictags">
+					 	<h2> Tags </h2>
+						<% if @idea.tags.any? %>
+					 		<% @idea.tags.each do |tag| %>
+				              <span class="label"><%= tag %></span>
+				            <% end %>
+					 	<% end %>
+					 </div>
+
+					 <div class="shorturl">
+					 	<h2> Short URL </h2>
+					 	<input id="shorturl" class="input-xlarge" type="text" >
+					 </div>
+
+					 <div class="lastestcommentspub">
+			          	  <script>
+			          	  	function CompressURL(url,success)
+							{
+
+								var link = 'http://to.ly/api.php?json=1&longurl=' + encodeURIComponent(url) + '&callback=?';
+
+								$.getJSON(link, function(data){
+									success && success(data.shorturl);
+								});
+
+							}
+
+							CompressURL("http://www.twitter.com/highvoltag3", function(shorturl) {
+
+							$('#shorturl').val(shorturl);
+
+							});
+			          	  </script>
+
+				          <% if @idea.comments.any? %>
+				            <h2> LASTEST COMMENTS </h2>
+				           
+				            <div class="inv_comments clearfix">
+				            <% @idea.comments.each do |comment| %>
+				              <div>
+				                <header>
+				                	<span class="commenterName"><strong><%= comment.user.name %></strong>&nbsp;said:<span class="pubdate HelveticaNeueUltraLight">
+				                		<%= l comment.created_at, :format => :long %>
+				                	</span></span>
+				                	
+				                </header>
+				                <p>
+				                	<span class="commentbody"><%= comment.body %></span>
+				                </p>
+				              </div>
+				            <% end %>
+				            </div> <!-- end inv_comments -->
+
+				          <% end %> <%#end if comments %>
+						 
+						  <h2>LEAVE A COMMENT</h2>
+				          <%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
+							<%= f.text_area :body, :class => 'span12', :rows => "5", :placeholder => 'Share your thoughts...' %><br/><br/>
+							<%= f.submit  :class => 'btn btn btn-primary pull-right' %>
+						  <% end %>
+
+					</div> <!-- end latest comments -->
+
+				<% end %><%# ! what public can see %>
 		    </div> <!-- end ideapanel -->
 
     	</section> <!-- /ideas -->

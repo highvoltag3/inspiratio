@@ -1282,7 +1282,11 @@ article div.preview img {
 	  		margin: 10px;
 	  		background: rgba(255,255,255,.3);
   		}
+/* Public view */
 
+		.publictags .label {
+			padding: .3rem;
+		}
 
 /* END OF THE SITE */
 footer.endofsite {
