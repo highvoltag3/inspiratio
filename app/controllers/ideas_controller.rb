@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
   before_filter :find_idea, only: [:show, :like, :comment]
 
   def index
+    @idea = Idea.new
     @ideas = current_user.ideas
   end
 

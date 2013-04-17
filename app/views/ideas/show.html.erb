@@ -46,7 +46,7 @@
        		<div id="bubbleView" style="display: none;">
        			<%= render :partial => 'bubble_view' %>
        		</div>
-	   		
+
 	   		<% if ( user_signed_in? ) %>
 	   		<div class="span6 ideaside">
 	   		<% else %>
@@ -77,7 +77,7 @@
 		          </footer>
 
 		        </article><!-- /idea -->
-				
+
 				<% if ( user_signed_in? ) %>
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
@@ -85,11 +85,11 @@
 						<%= f.text_area :body, :rows => '10', :placeholder => 'Share your thoughts...' %><br/><br/>
 						<%= f.submit  :class => 'btn btn btn-primary pull-right' %>
 					<% end %>
-		          	
+
 			          <% if @idea.comments.any? %>
 
 			            <h2> LASTEST COMMENTS </h2>
-			           
+
 			            <div class="inv_comments clearfix">
 			            <% @idea.comments.each do |comment| %>
 			              <div>
@@ -99,7 +99,7 @@
 			                	<span class="commenterName"><strong><%= comment.user.name %></strong>&nbsp;said:<span class="pubdate HelveticaNeueUltraLight">
 			                		<%= l comment.created_at, :format => :long %>
 			                	</span></span>
-			                	
+
 			                </header>
 			                <p>
 			                	<span class="commentbody"><%= comment.body %></span>
@@ -113,7 +113,7 @@
 				</div> <!-- end latest comments -->
 				<% end %>
 		    </div>
-			
+
 			<% if ( user_signed_in? ) %>
 		    <div id="ideadetailspanel" class="span6 ideadetailarrow_box">
 			<% else %>
@@ -240,9 +240,7 @@
 						<%#= "found #{@idea.flickr_photos.size} photo(s)" %>
 
 						<% @idea.flickr_photos.each do |photo| %>
-						
-
-						<%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
+              <%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
 						<% end %>
 
 					</div> <!-- end related images -->
@@ -279,7 +277,7 @@
 
 					      // Set the Local Search center point
 					      //localSearch.setCenterPoint("New York, NY");
-					      
+
 					      //draw mode
 					      // create a drawOptions object
 					      var drawOptions = new google.search.DrawOptions();
@@ -370,7 +368,7 @@
 
 				          <% if @idea.comments.any? %>
 				            <h2> LASTEST COMMENTS </h2>
-				           
+
 				            <div class="inv_comments clearfix">
 				            <% @idea.comments.each do |comment| %>
 				              <div>
@@ -378,7 +376,7 @@
 				                	<span class="commenterName"><strong><%= comment.user.name %></strong>&nbsp;said:<span class="pubdate HelveticaNeueUltraLight">
 				                		<%= l comment.created_at, :format => :long %>
 				                	</span></span>
-				                	
+
 				                </header>
 				                <p>
 				                	<span class="commentbody"><%= comment.body %></span>
@@ -388,7 +386,7 @@
 				            </div> <!-- end inv_comments -->
 
 				          <% end %> <%#end if comments %>
-						 
+
 						  <h2>LEAVE A COMMENT</h2>
 				          <%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
 							<%= f.text_area :body, :class => 'span12', :rows => "5", :placeholder => 'Share your thoughts...' %><br/><br/>
