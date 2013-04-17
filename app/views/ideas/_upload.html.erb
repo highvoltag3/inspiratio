@@ -1,0 +1,12 @@
+<div class="upload">
+  <% unless f.object.new_record? %>
+    <% if f.object.id == f.object.idea.current_image.id %>
+      <h3>current image:</h3>
+      <%= image_tag f.object.image.url, size: '300x300' %>
+      <p>remove <%= f.check_box :_destroy %></p>
+    <% else %>
+      <%= image_tag f.object.image.url, size: '100x100' %>
+      <p>remove <%= f.check_box :_destroy %></p>
+    <% end%>
+  <% end %>
+</div>

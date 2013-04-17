@@ -12,9 +12,13 @@
         <%#= f.label :public %>
         <%#= f.check_box :public %>
 
-        <%= f.fields_for :uploads, @idea.uploads.build do |b| %><br />
+        <%= f.fields_for :uploads, @idea.uploads.build do |b| %>
           <%= b.label :image, "Image" %><br />
           <%= b.file_field :image %>
+        <% end %>
+
+        <%= f.fields_for :uploads do |b| %>
+          <%= render partial: 'upload', locals: {f: b} %>
         <% end %>
     </p>
       <p><%= f.submit "Upload" %></p>
