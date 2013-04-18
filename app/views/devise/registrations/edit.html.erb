@@ -1,31 +1,89 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<script>
+$(document).ready(function() {
+  // Stuff to do as soon as the DOM is ready;
+  // Use Geolocation API
+  if ( !$("#user_location").val() ) {
+    $("#user_location").attr("placeholder","Requesting information...");
+    navigator.geolocation.getCurrentPosition(function(pos){
+        var latlng = pos.coords.latitude + "," + pos.coords.longitude;
+        var apiurl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latlng + '&sensor=false';
+        $.getJSON(apiurl,
+            function(data){
+                console.log(data);
+                var location = data.results[1].formatted_address;
+                $("#user_location").val(location);
+            }
+        );
+    });
+  }
+});
+</script>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="row-fluid">
 
-  <%#= gravatar_image_tag('spam@spam.com'.gsub('spam', 'mdeering'), :alt => 'Michael Deering') %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <%#= gravatar_image_tag('spam@spam.com'.gsub('spam', 'mdeering'), :alt => 'Michael Deering') %>
+    <div class="span5 offset1">
+      
+      <div class="well">
+       
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email, :autofocus => true %></div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+         <div><%= f.label :location %> <i>Where are you?</i><br />
+          <pre></pre>
+        <%= f.text_field :location %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+        <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+      </div>
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+      <span class="span7"><%= f.submit "Update", :class => 'btn btn-large btn-block btn-primary' %></span> 
+      <%= link_to "Back", :back, :class => 'btn btn-large span4' %>
 
-<h3>Cancel my account</h3>
+    </div>
+    
+    <div class="span5">
+      <div class="well">
+        <span class="help-block"><p>If you want to change your password you can do so below.</p></span>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+        <div>
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, :autocomplete => "off" %>
+        </div>
 
-<%= link_to "Back", :back %>
+        <div>
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation %>
+        </div>
+
+      </div>
+
+        <div class="well">
+
+          <h3>Cancel my account</h3>
+        
+          <p>I'm not happy here... <span><%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-link' %> </span>
+          </p>
+
+        </div>
+
+    </div>
+
+    <% end %>
+
+</div>
+
+<div class="row-fluid">
+
+  
+</div>

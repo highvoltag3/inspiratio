@@ -1,11 +1,36 @@
+<script>
+$(document).ready(function() {
+
+  // Stuff to do as soon as the DOM is ready;
+  // Use Geolocation API
+  $('.signupemail').focus(function(){
+    if ( !$("#user_location").val() ) {
+      $("#user_location").attr("placeholder","Requesting information...");
+      navigator.geolocation.getCurrentPosition(function(pos){
+          var latlng = pos.coords.latitude + "," + pos.coords.longitude;
+          var apiurl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latlng + '&sensor=false';
+          $.getJSON(apiurl,
+              function(data){
+                  console.log(data);
+                  var location = data.results[1].formatted_address;
+                  $("#user_location").val(location);
+              }
+          );
+      });
+    }
+  });
+
+});
+</script>
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |fup| %>
-  <%= devise_error_messages! %>
+   <%= devise_error_messages! %>
 
   <div><%= fup.label :email %></div>
   <div class="input-append control-group">
-    <%= fup.email_field :email, :placeholder => "email@address.com", :required => '' %><span class="add-on">email</span>
+    <%= fup.email_field :email, :placeholder => "email@address.com", :required => '', :class => 'signupemail' %><span class="add-on">email</span>
   </div>
 
   <div><%= fup.label :name %></div>
@@ -21,7 +46,7 @@
 
   <div><%= fup.label :password %></div>
   <div class="input-append control-group">
-    <%= fup.password_field :password, :placeholder => 'Password', :required => '' %><span class="add-on">Password</span>
+    <%= fup.password_field :password, :placeholder => 'Choose a Password', :required => '' %><span class="add-on">Password</span>
   </div>
 
   <div><%= fup.label :password_confirmation %></div>

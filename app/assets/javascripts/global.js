@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 	$('#container').css('min-height', cheight);
 
 	//auto dismiss alert of success
-	$('.alert-success').delay(1500).fadeOut();
+	$('.alert-success').delay(1500).fadeOut('slow');
 	//auto dismiss alert of error
-	$('.alert-success').delay(3000).fadeOut();
+	$('.alert-error').delay(3000).fadeOut('slow');
 });

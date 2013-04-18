@@ -19,6 +19,16 @@ $(document).ready(function() {
   //set the with for the tag input field.
   $('#idea_tag_list_addTag').addClass('span12');
 
+  $('.createidea').click(function(){
+    console.log('click');
+    if( !$('#idea_uploads_attributes_0_image').val() ) {
+      openConfirmModalCreateIdea();
+      return false;
+    } else {
+      return true;
+    }
+  });
+
   $('.cancelnewidea').click(function(e){
     e.preventDefault;
     $('.controls form').find("input[type=text], textarea").val("");
@@ -45,6 +55,19 @@ function openConfirmModal() {
         confirmtext: 'Yes, Destroy!',
         callback: function () {
             $('.yesdelete').trigger('click');
+        }
+    });
+}
+
+function openConfirmModalCreateIdea() {
+    $("#confirmDiv").confirmModal({
+        heading: 'Sorry!! :(',
+        body: 'The only rule here is that you must upload an image, please do so and try again',
+        btntype: 'btn-info',
+        confirmtext: 'Got it!',
+        showclose: false,
+        callback: function () {
+            //
         }
     });
 }

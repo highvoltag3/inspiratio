@@ -1230,9 +1230,6 @@ article div.preview img {
 		width: 100%;
 		height: auto;
 	}
-	#relatedimages .google-thumb:nth-child(4n) {
-		margin-right: 0;
-	}
 
 	#relatedarticles .relatedlink {
 		padding: 0 1em;
@@ -1318,7 +1315,7 @@ article div.preview img {
 		.colors .colorhex {
 			display: block;
 			float: left;
-			padding: 1% .2%;
+			padding: 1% 0;
 		}
 
 		.publictags h2 {

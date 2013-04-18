@@ -361,8 +361,7 @@
             var html = '<div class="modal" id="confirmContainer"><div class="modal-header"><a class="close" data-dismiss="modal">×</a>' +
             '<h3>#Heading#</h3></div><div class="modal-body">' +
             '#Body#</div><div class="modal-footer">' +
-            '<a href="#" class="btn #BtnType#" id="confirmYesBtn">#Confirm#</a>' +
-            '<a href="#" class="btn" data-dismiss="modal">#Close#</a></div></div>';
+            '<a href="#" class="btn #BtnType#" id="confirmYesBtn">#Confirm#</a>';
 
             var defaults = {
                 heading: 'Please confirm',
@@ -370,15 +369,20 @@
                 callback : null,
                 btntype: 'btn-primary',
                 confirmtext: 'Confirm',
-                closetext: 'Close'
+                closetext: 'Close',
+                showclose: true
             };
             
             var options = $.extend(defaults, options);
+            //check if we need a close button if so added before the replacements in case the "Close" text is different.
+            if( options.showclose ) {
+            	html += '<a href="#" class="btn" data-dismiss="modal">#Close#</a></div></div>';
+        	}
             html = html.replace('#Heading#',options.heading)
             .replace('#Body#',options.body)
             .replace('#BtnType#',options.btntype)
             .replace('#Confirm#',options.confirmtext)
-            .replace('#Close#',options.closetext);
+            .replace('#Close#',options.closetext); 
             $(this).html(html);
             $(this).modal('show');
             var context = $(this); 

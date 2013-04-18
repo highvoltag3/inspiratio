@@ -17,7 +17,7 @@
             <%#= f.check_box :public %>
 
             <%= f.fields_for :uploads, @idea.uploads.build do |b| %>
-              <%= b.label :image, "Image" %><br />
+              <%= b.label :image, "Upload your Image" %><br />
               <%= b.file_field :image %>
             <% end %>
 
@@ -28,7 +28,7 @@
             <%= f.label :tag_list %><br />
             <%= f.text_field :tag_list %>
         </p>
-          <p><%= f.submit "Create", :class => 'btn btn-success' %> <button class="btn btn-danger cancelnewidea">Cancel</button></p>
+          <p><%= f.submit "Create", :class => 'btn btn-success createidea' %> <button class="btn btn-danger cancelnewidea">Cancel</button></p>
   </div>
     <% end %>
 
