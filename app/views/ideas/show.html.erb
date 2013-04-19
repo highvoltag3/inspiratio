@@ -23,7 +23,7 @@
 
   	<div id="useridea">
 	    <header>
-			<% if ( user_signed_in? ) %>
+			<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
 			<ul class="breadcrumb">
 				<li>
 				  <%= link_to 'Home', root_path %>
@@ -56,6 +56,9 @@
 		          <div class="preview">
 		            <%= image_tag(@idea.current_image.image.url, :alt => @idea.title) %>
 		          </div>
+		          <% if ( URI(request.referer).path == '/' ) %>
+		          	<p class="description"><%= @idea.description %></p>
+			      <% end %>
 
 		          <footer id="ideainfo" class="clearfix">
 		            <div>
@@ -77,7 +80,7 @@
 
 		        </article><!-- /idea -->
 
-				<% if ( user_signed_in? ) %>
+				<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
 					<%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
@@ -315,7 +318,9 @@
 							  results['colors'].each do |color|      # iterate over all significant colors
 							    puts color                      #color[0] =  hex value, color[1] = percentage
 					 	%>
-					 			<span class="colorhex label" style="background: <%= color[0] %>; width: <%= color[1] %>%;" >&nbsp;</span>
+					 			<span class="colorhex label" style="background: <%= color[0] %>; width: <%= color[1] %>%;" >
+					 				<div class="tooltip" style="width: 100%; position: relative;" data-placement="top" title="<%= color[0] %>">&nbsp;</div>
+					 			</span>
 					 	<%end %>
 					 	</div>
 
@@ -334,7 +339,9 @@
 							  results['colors'].each do |color|      # iterate over all significant colors
 							    puts color                      #color[0] =  hex value, color[1] = percentage
 					 	%>
-					 			<span class="colorhex label" style="background: <%= color[0] %>; width: <%= color[1] %>%;" >&nbsp;</span>
+					 			<span class="colorhex label" style="background: <%= color[0] %>; width: <%= color[1] %>%;" >
+					 				<div class="tooltip" style="width: 100%; position: relative;" data-placement="top" title="<%= color[0] %>">&nbsp;</div>
+					 			</span>
 					 	<%end %>
 					 	</div>
 

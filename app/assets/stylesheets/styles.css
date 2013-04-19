@@ -320,7 +320,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		border-radius: .3rem;
 	}
 	#signinreg .username {
-		margin-left: .6em;
+		padding: 25px 0 0 .6rem;
 		display: block;
 		color: #303136;
 	}
@@ -348,9 +348,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			padding: 2% 5%;
 		}
 
-	#signinreg a {
-		margin-top: 25px;
-	}
 	#signinreg a.c2as {
 		font-size: .8em;
 	}
@@ -1005,7 +1002,8 @@ article div.preview img {
 	#newidea_text label {
 		display: inline-block;
 	}
-	#newidea_text input[type="text"], #tags_p_tag {
+	#newidea_text input[type="text"],
+	#tags_p_tag {
 		width: 100%;
 		border: 1px solid #666;
 		border-radius: 2px;
@@ -1089,6 +1087,7 @@ article div.preview img {
 
   .editidea {
 	position: absolute;
+	top: 0;
 	right: 0;
 	color: #666;
   }
@@ -1099,8 +1098,8 @@ article div.preview img {
 	width:  25px;
 	height: 25px;
 	position: absolute;
-	right: -19px;
-	bottom: -20px;
+	right: 	-25px;
+	top: -25px;
   }
 
   .lastestcomments {
@@ -1337,6 +1336,41 @@ article div.preview img {
 			background: url(/assets/new/comment_icon.png) 0 10px no-repeat;
 			padding-left: 30px;
 		}
+
+/*Edit idea screen*/
+.editideaform input[type="text"] {
+	width: 100%;
+	border: 1px solid #666;
+	border-radius: 2px;
+	color: #aaa;
+	font-size: .9em;
+	padding: .5em;
+	background: white;
+}
+
+.editideaform textarea {
+	width: 100%;
+}
+
+.taglistbox {
+	margin-top: 2rem;
+}
+
+.newtagbox {
+	width: 100%;
+}
+
+.upload {
+	margin-bottom: 2rem;
+}
+
+.editideaform .thumbnails .span6 {
+	margin-left: 0;
+}
+.editformctas {
+	position: relative;
+	margin-top: -30px;
+}
 
 /* END OF THE SITE */
 footer.endofsite {
