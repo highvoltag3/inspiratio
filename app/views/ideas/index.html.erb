@@ -13,7 +13,6 @@
       <h1>New Idea</h1>
     </header>
     <div id="newidea_text">
-      <%#=Todo render the new template or the form here (none of the two lines above worked for me) :( help! ) %>
       <%= render partial: 'form' %>
     </div>
   </div> <!-- /ideabox -->
@@ -41,8 +40,12 @@
             <span class="projectname"><%= link_to idea.title, idea %></span>
             <span class="username"><%= current_user.name %></span>
             <span class="location"><%= current_user.location %></span>
-            <%#=Todo get a simple follow system working (this is low priority) %>
-            <button type="button" name="" value="" class="follow"></button>
+
+            <%= link_to "Edit", edit_idea_path(idea), :class => 'editidea' %>
+            <span class="idea_delete">
+               <%= button_to "", idea, :class => 'destroy_idea confirm' %>
+               <%= link_to "", idea, :method => :delete, :class => 'yesdelete hide' %>
+            </span>
           </header>
           <div class="preview">
             <%= link_to image_tag(idea.current_image.image.url, :alt => idea.title), idea %>
@@ -61,11 +64,6 @@
                 <%= idea.views_count %>
               </span>
             </div>
-            <%= link_to "Edit", edit_idea_path(idea), :class => 'editidea' %>
-            <span class="idea_delete">
-               <%= button_to "", idea, :class => 'destroy_idea confirm' %>
-               <%= link_to "", idea, :method => :delete, :class => 'yesdelete hide' %>
-            </span>
           </footer>
         </article><!-- /idea -->
 
