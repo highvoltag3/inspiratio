@@ -2,17 +2,22 @@
   <%= form_for @idea, :html => {:multipart => true} do |f| %>
       <%= f.error_messages %>
   <div class="span6 offset2">
-
+          <h1> Edit idea </h1>
     
-        <p> <%= f.label :title %><br />
+            <%= f.label :title %><br />
             <%= f.text_field :title %>
 
             <%= f.label :description %><br />
             <%= f.text_area :description %>
+
+            <div class="taglistbox">
+            <%= f.label :tag_list %><br />
+            <%= f.text_field :tag_list %>
+            </div>
   </div>
   
-  <div class="span4">
-
+  <div class="span5">
+            <br /><br />
             <%#= f.label :public %>
             <%#= f.check_box :public %>
 
@@ -20,16 +25,22 @@
               <%= b.label :image, "Upload a new Image" %><br />
               <%= b.file_field :image %>
             <% end %>
-
+            
+            <ul class="thumbnails">
             <%= f.fields_for :uploads do |b| %>
               <%= render partial: 'upload', locals: {f: b} %>
             <% end %>
-
-            <%= f.label :tag_list %><br />
-            <%= f.text_field :tag_list %>
-        </p>
-          <p><%= f.submit "Create", :class => 'btn btn-success createidea' %> <button class="btn btn-danger cancelnewidea">Cancel</button></p>
+            </ul>
   </div>
+
+  <div class="span12">
+    <div class="editformctas offset6">
+      <%= f.submit "Save Changes", :class => 'btn btn-primary createidea' %> 
+      <%= link_to "Cancel", ideas_path, :class => "btn"  %>
+    </div>
+  </div>
+
     <% end %>
 
 </div>
+<div id="confirmDiv"><!-- note to self: this is just my placeholder for modals --></div>

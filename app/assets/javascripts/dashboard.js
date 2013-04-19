@@ -17,11 +17,11 @@ $(document).ready(function() {
   });
 
   //set the with for the tag input field.
-  $('#idea_tag_list_addTag').addClass('span12');
+  $('#idea_tag_list_addTag').addClass('newtagbox');
 
   $('.createidea').click(function(){
-    console.log('click');
-    if( !$('#idea_uploads_attributes_0_image').val() ) {
+    console.log('clicked create idea');
+    if( !$('input[type="file"]').val() ) {
       openConfirmModalCreateIdea();
       return false;
     } else {

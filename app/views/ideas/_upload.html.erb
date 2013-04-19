@@ -1,12 +1,18 @@
-<div class="upload">
   <% unless f.object.new_record? %>
     <% if f.object.id == f.object.idea.current_image.id %>
       <h3>current image:</h3>
-      <p><%= image_tag f.object.image.url, size: '300x300' %> 
-        remove <%= f.check_box :_destroy %></p>
+      <li class="span6">
+        <a href="#" class="thumbnail">
+          <%= image_tag f.object.image.url, size: '360x270' %> 
+        </a>
+        <span class="pull-right removeimage">remove <%= f.check_box :_destroy %></span>
+      </li>
     <% else %>
-      <p><%= image_tag f.object.image.url, size: '100x100' %>
-      remove <%= f.check_box :_destroy %></p>
+       <li class="span2">
+          <a href="#" class="thumbnail">
+            <%= image_tag f.object.image.url, size: '160x120' %>
+          </a>
+          <span class="pull-right removeimage">remove <%= f.check_box :_destroy %></span>
+        </li>    
     <% end%>
   <% end %>
-</div>
