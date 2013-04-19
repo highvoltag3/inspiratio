@@ -2,7 +2,9 @@
 <%= javascript_include_tag 'http://code.jquery.com/ui/1.10.2/jquery-ui.js' %>
 <%= javascript_include_tag 'raphael-min.js' %>
 <%= javascript_include_tag 'js-mindmap.js' %>
-<%= javascript_include_tag 'bubbleView.js' %>  
+<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
+	<%= javascript_include_tag 'bubbleView.js' %>  
+<% end %>
 
   <div id="droppable" class="ui-widget-header">
     <h4>Your List</h4>
