@@ -9,10 +9,18 @@
 
   <nav>
     <ul id="nav" class="mainnav">
+    <% if (current_page?(root_path)) %>
+      <li class="selected">
+    <% else %>
       <li>
+    <% end %>
         <%= link_to 'Home', root_path, :id => 'home', :title => 'Browse the gallery' %>
       </li>
+    <% if (current_page?(ideas_path)) %>
       <li class="selected">
+    <% else %>
+      <li>
+    <% end %>
         <%= link_to 'Your Ideas', ideas_path, :id => 'yi', :title => 'Your ideas' %>
       </li>
     </ul>
@@ -36,7 +44,32 @@
         </li>
       </ul>
     </nav><!-- /nav  -->
-
+  <% elsif ( current_page?(root_path) ) %>
+    <nav>
+      <ul id="subnav" class="navbar">
+        <li>
+          <% if( vfilter = params[:f] == "likes" ) %>
+            <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom', :class => 'icon_active' %>
+          <% else %>
+            <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom' %>
+          <% end %>
+        </li>
+        <li>
+          <% if( vfilter = params[:f] == "views" ) %>
+            <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom', :class => 'icon_active' %>
+          <% else %>
+            <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
+          <% end %>
+        </li>
+        <li class="divider-vertical"></li>
+        <li>
+          <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+        </li>
+        <li>
+          <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+        </li>
+      </ul>
+    </nav><!-- /nav  -->
   <% end %>
 
 
