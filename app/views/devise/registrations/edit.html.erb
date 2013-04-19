@@ -1,21 +1,25 @@
 <script>
 $(document).ready(function() {
+  
   // Stuff to do as soon as the DOM is ready;
   // Use Geolocation API
-  if ( !$("#user_location").val() ) {
-    $("#user_location").attr("placeholder","Requesting information...");
-    navigator.geolocation.getCurrentPosition(function(pos){
-        var latlng = pos.coords.latitude + "," + pos.coords.longitude;
-        var apiurl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latlng + '&sensor=false';
-        $.getJSON(apiurl,
-            function(data){
-                console.log(data);
-                var location = data.results[1].formatted_address;
-                $("#user_location").val(location);
-            }
-        );
-    });
-  }
+  $('.location').focus(function(){
+    if ( !$("#user_location").val() ) {
+      $("#user_location").attr("placeholder","Requesting information...");
+      navigator.geolocation.getCurrentPosition(function(pos){
+          var latlng = pos.coords.latitude + "," + pos.coords.longitude;
+          var apiurl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latlng + '&sensor=false';
+          $.getJSON(apiurl,
+              function(data){
+                  console.log(data);
+                  var location = data.results[1].formatted_address;
+                  $("#user_location").val(location);
+              }
+          );
+      });
+    }
+  });
+
 });
 </script>
 
@@ -38,9 +42,8 @@ $(document).ready(function() {
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-         <div><%= f.label :location %> <i>Where are you?</i><br />
-          <pre></pre>
-        <%= f.text_field :location %></div>
+        <div><%= f.label :location %> <i>Where are you?</i><br />
+        <%= f.text_field :location, :placeholder => "Where are you?", :class => 'location' %></div>
 
         <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password %></div>

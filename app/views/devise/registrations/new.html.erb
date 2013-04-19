@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   // Stuff to do as soon as the DOM is ready;
   // Use Geolocation API
-  $('.signupemail').focus(function(){
+  $('.location').focus(function(){
     if ( !$("#user_location").val() ) {
       $("#user_location").attr("placeholder","Requesting information...");
       navigator.geolocation.getCurrentPosition(function(pos){
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
   <div><%= fup.label :email %></div>
   <div class="input-append control-group">
-    <%= fup.email_field :email, :placeholder => "email@address.com", :required => '', :class => 'signupemail' %><span class="add-on">email</span>
+    <%= fup.email_field :email, :placeholder => "email@address.com", :required => '' %><span class="add-on">email</span>
   </div>
 
   <div><%= fup.label :name %></div>
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   <div><%= fup.label :location %></div>
   <div class="input-append control-group">
-    <%= fup.text_field :location, :placeholder => "Where are you?" %><span class="add-on"><i class="icon-map-marker"></i></span>
+    <%= fup.text_field :location, :placeholder => "Where are you?", :class => 'location' %><span class="add-on"><i class="icon-map-marker"></i></span>
   </div>
 
   <div><%= fup.label :password %></div>
