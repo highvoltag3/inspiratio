@@ -37,8 +37,8 @@
       <% @ideas.each do |idea| %>
         <article class="idea">
           <header>
-            <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 55 }, :alt => current_user.name, :class => 'fl') %>
-            <span class="projectname"><%= idea.title %></span>
+            <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 55 }, :alt => current_user.name, :class => 'fl') %>                 
+            <span class="projectname"><%= link_to idea.title, idea %></span>
             <span class="username"><%= current_user.name %></span>
             <span class="location"><%= current_user.location %></span>
             <%#=Todo get a simple follow system working (this is low priority) %>

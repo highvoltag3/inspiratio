@@ -29,7 +29,7 @@
         <article class="idea">
           <header>
             <%= gravatar_image_tag(idea.user.email, :gravatar => { :size => 55 }, :alt =>  idea.user.name, :class => 'fl') %>
-            <span class="projectname"><%= idea.title %></span>
+            <span class="projectname"><%= link_to idea.title, idea %></span>
             <span class="username"><%= idea.user.name %></span>
             <span class="location"><%= idea.user.location %></span>
             <%#=Todo get a simple follow system working (this is low priority) %>

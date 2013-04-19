@@ -548,18 +548,19 @@ article header > img {
 article header > span {
 	display: block;
 }
-article header > span.projectname {
+article header > span.projectname,
+article header > span.projectname > a {
 	font-family: 'HelveticaRegular';
 	color: #4889AF;
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	display: block;
 	overflow: hidden;
-	padding-top: .2rem;
+	padding-top: .3rem;
 }
 article header > span.username {
-	padding-top: .9em;
+	padding-top: .6rem;
 	height: 30px;
 	margin-top: -13px;
 
@@ -1098,8 +1099,8 @@ article div.preview img {
 	width:  25px;
 	height: 25px;
 	position: absolute;
-	right: -5%;
-	bottom: -6%;
+	right: -19px;
+	bottom: -20px;
   }
 
   .lastestcomments {
