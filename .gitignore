@@ -29,6 +29,7 @@ doc/
 
 .svn
 .gitrepo
+tags
 
 ror/inspiratio/log/*
 ror/inspiratio/tmp/*

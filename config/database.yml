@@ -28,8 +28,8 @@ test:
   reconnect: false
   database: inspiratio_test
   pool: 5
-  username: root
-  password: ADNJ1807
+  username: andrea
+  password: andrea
   socket: /tmp/mysql.sock
 
 production:
