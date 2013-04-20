@@ -8,6 +8,15 @@ Inspiratio::Application.routes.draw do
   end
 
   devise_for :users
+  
+  # Do this once you build a Users Controller
+  # resources :users do
+  #  member do
+  #    resources :ideas
+  #  end
+  # end
+  
+  get 'users/:id/ideas' => 'ideas#user_idea', :as => :user_idea
 
   root :to => "home#index"
 
