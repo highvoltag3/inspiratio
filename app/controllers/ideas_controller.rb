@@ -53,7 +53,7 @@ class IdeasController < ApplicationController
     if request.xhr?
       render json: { idea: { id: @idea.id, likes: @idea.likes_users_count } }
     else
-      redirect_to @idea, notice: "Successfully #{verb} idea."
+      redirect_to @idea, notice: "Cool you just #{verb} this idea."
     end
 
   end
@@ -63,7 +63,7 @@ class IdeasController < ApplicationController
     comment.idea_id = @idea.id
 
     if comment.save
-      flash[:notice] = "Successfully added comment."
+      flash[:notice] = "Comment added, thank you!."
     end
     redirect_to @idea
   end
