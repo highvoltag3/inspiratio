@@ -68,6 +68,10 @@ class IdeasController < ApplicationController
     redirect_to @idea
   end
 
+  def user_idea
+    @ideas = Idea.find_all_by_user_id(params[:id])
+  end
+
   private
   def find_user_idea
     unless @idea = current_user.ideas.where(id: params[:id]).first

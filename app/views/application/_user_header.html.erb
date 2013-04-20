@@ -16,7 +16,7 @@
     <% end %>
         <%= link_to 'Home', root_path, :id => 'home', :title => 'Browse the gallery' %>
       </li>
-    <% if ( current_page?(url_for(:controller => 'ideas') ) )  %>
+    <% if ( params[:controller].eql?('ideas') )  %>
       <li class="selected">
     <% else %>
       <li>
