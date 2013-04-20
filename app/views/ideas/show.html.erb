@@ -1,24 +1,8 @@
-<%# title "Idea" %>
-
-<!-- <p>
-  <strong>User:</strong>
-  <%#= @idea.user_id %>
-</p>
-
-<p>
-  <%#= link_to "Edit", edit_idea_path(@idea) %> |
-  <%#= button_to "Destroy", @idea, :confirm => 'Are you sure?', :method => :delete %> |
-  <%#= link_to "View All", ideas_path %>
-</p>
--->
-
 <% content_for :more_headers do %>
-  <%= stylesheet_link_tag 'jquery.tagsinput' %>
-  <%= stylesheet_link_tag 'sharrre' %>
+  <%= stylesheet_link_tag 'jquery.tagsinput', 'sharrre' %>
 <% end %>
 <% content_for :js_includes do %>
-  <% javascript_include_tag 'user_idea' %>
-  <% javascript_include_tag 'sharrre' %>
+  <% javascript_include_tag 'user_idea', 'dashboard', 'sharrre' %>
 <% end %>
 
 <section id="main" class="clearfix">

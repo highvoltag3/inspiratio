@@ -1,6 +1,7 @@
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
 
 	$('.bvinv').click(function(){
+		console.log('Show bubble View clicked');
 		$('#bubbleView').fadeIn();
 
 	});
