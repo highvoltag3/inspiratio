@@ -48,6 +48,9 @@
     <nav>
       <ul id="subnav" class="navbar">
         <li>
+          <%= link_to 'All', root_path, :title => 'Show all', :'data-placement' => 'bottom' %>
+        </li>
+        <li>
           <% if( vfilter = params[:f] == "likes" ) %>
             <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom', :class => 'icon_active' %>
           <% else %>

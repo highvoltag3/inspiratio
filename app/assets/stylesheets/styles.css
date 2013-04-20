@@ -437,7 +437,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 	#subnav {
 		display: block;
-		width: 15%;
+		width: 27%;
 		position: absolute;
 		right: 10%;
 		background: rgba(255,255,255,.8);
@@ -448,8 +448,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		top: 80px;
 		padding-top: .7%;
 
-		max-width: 200px;
-		max-width: 230px;
+		max-width: 285px;
 	}
 
 	#subnav li {
