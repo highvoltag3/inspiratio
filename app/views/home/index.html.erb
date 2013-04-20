@@ -33,10 +33,13 @@
             <span class="username"><%= idea.user.name %></span>
             <span class="location"><%= idea.user.location %></span>
             <%#=Todo get a simple follow system working (this is low priority) %>
-            <button type="button" name="" value="" class="follow"></button>
+            <button type="button" name="" value="" class="follow tooltip" data-placement="top" data-title="Follow <%= idea.user.name %>"></button>
           </header>
           <div class="preview">
-            <%= link_to image_tag(idea.current_image.image.url, :alt => idea.title), idea %>
+            <%= link_to(idea) do %>
+              <%= image_tag(idea.current_image.image.url, :alt => idea.title) %>
+              <div class="description"><%= idea.description %></div>
+            <% end %>
           </div>
           <footer class="clearfix">
             <div>
@@ -46,7 +49,7 @@
               <%= link_to idea.likes_users_count, like_idea_path(idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
             </div>
             <div>
-              <span class="views number"><%= link_to idea.views_count, '#', :title => 'Number of times your idea has been viewed' %></span>
+              <span class="views number"><%= idea.views_count %></span>
             </div>
           </footer>
         </article><!-- /idea -->
