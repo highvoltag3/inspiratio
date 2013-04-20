@@ -48,7 +48,10 @@
             </span>
           </header>
           <div class="preview">
-            <%= link_to image_tag(idea.current_image.image.url, :alt => idea.title), idea %>
+            <%= link_to(idea) do %>
+              <%= image_tag(idea.current_image.image.url, :alt => idea.title) %>
+              <div class="description"><%= idea.description %></div>
+            <% end %>
           </div>
           <footer class="clearfix">
             <div>
