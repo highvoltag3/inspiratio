@@ -44,7 +44,11 @@ class Idea < ActiveRecord::Base
   end
 
   def flickr_photos
-    @flickr_photos ||= FLICKR_CLIENT.photos.search(text: self.title, per_page: 10)
+    if (self.tags.many?)
+      @flickr_photos ||= FLICKR_CLIENT.photos.search(tags: self.tags.collect { |w| w.name }.join(", "), per_page: 10)
+    else
+      @flickr_photos ||= FLICKR_CLIENT.photos.search(text: self.title, per_page: 10)
+    end
   end
 
   # views feature

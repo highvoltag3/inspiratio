@@ -6,17 +6,32 @@
 
   <nav>
     <ul id="nav" class="mainnav">
+      <% if ( controller.controller_name == 'home' )  %>
       <li class="selected">
+      <% else %>
+      <li>
+      <% end %>
         <%= link_to 'Home', root_path, :id => 'home', :title => 'Browse the gallery' %>
       </li>
+      <% if ( controller.controller_name == 'sessions' )  %>
+      <li class="selected">
+      <% else %>
       <li>
+      <% end %>
         <%= link_to 'Login', new_user_session_path, :id => 'lg', :title => 'Login' %>
       </li>
     </ul>
   </nav><!-- /nav  -->
 
   <nav>
-    <ul id="subnav" class="navbar">
+    <ul id="subnav" class="navbar filtersnav">
+      <li>
+        <% if ( controller.controller_name == 'home' && !params[:f] )  %>
+          <%= link_to 'All', root_path, :title => 'Show all', :'data-placement' => 'bottom', :class => 'icon_active' %>
+        <% else %>
+         <%= link_to 'All', root_path, :title => 'Show all', :'data-placement' => 'bottom' %>
+        <% end %>
+      </li>
       <li>
         <% if( vfilter = params[:f] == "likes" ) %>
           <%= link_to '', root_path(f: 'likes'), :id => 'mp', :title => 'Most Popular', :'data-placement' => 'bottom', :class => 'icon_active' %>
@@ -31,28 +46,14 @@
           <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
         <% end %>
       </li>
-      <li class="divider-vertical"></li>
+      <!-- <li class="divider-vertical"></li>
       <li>
-        <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+        <%#= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
       </li>
       <li>
-        <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
-      </li>
+        <%#= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+      </li> -->
     </ul>
   </nav><!-- /nav  -->
 
-  <!-- <div id="signinreg">
-    <div>
-      <input type="email" name="username" value="" id="username" placeholder="email or screen name" />
-      <input type="password" name="password"  value="" id="password" placeholder="password" />
-      <span class="actions">
-        <%#= link_to '<button name="signin" id="sighin">Sign in</button>'.html_safe, dashboard_index_path %>
-        - or -
-        <%#= link_to '<button name="register" class="fr" id="register">Register</button>'.html_safe, new_user_path %>
-      </span>
-      <div class="arrow_box">
-        You can fill the form and click on register to create a new account is that easy!
-      </div>
-    </div>
-  </div> -->
 </header><!-- /header -->

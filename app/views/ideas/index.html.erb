@@ -33,49 +33,64 @@
   </header>
   <div id="ideasList">
     <div id="ideas" class="clearfix">
-      <% @ideas.each do |idea| %>
+      <% if !@ideas.any? %>
         <article class="idea">
           <header>
-            <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 55 }, :alt => current_user.name, :class => 'fl') %>                 
-            <span class="projectname"><%= link_to idea.title, idea %></span>
-            <span class="username"><%= current_user.name %></span>
-            <span class="location"><%= current_user.location %></span>
-
-            <%= link_to "Edit", edit_idea_path(idea), :class => 'editidea' %>
-            <span class="idea_delete">
-               <%= button_to "", idea, :class => 'destroy_idea confirm' %>
-               <%= link_to "", idea, :method => :delete, :class => 'yesdelete hide' %>
-            </span>
+            <span class="text-info lead">Add your first idea</span>
           </header>
-          <div class="preview">
-            <%= link_to(idea) do %>
-              <%= image_tag(idea.current_image.image.url, :alt => idea.title) %>
-              <div class="description"><%= idea.description %></div>
-            <% end %>
+          <div class="bigadd">
+            <%= image_tag('new/big_add_icon.png') %>
           </div>
           <footer class="clearfix">
-            <div>
-              <span class="comments number"> <%= idea.comments.size %> </span>
-            </div>
-            <div>
-              <span class="likes number">
-                  <%= idea.likes_users_count %>
-              </span>
-            </div>
-            <div>
-              <span class="views number">
-                <%= idea.views_count %>
-              </span>
-            </div>
+            <p class="text-left">Just click on the big add or the add icon on your top right menu bar. </p>
           </footer>
         </article><!-- /idea -->
+      <% else %>
+        <% @ideas.each do |idea| %>
+          <article class="idea">
+            <header>
+              <%= gravatar_image_tag(current_user.email, :gravatar => { :size => 55 }, :alt => current_user.name, :class => 'fl') %>                 
+              <span class="projectname"><%= link_to idea.title, idea %></span>
+              <span class="username"><%= current_user.name %></span>
+              <span class="location"><%= current_user.location %></span>
 
-          <%#= idea.user_id %>
-          <%#= link_to idea.current_image.image_file_name, idea.current_image.url %>
-          <%#= link_to "Show", idea %>
-          <%#= link_to "Edit", edit_idea_path(idea) %>
-          <%#= button_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %>
-          <%#= link_to "New Idea", new_idea_path %>
+              <%= link_to "Edit", edit_idea_path(idea), :class => 'editidea' %>
+              <span class="idea_delete">
+                 <%= button_to "", idea, :class => 'destroy_idea confirm' %>
+                 <%= link_to "", idea, :method => :delete, :class => 'yesdelete hide' %>
+              </span>
+            </header>
+            <div class="preview">
+              <%= link_to(idea) do %>
+                <%= image_tag(idea.current_image.image.url, :alt => idea.title) %>
+                <div class="description"><%= idea.description %></div>
+              <% end %>
+            </div>
+            <footer class="clearfix">
+              <div>
+                <span class="comments number"> <%= idea.comments.size %> </span>
+              </div>
+              <div>
+                <span class="likes number">
+                    <%= idea.likes_users_count %>
+                </span>
+              </div>
+              <div>
+                <span class="views number">
+                  <%= idea.views_count %>
+                </span>
+              </div>
+            </footer>
+          </article><!-- /idea -->
+
+            <%#= idea.user_id %>
+            <%#= link_to idea.current_image.image_file_name, idea.current_image.url %>
+            <%#= link_to "Show", idea %>
+            <%#= link_to "Edit", edit_idea_path(idea) %>
+            <%#= button_to "Destroy", idea, :confirm => 'Are you sure?', :method => :delete %>
+            <%#= link_to "New Idea", new_idea_path %>
+
+        <% end %>
 
       <% end %>
 

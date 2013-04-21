@@ -44,6 +44,15 @@ $(document).ready(function() {
       return false;
   }); 
 
+  if( $('.relatedthumb').length ) {
+    $('.relatedthumb').fancybox();
+  }
+
+  $('.bigadd').click(function (e) {
+      e.preventDefault();
+      $('.addidea').trigger('click');
+  });
+
 }); /* end on ready function */
 
 

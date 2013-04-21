@@ -437,18 +437,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 	#subnav {
 		display: block;
-		width: 27%;
+		width: 5%;
 		position: absolute;
-		right: 10%;
+		left: 80%;
 		background: rgba(255,255,255,.8);
 		border: 2px solid #999;
 		border-top: none;
 		border-bottom-right-radius: 3px;
 		border-bottom-left-radius: 	3px;
 		top: 80px;
-		padding-top: .7%;
+		padding: .7em 0 .3em 0;
 
-		max-width: 285px;
+		max-width: 145px;
+		min-width: 115px;
 	}
 
 	#subnav li {
@@ -463,6 +464,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			display: block;
 			width: 25px;
 			height: 25px;
+		}
+
+	.filtersnav > li a {
+		opacity: .5;
+
+		-webkit-transition:	all .2s ease-in-out;
+		-moz-transition: 	all .2s ease-in-out;
+		-ms-transition:	 	all .2s ease-in-out;
+		-o-transition:		all .2s ease-in-out;
+		transition:			all .2s ease-in-out;
+	}
+
+	.filtersnav > li a:hover {
+		opacity: 1;
+	}
+		
+		.filtersnav > li a.icon_active {
+			opacity: 1;
 		}
 
 	#mainCarousel.slide {
@@ -582,9 +601,8 @@ article header > .follow {
 	border: none;
 	background: url(/assets/new/follow_icon.png) 15px 0 no-repeat;
 
-	bottom: 15%;
 	right: 0;
-	top: 2.2em;
+	top: 35px;
 	opacity: 1; /*because of the tooltip not sure why*/
 }
 
@@ -601,6 +619,9 @@ article div.preview {
 		height: 100%;
 	}
 
+	article div.preview a {
+		color: #666;
+	}
 	article div.preview a:hover {
 		color: rbga(255,255,255, 0);
 	}
@@ -630,6 +651,7 @@ article div.preview {
 	article div.preview a:hover > .description {
 		background: rgba(255, 255, 255, 0.9);
 		font-size: 1.3em;
+		border-bottom: 10px solid #4d4d4d;
 		
 		opacity: 1;
 	}
@@ -647,6 +669,10 @@ article footer > div:nth-child(2) {
 	padding: 0 1em;
 }
 article footer > div:nth-child(3) {
+}
+
+article footer a {
+		color: #666;
 }
 
 .number {
@@ -925,60 +951,11 @@ article div.preview img {
 
 
 
-/* Share */
-#sharebox {
-	display: none;
+.bigadd {
+	text-align: center;
+	padding: 17%;
+	cursor: pointer;
 }
-
-	#sharebox header {
-		background: #8F99A8;
-		text-align: center;
-		height: auto;
-		box-shadow: none;
-	}
-
-	#sharebox header h1 {
-		font-size: 2em;
-		font-weight: lighter;
-		color: #fff;
-		padding: .2em;
-	}
-
-	#share_text,
-	#bigpic {
-		margin-top: 1.5em;
-	}
-
-	#share_text {
-		width: 45%;
-		height: 70%;
-	}
-	#share_text input {
-		width: 100%;
-		border: 1px solid #666;
-		border-radius: 2px;
-	}
-	#share_text div {
-		margin: 2em 0;
-	}
-		#share_text div img {
-			margin-left: 3em;
-		}
-
-
-	#bigpic {
-		width: 40%;
-		height: auto;
-		max-height: 600px;
-		overflow: hidden;
-	}
-	#bigpic h2 {
-		font-weight: lighter;
-		margin-bottom: 1em;
-	}
-	#bigpic img {
-		max-width: auto;
-	}
 
 /* New idea */
 
@@ -1259,6 +1236,33 @@ article div.preview img {
 		height: auto;
 	}
 
+.relatedthumb{
+	float:left;
+	margin:.5em .5em .5em 0;
+	overflow:hidden; /* this is important */
+	position:relative; /* this is important too */
+	width:150px;
+	height:150px;
+	}
+.relatedthumb img{
+		position:absolute;
+		top:-20px;
+		left:-55px;
+		min-width: 200px;
+		min-height: 200px;
+	}
+
+	/*#relatedimages .relatedthumb {
+		width: 250px;
+		height: 250px;
+		overflow: hidden;
+		display: block;
+	}
+	
+	#relatedimages .relatedthumb > img {
+		min-width: 250px;
+		min-height: 250px;
+	}*/
 	#relatedarticles .relatedlink {
 		padding: 0 1em;
 	}
@@ -1339,13 +1343,30 @@ article div.preview img {
 
 		.colors {
 			width: 100%;
+			height: 16px;
 		}
 		.colors .colorhex {
 			display: block;
 			float: left;
 			padding: 0;
-		}
 
+			-webkit-transition:	all .3s ease-in-out;
+			-moz-transition: 	all .3s ease-in-out;
+			-ms-transition:	 	all .3s ease-in-out;
+			-o-transition:		all .3s ease-in-out;
+			transition:			all .3s ease-in-out;
+		}
+		
+		.colorhex:hover {
+			margin-top: -9px;
+			-moz-box-shadow: 	0px 0px 9px rgba(200, 200, 200, 0.8);
+			-webkit-box-shadow: 0px 0px 9px rgba(200, 200, 200, 0.8);
+			box-shadow: 		0px 0px 9px rgba(200, 200, 200, 0.8);
+		}
+		.colorhex:hover > div {
+			height: 30px;
+		}
+		
 		.publictags h2 {
 			background: url(/assets/new/tags_icon.png) 0 10px no-repeat;
 			padding-left: 30px;

@@ -28,27 +28,31 @@
 
   <% if (current_page?(ideas_path)) %>
     <nav>
-      <ul id="subnav" class="navbar">
+      <ul id="subnav" class="navbar usernavbar">
         <li>
          <%= link_to ' ', '#', :id => 'ni', :class => 'addidea', :title => 'New Idea', :'data-placement' => 'bottom' %>
         </li>
         <li>
           <%= link_to ' ', '#', :id => 'st', :title => 'Settings', :'data-placement' => 'bottom' %>
         </li>
-        <li class="divider-vertical"></li>
+        <!-- <li class="divider-vertical"></li>
         <li>
-          <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+          <%#= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
         </li>
         <li>
-          <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
-        </li>
+          <%#= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+        </li> -->
       </ul>
     </nav><!-- /nav  -->
   <% elsif ( current_page?(root_path) ) %>
     <nav>
-      <ul id="subnav" class="navbar">
+      <ul id="subnav" class="navbar filtersnav">
         <li>
-          <%= link_to 'All', root_path, :title => 'Show all', :'data-placement' => 'bottom' %>
+          <% if ( controller.controller_name == 'home' && !params[:f] )  %>
+            <%= link_to 'All', root_path, :title => 'Show all', :'data-placement' => 'bottom', :class => 'icon_active' %>
+          <% else %>
+           <%= link_to 'All', root_path, :title => 'Show all', :'data-placement' => 'bottom' %>
+          <% end %>
         </li>
         <li>
           <% if( vfilter = params[:f] == "likes" ) %>
@@ -64,13 +68,13 @@
             <%= link_to '', root_path(f: 'views'), :id => 'mv', :title => 'Most Viewed', :'data-placement' => 'bottom' %>
           <% end %>
         </li>
-        <li class="divider-vertical"></li>
+        <!-- <li class="divider-vertical"></li>
         <li>
-          <%= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
+          <%#= link_to '', '#', :id => 'gv', :title => 'Grid View', :'data-placement' => 'bottom' %>
         </li>
         <li>
-          <%= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
-        </li>
+          <%#= link_to '', '#', :id => 'lv', :title => 'ListView', :'data-placement' => 'bottom' %>
+        </li> -->
       </ul>
     </nav><!-- /nav  -->
   <% end %>

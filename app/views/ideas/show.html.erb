@@ -1,8 +1,8 @@
 <% content_for :more_headers do %>
-  <%= stylesheet_link_tag 'jquery.tagsinput', 'sharrre' %>
+  <%= stylesheet_link_tag 'jquery.tagsinput', 'sharrre', 'jquery.fancybox.css' %>
 <% end %>
 <% content_for :js_includes do %>
-  <% javascript_include_tag 'user_idea', 'dashboard', 'sharrre' %>
+  <% javascript_include_tag 'user_idea', 'dashboard', 'sharrre', 'jquery.fancybox.pack.js' %>
 <% end %>
 
 <section id="main" class="clearfix">
@@ -20,7 +20,7 @@
 				  <span class="divider">/</span>
 				</li>
 				<li>
-				  <%= link_to @idea.title, ideas_path, :class => 'active' %>
+				  <span class="text-info"><%= @idea.title %></span>
 				</li>
 			</ul>
 			<% end %>
@@ -119,178 +119,6 @@
 						</span>
 					</div>
 
-					<div id="relatedimages">
-						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
-						<script src="https://www.google.com/jsapi"></script>
-					    <script type="text/javascript">
-
-					      google.load('search', '1');
-
-					      var imageSearch;
-
-					      function addPaginationLinks() {
-
-					        // To paginate search results, use the cursor function.
-					        var cursor = imageSearch.cursor;
-					        var curPage = cursor.currentPageIndex; // check what page the app is on
-					        var pagesDiv = document.createElement('div');
-					        for (var i = 0; i < cursor.pages.length; i++) {
-					          var page = cursor.pages[i];
-					          if (curPage == i) {
-
-					          // If we are on the current page, then don't make a link.
-					            var label = document.createTextNode(' ' + page.label + ' ');
-					            pagesDiv.appendChild(label);
-					          } else {
-
-					            // Create links to other pages using gotoPage() on the searcher.
-					            var link = document.createElement('a');
-					            link.href="/image-search/v1/javascript:imageSearch.gotoPage("+i+');';
-					            link.innerHTML = page.label;
-					            link.style.marginRight = '2px';
-					            pagesDiv.appendChild(link);
-					          }
-					        }
-
-					        var contentDiv = document.getElementById('content');
-					        contentDiv.appendChild(pagesDiv);
-					      }
-
-					      function searchComplete() {
-
-					        // Check that we got results
-					        if (imageSearch.results && imageSearch.results.length > 0) {
-
-					          // Grab our content div, clear it.
-					          var contentDiv = document.getElementById('content');
-					          contentDiv.innerHTML = '';
-
-					          // Loop through our results, printing them to the page.
-					          var results = imageSearch.results;
-					          //for (var i = 0; i < results.length; i++) {
-					          for (var i = 0; i < 12; i++) {
-					            // For each result write it's title and image to the screen
-					            var result = results[i];
-					            var imgContainer = document.createElement('div');
-					            imgContainer.className = "google-thumb";
-					            //var title = document.createElement('div');
-
-					            // We use titleNoFormatting so that no HTML tags are left in the
-					            // title
-					            //title.innerHTML = result.titleNoFormatting;
-					            var newImg = document.createElement('img');
-
-					            // There is also a result.url property which has the escaped version
-					            newImg.src = result.tbUrl;
-					           // imgContainer.appendChild(title);
-					            imgContainer.appendChild(newImg);
-
-					            // Put our title + image in the content
-					            contentDiv.appendChild(imgContainer);
-					          }
-
-					          // Now add links to additional pages of search results.
-					          //addPaginationLinks(imageSearch);
-					        }
-					      }
-
-					      function OnLoad() {
-
-					        // Create an Image Search instance.
-					        imageSearch = new google.search.ImageSearch();
-					        imageSearch.setResultSetSize(8);
-					        imageSearch.setRestriction(google.search.ImageSearch.RIGHTS_REUSE);
-					        imageSearch.setRestriction(
-								google.search.ImageSearch.RESTRICT_IMAGESIZE,
-								google.search.ImageSearch.IMAGESIZE_EXTRA_LARGE
-							);
-
-					        // Set searchComplete as the callback function when a search is
-					        // complete.  The imageSearch object will have results in it.
-					        imageSearch.setSearchCompleteCallback(this, searchComplete, null);
-
-					        // Find me a beautiful car.
-					        var lookfor = '<%= @idea.title %>'
-					        imageSearch.execute(lookfor);
-
-					        // Include the required Google branding
-					        google.search.Search.getBranding('branding');
-					      }
-					      google.setOnLoadCallback(OnLoad);
-					    </script>
-
-
-					    <div id="branding"  style="float: left;"></div><br />
-					    <div id="content">Loading...</div>
-
-
-						<% @idea.flickr_photos.each do |photo| %>
-              				<%= link_to(image_tag(photo.url(:square), class: 'thumb', title: photo.title, border: 0, size: '150x90'), photo.url_photopage) %>
-						<% end %>
-
-					</div> <!-- end related images -->
-
-					<hr>
-
-					<div id="relatedarticles">
-						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES & LINKS</h2>
-						<%# words = Wordnik.word.get_related('hysterical')					%>
-
-						<script language="Javascript" type="text/javascript">
-					    //<!
-					    google.load('search', '1');
-
-					    function OnLoad() {
-					      // Create a search control
-					      var searchControl = new google.search.SearchControl();
-
-					      // Add in a full set of searchers
-					      //var localSearch = new google.search.LocalSearch();
-					      //searchControl.addSearcher(localSearch);
-					      options = new google.search.SearcherOptions();
-						  options.setExpandMode(google.search.SearchControl.EXPAND_MODE_PARTIAL);
-						  searchControl.addSearcher(new google.search.WebSearch(), options);
-						  searchControl.addSearcher(new google.search.BlogSearch(), options);
-					      //searchControl.addSearcher(new google.search.NewsSearch());
-					      //searchControl.addSearcher(new google.search.ImageSearch());
-
-					      options = new google.search.SearcherOptions();
-					      options.setExpandMode(google.search.SearchControl.EXPAND_MODE_CLOSED);
-						  searchControl.addSearcher(new google.search.VideoSearch(), options);
-						  searchControl.addSearcher(new google.search.BookSearch(), options);
-						  searchControl.addSearcher(new google.search.PatentSearch(), options);
-
-					      // Set the Local Search center point
-					      //localSearch.setCenterPoint("New York, NY");
-
-					      //draw mode
-					      // create a drawOptions object
-					      var drawOptions = new google.search.DrawOptions();
-					      // tell the searcher to draw itself in tabbed mode
-					      drawOptions.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
-
-					      // tell the searcher to draw itself and tell it where to attach
-					      searchControl.draw(document.getElementById("searchcontrol"), drawOptions);
-
-					      // execute an inital search
-					      searchControl.execute('<%= @idea.title %>');
-					    }
-					    google.setOnLoadCallback(OnLoad);
-
-					    //]]>
-					    </script>
-
-
-					  	<div id="searchcontrol">Loading</div>
-
-
-						 <div id="dropper">
-						 	<input type="text" placeholder="Drop any text file or paste a URL to upload" />
-						 </div>
-					</div>
-
-					<hr>
-
 					<div id="relatedcolors">
 
 						<h2> Color Palette </h2>
@@ -309,6 +137,83 @@
 					 	</div>
 
 					</div>
+
+					<hr>
+
+					<div id="relatedimages">
+						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
+						<div class="clearfix"></div>
+						<% @idea.flickr_photos.each do |photo| %>
+              				<%= link_to(photo.url(:large), :class => 'relatedthumb pull-left', :rel => 'relatedimages', :title => photo.description) do %>
+              					<%= image_tag(photo.url(:large), :class => 'thumb', :title => photo.title, :size => '250x250' ) %>
+							<% end %>
+						<% end %>
+						<div class="clearfix"></div>
+					</div> <!-- end related images -->
+
+					<hr>
+
+					<div id="relatedarticles">
+						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES, LINKS & MORE</h2>
+						<%# words = Wordnik.word.get_related('hysterical')					%>
+						<script src="https://www.google.com/jsapi"></script>
+						<script language="Javascript" type="text/javascript">
+						    //<!
+						    google.load('search', '1');
+
+						    function OnLoad() {
+						      // Create a search control
+						      var searchControl = new google.search.SearchControl();
+
+						      // Add in a full set of searchers
+						      //var localSearch = new google.search.LocalSearch();
+						      //searchControl.addSearcher(localSearch);
+						      options = new google.search.SearcherOptions();
+							  options.setExpandMode(google.search.SearchControl.EXPAND_MODE_PARTIAL);
+							  searchControl.addSearcher(new google.search.WebSearch(), options);
+							  searchControl.addSearcher(new google.search.BlogSearch(), options);
+						      //searchControl.addSearcher(new google.search.NewsSearch());
+						      searchControl.addSearcher(new google.search.ImageSearch());
+
+						      options = new google.search.SearcherOptions();
+						      options.setExpandMode(google.search.SearchControl.EXPAND_MODE_CLOSED);
+							  searchControl.addSearcher(new google.search.VideoSearch(), options);
+							  searchControl.addSearcher(new google.search.BookSearch(), options);
+							  searchControl.addSearcher(new google.search.PatentSearch(), options);
+
+						      // Set the Local Search center point
+						      //localSearch.setCenterPoint("New York, NY");
+
+						      //draw mode
+						      // create a drawOptions object
+						      var drawOptions = new google.search.DrawOptions();
+						      // tell the searcher to draw itself in tabbed mode
+						      drawOptions.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
+
+						      // tell the searcher to draw itself and tell it where to attach
+						      searchControl.draw(document.getElementById("searchcontrol"), drawOptions);
+
+						      // execute an inital search
+						      <% if @idea.tags.any? %>
+						      searchControl.execute('<%= @idea.tags.collect { |w| w.name }.join(" ") %>');
+						      <% else %>
+						      searchControl.execute('<%= @idea.title %>');
+						      <% end %>
+						    }
+						    google.setOnLoadCallback(OnLoad);
+
+						    //]]>
+					    </script>
+
+
+					  	<div id="searchcontrol">Loading</div>
+
+
+						 <div id="dropper">
+						 	<input type="text" placeholder="Drop any text file or paste a URL to upload" />
+						 </div>
+					</div>
+
 				<% else %>
 				
 				  	<%# what public can see %>
