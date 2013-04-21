@@ -3,6 +3,31 @@ jQuery(document).ready(function($) {
 	$('#ideadetailspanel h2').tooltip();
 	$('.tooltip').tooltip();
 
+
+	$('.likes').click(function(){
+		var likes;
+		var thisobj = $(this);
+		$.ajax({
+		  type: "GET",
+		  url: $(this).attr('href'),
+		}).success(function( msg ) {
+		  	likes = msg.idea.likes;
+		  	$(thisobj).html(likes);
+		});
+		return false;
+	});
+
+	$('.follow').click(function(){
+		var current_bg = $(this).css('background');
+		if ( current_bg.search("follow_icon") > 0 ) {
+			$(this).css('background', 'url(/assets/new/following_icon.png) 15px 0 no-repeat');
+			var title = $(this).attr('data-title');
+			title.replace("Follow","Following");
+			$(this).attr('data-title', title);
+		} else {
+			$(this).css('background', 'url(/assets/new/follow_icon.png) 15px 0 no-repeat');
+		}
+	});
 	//masonry	
 	var $container = $('#ideas');
 
