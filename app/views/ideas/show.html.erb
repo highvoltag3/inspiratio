@@ -105,7 +105,7 @@
 			<% else %>
 			 <div id="ideadetailspanel" class="span4 ideadetailarrow_box">
 			<% end %>
-				<% if ( current_user && URI(request.referer).path != '/' ) %>
+				<% if ( current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
 					<div class="viewsbar">
 						<span class="lvinv">
 							<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip">
