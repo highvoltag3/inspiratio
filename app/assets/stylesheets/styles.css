@@ -582,7 +582,7 @@ article header > span.username {
 	font-family: 'HelveticaLight';
 }
 article header > span.location {
-	padding-top: 0;
+	padding: 0 2rem 0 0;
 	height: 30px;
 	margin-top: -13px;
 
