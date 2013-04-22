@@ -509,6 +509,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			background: none;
 			box-shadow: none;
 			height: auto;
+			padding-top: .5rem;
 		}
 
 /* Home */
