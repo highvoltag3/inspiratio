@@ -9,7 +9,7 @@
 
   	<div id="useridea">
 	    <header>
-			<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
+			<% if ( current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
 			<ul class="breadcrumb">
 				<li>
 				  <%= link_to 'Home', root_path %>
@@ -64,7 +64,7 @@
 
 		        </article><!-- /idea -->
 
-				<% if ( user_signed_in? && URI(request.referer).path != '/' ) %>
+				<% if ( current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
 					<%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
