@@ -5,11 +5,14 @@ $(document).ready(function() {
   $('#bubbleView').mindmap({
     damping: 0.5,
     wallrepulse: 1,
-    container: 'bubbleView'   
+    container: 'bubbleView',
+    lineColor: "#ccc",
+    showProgressive: false,
+    repulse: 8
   });
 
 
-            keywords = $('.breadcrumb .active').text();
+            keywords = $('.hiddentags').val();
             var searchKeywords = [];
             searchKeywords = keywords.split(' ', 3);
 

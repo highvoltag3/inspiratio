@@ -30,6 +30,12 @@
 	   <h1 class="inv_idea_title"><%= @idea.title %></h1>
        <section class="mainidea row-fluid">
        		<div id="bubbleView" style="display: none;">
+       			 <% if @idea.tags.any? %>
+			      <input type="hidden" class="hiddentags" value="<%= @idea.tags.collect { |w| w.name }.join(" ") %>" />
+			     <% else %>
+			      <input type="hidden" class="hiddentags" value="<%= @idea.title %>" />
+			     <% end %>
+       			
        			<%= render :partial => 'bubble_view' %>
        		</div>
 
@@ -51,7 +57,7 @@
 		            </div>
 		            <div>
 		            	<span class="likes number">
-                  		<%= link_to @idea.likes_users_count, like_idea_path(@idea), :title => 'Number of times this idea has been liked' %>
+                  		<%= @idea.likes_users_count %>
                   		</span>
 		            </div>
 		            <div>
@@ -108,7 +114,7 @@
 				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
 					<div class="viewsbar">
 						<span class="lvinv">
-							<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip">
+							<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip icon_active">
 								<%= image_tag('new/grid_view_icon.png') %>
 							</a>
 						</span>

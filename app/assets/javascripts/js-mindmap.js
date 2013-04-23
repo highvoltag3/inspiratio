@@ -119,14 +119,14 @@
         $( this )
           .addClass( "ui-state-highlight" )
           .find(".list")
-          .append("<p class='word'>" + ui.draggable.text() + "</p>");
+          .append("<p class='word label'>" + ui.draggable.text() + "</p>");
           //.delay(180000).html('Drop here..');
         
         list.push( ui.draggable.text() );
         console.log(list);
 
-        $(this).find("h5").html( "<br /><span class='saved'>Saved!</span> <br />" );
-        $('.saved').fadeOut(900);
+        $(this).find("h5").html( "<br /><span class='saved text-success'>Saved!</span> <br />" );
+        $('.saved').fadeOut(1200);
 
         $( ui.draggable ).remove();
        // $('#droppable p').delay(100000).html('Drop here');
