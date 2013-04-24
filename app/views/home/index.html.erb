@@ -1,4 +1,12 @@
 <section class="carousel row-flow">
+  <script>$(document).ready(function() {
+    setTimeout(function () {
+      $('.carousel-control.right').trigger('click');
+      $('.carousel-inner').trigger('mouseenter');
+      $('.carousel-inner').trigger('mouseleave');
+    }, 3000);
+  });
+  </script>
   <div id="mainCarousel" class="carousel slide">
     <ol class="carousel-indicators">
       <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
