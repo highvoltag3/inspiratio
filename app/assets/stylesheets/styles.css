@@ -596,6 +596,7 @@ article header > span.location {
 article header > span.username,
 article header > span.location {
 	margin-left: 60px;
+	letter-spacing: .2em;
 }
 
 article header > .follow {
