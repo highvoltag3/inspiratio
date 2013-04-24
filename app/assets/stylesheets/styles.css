@@ -583,14 +583,14 @@ article header > span.username {
 	height: 30px;
 	margin-top: -13px;
 
-	font-family: 'HelveticaLight';
+	font-family: 'HelveticaNeueUltraLight';
 }
 article header > span.location {
 	padding: 0 2rem 0 0;
 	height: 30px;
 	margin-top: -13px;
 
-	font-family: 'HelveticaLight';
+	font-family: 'HelveticaNeueUltraLight';
 }
 
 article header > span.username,
