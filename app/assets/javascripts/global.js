@@ -93,7 +93,7 @@ function openErrorModal(errorMsg, confirmtext) {
         btntype: 'btn-info',
         confirmtext: confirmtext,
         callback: function () {
-            window.location.href = './users/sign_up';
+            window.location.href = './users/sign_up?where=modal';
         }
     });
 }

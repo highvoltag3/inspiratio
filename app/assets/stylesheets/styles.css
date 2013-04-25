@@ -706,12 +706,6 @@ article footer a {
 #main article {
 	float: left;
 }
-/*
-#main article:nth-child(3n+2) {
-	margin-left: 1em;
-	margin-right: 1em;
-}
-*/
 
 /* individual item */
 h2 {
@@ -1830,4 +1824,9 @@ div.gsc-results
 .gsc-cursor-current-page {
 	font-weight: bold;
 	color: #4d4d4d;;
+}
+
+.signup_promo {
+	padding: 7rem 7rem 0 0;
+	float: right;
 }

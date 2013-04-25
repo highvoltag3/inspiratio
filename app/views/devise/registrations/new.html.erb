@@ -1,4 +1,4 @@
-<% if URI(request.referer).path == '/' %>
+<% if params[:where] == "modal" %>
 <div class="row-fluid">
   <div class="span5 offset4 well">
 <% end %>
@@ -26,7 +26,11 @@ $(document).ready(function() {
 
 });
 </script>
-
+<% if params[:where] == "modal" %>
+  <div class="signup_promo">
+    <%= image_tag('new/wewantyou.png', :alt => "We want you!! Join now... it's free and awesome") %>
+  </div> 
+<% end %>
 <h2 class="text-info lead">New user? <br />Join the community</h2>
 <h1>Register</h1>
 
