@@ -66,11 +66,11 @@
 		              </span>
 		            </div>
 
-		            <div class="row hidden-phone slider-thumbs">
+					<% if @idea.prev_images.size > 1 %>
+		            <div class="row-fluid hidden-phone slider-thumbs">
 		            	<h2>Previous revisions</h2>
                         <div class="span12">
                                 <ul class="thumbnails">
-                            	<% if @idea.prev_images.any? %>
                             		<% @idea.prev_images.each do |image| %>
 									<li class="span2">
 									    <a id="carousel-selector-0" href="http://inspiratio.s3.amazonaws.com/uploads/<%= image.id %>/<%= image.image_file_name %>" class="thumbnail" title="<%= @idea.title %>" alt="<%= @idea.title %>" rel="<%= @idea.id %>">
@@ -78,33 +78,16 @@
 										</a>
 									</li>
 									<% end %>
-					            <% end %>
                                 </ul>
                         </div>
 	                </div>
+	                <% end %>
 
 		          </footer>
 
 		        </article><!-- /idea -->
 
 				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
-				<div class="row hidden-phone slider-thumbs">
-					<h2>Previous revisions</h2>
-                    <div class="span12">
-                            <ul class="thumbnails">
-                        	<% if @idea.prev_images.any? %>
-                        		<% @idea.prev_images.each do |image| %>
-								<li class="span2">
-								    <a class="thumbnail" id="carousel-selector-0">
-								    	<img src="http://inspiratio.s3.amazonaws.com/uploads/<%= image.id %>/<%= image.image_file_name %>" />
-									</a>
-								</li>
-								<% end %>
-				            <% end %>
-                            </ul>
-                    </div>
-                </div>
-
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
 					<%= form_for :comment, url: comment_idea_path(@idea) do |f| %>

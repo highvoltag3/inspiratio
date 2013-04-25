@@ -17,6 +17,9 @@ jQuery(document).ready(function($) {
 		}).success(function( msg ) {
 		  	likes = msg.idea.likes;
 		  	$(thisobj).html(likes);
+		}).error(function(xhr, status, err) {
+			if (xhr.status == 401)
+			openErrorModal("<p>We are sorry, but to ensure quality and so we can all benefit from a great community we require that you register before you can like an idea.</p><br /> <p>Join us and enjoy some great benefits, it's really quick and easy.</p>", 'I\'d like toRegister!');
 		});
 		return false;
 	});
@@ -81,3 +84,16 @@ jQuery(document).ready(function($) {
 	//auto dismiss alert of error
 	$('.alert-error').delay(3000).fadeOut('slow');
 });
+
+function openErrorModal(errorMsg, confirmtext) {
+	$('#container').append('<div id="confirmDiv"></div>');
+    $("#confirmDiv").confirmModal({
+        heading: 'Bummer',
+        body: errorMsg,
+        btntype: 'btn-info',
+        confirmtext: confirmtext,
+        callback: function () {
+            window.location.href = './users/sign_up';
+        }
+    });
+}

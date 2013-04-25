@@ -1,3 +1,7 @@
+<% if URI(request.referer).path == '/' %>
+<div class="row-fluid">
+  <div class="span5 offset4 well">
+<% end %>
 <script>
 $(document).ready(function() {
 
@@ -59,6 +63,11 @@ $(document).ready(function() {
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<% if URI(request.referer).path == '/' %>
+  </div>
+</div>
+<% end %>
 
 
 

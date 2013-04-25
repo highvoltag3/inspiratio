@@ -1070,7 +1070,8 @@ article div.preview img {
   	position: relative;
   }
 
-  .span6.ideaside {
+  .span6.ideaside,
+  .span8.ideaside {
 	margin-left: 0 !important;
   }
   .ideaside {
@@ -1175,13 +1176,12 @@ article div.preview img {
 
 	.slider-thumbs h2 {
 		text-align: left;
-		padding-left: 1.5rem;
 		margin-top: 2rem;
 	}
 
 	.thumbnails {
 		padding: 1rem 3rem 1rem .5rem;
-		overflow: hidd
+		overflow: hidden;
 	}
 
 	#ideadetailspanel {
