@@ -60,7 +60,7 @@
 		            		<% if ( current_user && current_user.id == @idea.user_id ) %>
 		            		<%= @idea.likes_users_count %>
 		            		<% else %>
-                  			<%= link_to @idea.likes_users_count, like_idea_path(@idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
+                  			<%= link_to @idea.likes_users_count, like_idea_path(@idea), class: 'number', :title => 'Number of times this idea has been liked' %>
                   			<% end %>
                   		</span>
 		            </div>
