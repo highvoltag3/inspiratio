@@ -53,7 +53,9 @@
           <div class="preview">
             <%= link_to(idea) do %>
               <%= image_tag(idea.current_image.image.url, :alt => idea.title) %>
-              <div class="description"><%= idea.description %></div>
+              <div class="description">
+                <p><%= idea.description %></p>
+              </div>
             <% end %>
           </div>
           <footer class="clearfix">

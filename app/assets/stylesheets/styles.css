@@ -653,6 +653,10 @@ article div.preview {
 		overflow:hidden; 
 	}
 
+	article .description p {
+		white-space: normal;
+	}
+
 	article div.preview a:hover > .description {
 		background: rgba(255, 255, 255, 0.9);
 		font-size: 1.3em;
@@ -1435,6 +1439,7 @@ article div.preview img {
 
 		.publictags .label {
 			padding: .3rem;
+			margin-top: .3rem;
 		}
 
 		.shorturl h2 {
