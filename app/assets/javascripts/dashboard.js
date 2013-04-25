@@ -20,7 +20,7 @@ $(document).ready(function() {
   $('#idea_tag_list_addTag').addClass('newtagbox');
 
   $('.createidea').click(function(){
-    console.log('clicked create idea');
+    //console.log('clicked create idea');
     if( !$('input[type="file"]').val() ) {
       openConfirmModalCreateIdea();
       return false;

@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 		    	itemSelector : '.idea',
 		    	// set columnWidth a fraction of the container width
 				columnWidth: function( containerWidth ) {
-					console.log(containerWidth / 3);
+					//console.log(containerWidth / 3);
 					return containerWidth / 3;
 				},
 				isResizable: true 

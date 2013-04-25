@@ -41,13 +41,13 @@ $(document).ready(function() {
                   //called when successful
                   //console.log(data);
                   wordsresults = data[0].words;
-                  console.log(wordsresults);
+                  //console.log(wordsresults);
                   //makenodes(wordsresults, wordtolookup);
                   addNodeWordnik(wordsresults, wordtolookup);
                 },
                 error: function(e) {
                   //called when there is an error
-                  console.log(e.message);
+                  //console.log(e.message);
                 }
               });
 
@@ -63,7 +63,7 @@ $(document).ready(function() {
       });
   };
 
-            console.log(searchKeywords);
+            //console.log(searchKeywords);
 
 
 });   

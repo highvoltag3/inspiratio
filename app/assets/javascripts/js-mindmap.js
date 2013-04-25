@@ -123,7 +123,7 @@
           //.delay(180000).html('Drop here..');
         
         list.push( ui.draggable.text() );
-        console.log(list);
+        //console.log(list);
 
         $(this).find("h5").html( "<br /><span class='saved text-success'>Saved!</span> <br />" );
         $('.saved').fadeOut(1200);
@@ -467,10 +467,10 @@
   };
 
   $.fn.addNode = function (parent, name, options) {
-    console.log(this);
+    //console.log(this);
     var obj = this[0],
     node = obj.nodes[obj.nodes.length] = new Node(obj, name, parent, options);
-    console.log(obj.root);
+    //console.log(obj.root);
     obj.root.animateToStatic();
     return node;
   };

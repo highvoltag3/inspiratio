@@ -15,7 +15,7 @@ $(document).ready(function() {
           var apiurl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latlng + '&sensor=false';
           $.getJSON(apiurl,
               function(data){
-                  console.log(data);
+                  //console.log(data);
                   var location = data.results[1].formatted_address;
                   $("#user_location").val(location);
               }
