@@ -53,6 +53,10 @@ $(document).ready(function() {
       $('.addidea').trigger('click');
   });
 
+  $('#st').click(function (e) {
+      openSorryModal();
+  });
+
 }); /* end on ready function */
 
 
@@ -77,6 +81,19 @@ function openConfirmModalCreateIdea() {
         showclose: false,
         callback: function () {
             //
+        }
+    });
+}
+
+function openSorryModal() {
+    $("#confirmDiv").confirmModal({
+        heading: 'Sorry :(',
+        body: '<p>We are working on your own settings panel, you will be able to personalize your dashboard colors and layout, give us a few days.</p> <br /> <p> Thank for understanding. </p>',
+        btntype: 'btn-info',
+        confirmtext: 'Ok',
+        showclose: false,
+        callback: function () {
+            
         }
     });
 }
