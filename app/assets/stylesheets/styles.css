@@ -511,7 +511,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	#mainCarousel .carousel-inner > .item > .getitvideo img {
 		width: 15%;
 		position: absolute;
-		right: 26%;
+		right: 30%;
 		top: 9%;
 	}
 
@@ -1856,4 +1856,11 @@ div.gsc-results
 	right: 0;
 	bottom: .5%;
 	z-index: 20;
+}
+
+.goaway a {
+	opacity: .5;
+}
+.goaway a:hover {
+	opacity: 1;
 }
