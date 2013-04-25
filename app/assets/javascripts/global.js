@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 		  	$(thisobj).html(likes);
 		}).error(function(xhr, status, err) {
 			if (xhr.status == 401)
-			openErrorModal("<p>We are sorry, but to ensure quality and so we can all benefit from a great community we require that you register before you can like an idea.</p><br /> <p>Join us and enjoy some great benefits, it's really quick and easy.</p>", 'I\'d like toRegister!');
+			openErrorModal("<p>We are sorry, but to ensure quality and so we can all benefit from a great community we require that you register before you can like an idea.</p><br /> <p>Join us and enjoy some great benefits, it's really quick and easy.</p>", 'I\'d like to Register!');
 		});
 		return false;
 	});
@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
 		masonry();
 	}
 
-	//now triger for the resize with a delay so it wont fire constanly while resizing.
+	//now triger for the resize with a delay so it wont fire constantly while resizing.
 	var delay = (function(){
 	  var timer = 0;
 	  return function(callback, ms){
