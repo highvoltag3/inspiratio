@@ -16,7 +16,7 @@
     <% end %>
         <%= link_to 'Home', root_path, :id => 'home', :title => 'Browse the gallery' %>
       </li>
-    <% if ( controller.controller_name == 'ideas')  %>
+    <% if ( controller.controller_name == 'ideas' && URI(request.referer).path != '/')  %>
       <li class="selected">
     <% else %>
       <li>
@@ -90,16 +90,27 @@
 
 
     <div id="notificationsCircle">
-      <p>1</p>
+      <script>
+        $(document).ready(function() {
+          var notviewed = readCookie('notsViewed');
+          if ( notviewed == 'yes' ) {
+            $('.count').html('0');
+            $('#notificationsCircle').css('background', 'rgb(153, 153, 153)');
+          }else{
+            $('.count').html('1');
+          }
+        });
+      </script>
+      <p class="count">1</p>
     </div>
     <div id="notificationsWrapper">
       <div class="triangle_top_notifications"></div>
       <div id="notificationsWindow">
         <h1>Notifications</h1>
         <div class="notification">
-          <% image_tag 'avatar_jane_doe.jpeg', :alt => 'avatar_jane_doe', :width => 40, :height => 40 %>
           <span class="notificationTitle"></span>
-          <p class="notificationContent">Excellent Job, great chromatic use.</p>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p class="notificationContent alert alert-info"><strong>Welcome to INSPIRATIO</strong> we hope you enjoy using our app.<br />Get inspired, share and tap into your creative process like never before.</p>
           <div class="triangle_top_notInput"></div>
           <input type="text" name="reply" class="reply" value="" placeholder="Type your reply here" />
         </div><!-- /notification -->
