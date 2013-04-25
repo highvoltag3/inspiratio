@@ -66,11 +66,45 @@
 		              </span>
 		            </div>
 
+		            <div class="row hidden-phone slider-thumbs">
+		            	<h2>Previous revisions</h2>
+                        <div class="span12">
+                                <ul class="thumbnails">
+                            	<% if @idea.prev_images.any? %>
+                            		<% @idea.prev_images.each do |image| %>
+									<li class="span2">
+									    <a id="carousel-selector-0" href="http://inspiratio.s3.amazonaws.com/uploads/<%= image.id %>/<%= image.image_file_name %>" class="thumbnail" title="<%= @idea.title %>" alt="<%= @idea.title %>" rel="<%= @idea.id %>">
+									    	<img src="http://inspiratio.s3.amazonaws.com/uploads/<%= image.id %>/<%= image.image_file_name %>" />
+										</a>
+									</li>
+									<% end %>
+					            <% end %>
+                                </ul>
+                        </div>
+	                </div>
+
 		          </footer>
 
 		        </article><!-- /idea -->
 
 				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
+				<div class="row hidden-phone slider-thumbs">
+					<h2>Previous revisions</h2>
+                    <div class="span12">
+                            <ul class="thumbnails">
+                        	<% if @idea.prev_images.any? %>
+                        		<% @idea.prev_images.each do |image| %>
+								<li class="span2">
+								    <a class="thumbnail" id="carousel-selector-0">
+								    	<img src="http://inspiratio.s3.amazonaws.com/uploads/<%= image.id %>/<%= image.image_file_name %>" />
+									</a>
+								</li>
+								<% end %>
+				            <% end %>
+                            </ul>
+                    </div>
+                </div>
+
 				<div class="lastestcomments">
 		          <h2>LEAVE A COMMENT</h2>
 					<%= form_for :comment, url: comment_idea_path(@idea) do |f| %>
@@ -111,7 +145,7 @@
 			<% else %>
 			 <div id="ideadetailspanel" class="span4 ideadetailarrow_box">
 			<% end %>
-				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) %>
+				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) #we have a signed in user show him his stuff %>
 					<div class="viewsbar">
 						<span class="lvinv">
 							<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip icon_active">
@@ -220,9 +254,7 @@
 						 </div>
 					</div>
 
-				<% else %>
-				
-				  	<%# what public can see %>
+				<% else %><%# what public can see %>
 
 					 <div class="colorpalette">
 					 	<h2> Color Palette </h2>

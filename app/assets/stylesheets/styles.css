@@ -595,7 +595,7 @@ article header > span.location {
 
 article header > span.username,
 article header > span.location {
-	margin-left: 60px;
+	margin-left: 63px;
 	letter-spacing: .2em;
 }
 
@@ -1022,6 +1022,10 @@ article div.preview img {
 		padding: .5em;
 		background: white;
 	}
+	#newidea_text input[type="file"] {
+		display: block;
+    	padding-bottom: 1rem;
+	}
 	#newidea_text input[type="radio"] {
 		margin-right: 1em;
 	}
@@ -1167,6 +1171,17 @@ article div.preview img {
 		opacity: .5;
 		right: 1em;
 		position: absolute;
+	}
+
+	.slider-thumbs h2 {
+		text-align: left;
+		padding-left: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.thumbnails {
+		padding: 1rem 3rem 1rem .5rem;
+		overflow: hidd
 	}
 
 	#ideadetailspanel {

@@ -39,6 +39,10 @@ class Idea < ActiveRecord::Base
     self.uploads.first
   end
 
+  def prev_images
+    self.uploads.all
+  end
+
   def old_images
     self.uploads.where(Upload.arel_table[:id].not_eq(self.current_image.id))
   end

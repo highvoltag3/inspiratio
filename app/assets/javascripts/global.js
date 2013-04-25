@@ -3,6 +3,10 @@ jQuery(document).ready(function($) {
 	$('#ideadetailspanel h2').tooltip();
 	$('.tooltip').tooltip();
 
+	if( $('.slider-thumbs').length ) {
+    	$('.slider-thumbs .thumbnail').fancybox();
+  	}
+
 
 	$('.likes').click(function(){
 		var likes;
