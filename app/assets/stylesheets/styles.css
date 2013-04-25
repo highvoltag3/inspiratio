@@ -492,6 +492,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		background: rgba(255,255,255,.5);
 	}
 
+	.carousel-control {
+		width: 25px;
+		height: 26px;
+		font-size: 50px;
+		font-weight: 100;
+		line-height: 17px;
+	}
+
 	#mainCarousel .carousel-inner > .item {
 		text-align: center;
 	}
@@ -607,7 +615,7 @@ article header > .follow {
 	background: url(/assets/new/follow_icon.png) 15px 0 no-repeat;
 
 	right: 0;
-	top: 35px;
+	top: 41px;
 	opacity: 1; /*because of the tooltip not sure why*/
 }
 
@@ -1839,6 +1847,6 @@ div.gsc-results
 .goaway {
 	position: absolute;
 	right: 0;
-	bottom: 1rem;
-z-index: 20;
+	bottom: .5%;
+	z-index: 20;
 }
