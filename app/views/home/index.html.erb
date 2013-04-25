@@ -1,3 +1,9 @@
+<% content_for :more_headers do %>
+  <%= stylesheet_link_tag 'jquery.fancybox' %>
+<% end %>
+<% content_for :js_includes do %>
+  <% javascript_include_tag 'jquery.fancybox.pack', 'jquery.fancybox-media' %>
+<% end %>
 <section class="carousel row-flow">
   <script>$(document).ready(function() {
     setTimeout(function () {
@@ -16,6 +22,7 @@
       <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#mainCarousel" data-slide-to="1"></li>
       <li data-target="#mainCarousel" data-slide-to="2"></li>
+      <li data-target="#mainCarousel" data-slide-to="3"></li>
     </ol>
     <!-- Carousel items -->
     <div class="carousel-inner">
@@ -30,6 +37,23 @@
       </div>
       <div class="item">
         <%= image_tag 'new/third_thing.png', :alt => 'Welcome to INSPIRATIO here you can: Register and publish or share your work' %>
+      </div>
+      <div class="item">
+        <%= image_tag 'new/fourth_thing.png', :alt => 'See what this is about' %>
+        <a class="getitvideo" href="https://vimeo.com/63948264">
+          <%= image_tag 'new/videolink.jpg', :alt => 'Video: What this is about' %>
+        </a>
+        <script>
+          $(document).ready(function() {
+            $('.getitvideo').fancybox({
+                openEffect  : 'none',
+                closeEffect : 'none',
+                helpers : {
+                  media : {}
+                }
+            });
+          });
+        </script>
       </div>
     </div>
     <!-- Carousel nav -->

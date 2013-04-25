@@ -508,6 +508,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		display: inline-block;
 	}
 
+	#mainCarousel .carousel-inner > .item > .getitvideo img {
+		width: 15%;
+		position: absolute;
+		right: 26%;
+		top: 9%;
+	}
+
 	#main {
 		position: relative;
 		width: 95%;
