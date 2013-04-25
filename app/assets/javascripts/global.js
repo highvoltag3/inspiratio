@@ -7,6 +7,16 @@ jQuery(document).ready(function($) {
     	$('.slider-thumbs .thumbnail').fancybox();
   	}
 
+  	if( $('.goaway').length ) {
+    	$('.goaway a').click(function (e) {
+    		e.preventDefault();
+    		$(this).closest('.carousel').slideUp(400, function(){
+    			$('.carousel').remove()
+    		});
+    		createCookie('goaway','yes',30);
+    	});
+  	}
+
 
 	$('.likes').click(function(){
 		var likes;
@@ -96,4 +106,29 @@ function openErrorModal(errorMsg, confirmtext) {
             window.location.href = './users/sign_up?where=modal';
         }
     });
+}
+
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  createCookie(name,"",-1);
 }

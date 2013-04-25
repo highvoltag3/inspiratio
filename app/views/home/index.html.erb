@@ -5,6 +5,10 @@
       $('.carousel-inner').trigger('mouseenter');
       $('.carousel-inner').trigger('mouseleave');
     }, 3000);
+    var goaway = readCookie('goaway');
+    if( goaway == 'yes' ){
+        $('#mainCarousel').remove();
+      }
   });
   </script>
   <div id="mainCarousel" class="carousel slide">
@@ -15,6 +19,9 @@
     </ol>
     <!-- Carousel items -->
     <div class="carousel-inner">
+      <div class="pull-right goaway">
+            <a class="btn btn-link pull-right" href="#">Go away.. don't want to see this anymore.</a>
+        </div>
       <div class="active item">
         <%= image_tag 'new/first_thing.png', :alt => 'Welcome to INSPIRATIO here you can: Get inspired' %>
       </div>

@@ -1830,3 +1830,10 @@ div.gsc-results
 	padding: 7rem 7rem 0 0;
 	float: right;
 }
+
+.goaway {
+	position: absolute;
+	right: 0;
+	bottom: 1rem;
+z-index: 20;
+}
