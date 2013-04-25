@@ -56,8 +56,12 @@
 		              </span>
 		            </div>
 		            <div>
-		            	<span class="likes number">
-                  			<%= link_to idea.likes_users_count, like_idea_path(idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
+		            	<span class="number likes">
+		            		<% if ( current_user && current_user.id == @idea.user_id ) %>
+		            		<%= @idea.likes_users_count %>
+		            		<% else %>
+                  			<%= link_to @idea.likes_users_count, like_idea_path(@idea), class: 'likes number', :title => 'Number of times this idea has been liked' %>
+                  			<% end %>
                   		</span>
 		            </div>
 		            <div>
@@ -128,7 +132,7 @@
 			<% else %>
 			 <div id="ideadetailspanel" class="span4 ideadetailarrow_box">
 			<% end %>
-				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) #we have a signed in user show him his stuff %>
+				<% if ( current_user && current_user.id == @idea.user_id && URI(request.referer).path != '/' ) #we have a signed in user trying to see their own idea, show them their stuff %>
 					<div class="viewsbar">
 						<span class="lvinv">
 							<a href="#" data-placement="bottom" data-title="Grid View" class="tooltip icon_active">
