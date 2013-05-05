@@ -122,8 +122,26 @@
           .append("<p class='word label'>" + ui.draggable.text() + "</p>");
           //.delay(180000).html('Drop here..');
         
-        list.push( ui.draggable.text() );
+        //list.push( ui.draggable.text() );
         //console.log(list);
+        $('#bubblelist_tag_list').val(ui.draggable.text());
+        //console.log($('#bubblelist').val());
+
+        $.ajax({
+        type: "POST",
+        url: $('.edit_idea').attr('action') + '/save_bubble_list',
+        data: {bubblelist : {tag_list : $('#bubblelist_tag_list').val()}},  
+        dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+        }).success(function( msg ) {
+              console.log(msg);
+              //$(thisobj).html(likes);
+          }).error(function(xhr, status, err) {
+            if (xhr.status == 401)
+            console.log("error");
+            console.log(err);
+            console.log(xhr);
+          });
+
 
         $(this).find("h5").html( "<br /><span class='saved text-success'>Saved!</span> <br />" );
         $('.saved').fadeOut(1200);

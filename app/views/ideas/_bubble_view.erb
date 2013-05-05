@@ -6,6 +6,10 @@
 	<%= javascript_include_tag 'bubbleView.js' %>  
 <% end %>
 
+  <%= form_for @idea, :remote => true do |f| %>
+ 	<%= hidden_field(:bubblelist, :tag_list) %>
+  <% end %>
+
   <div id="droppable" class="ui-widget-header">
     <h4 class="lead">Your List</h4>
     <h5></h5>

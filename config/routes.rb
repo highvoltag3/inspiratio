@@ -4,6 +4,7 @@ Inspiratio::Application.routes.draw do
     member do
       get :like # NOTE: choose either a "post"
       post :comment
+      post :save_bubble_list
     end
   end
 

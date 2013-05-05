@@ -72,6 +72,15 @@ class IdeasController < ApplicationController
     @ideas = Idea.find_all_by_user_id(params[:id])
   end
 
+  def save_bubble_list
+    @idea = Idea.find(params[:id])
+    if request.format.json?
+        @idea.tag_list.add(params[:bubblelist][:tag_list])
+        @idea.save
+        render json: { idea: { id: @idea.id, idea: @idea.tags } }
+    end
+  end
+
   private
   def find_user_idea
     unless @idea = current_user.ideas.where(id: params[:id]).first
