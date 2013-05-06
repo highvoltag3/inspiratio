@@ -13,5 +13,10 @@
   <div id="droppable" class="ui-widget-header">
     <h4 class="lead">Your List</h4>
     <h5></h5>
-    <p class="list"><span class="lead muted">Drop Keywords here</span>
+    <p class="list">
+    	<span class="lead muted">Drop Keywords here</span>
+		<% @idea.tags.each do |t| %>
+			<p class='word label'> <%= t %> </p>
+		<% end %>
+    </p>
   </div>

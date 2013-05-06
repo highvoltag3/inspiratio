@@ -133,13 +133,13 @@
         data: {bubblelist : {tag_list : $('#bubblelist_tag_list').val()}},  
         dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
         }).success(function( msg ) {
-              console.log(msg);
+              //console.log(msg);
               //$(thisobj).html(likes);
           }).error(function(xhr, status, err) {
-            if (xhr.status == 401)
-            console.log("error");
-            console.log(err);
-            console.log(xhr);
+            //if (xhr.status == 401)
+            //console.log("error");
+            //console.log(err);
+            //console.log(xhr);
           });
 
 
