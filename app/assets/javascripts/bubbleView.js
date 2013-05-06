@@ -7,7 +7,6 @@ $(document).ready(function() {
     wallrepulse: 1,
     container: 'bubbleView',
     lineColor: "#ccc",
-    showProgressive: false,
     repulse: 8
   });
 
@@ -16,29 +15,35 @@ $(document).ready(function() {
   var searchKeywords = [];
   searchKeywords = keywords.split(' ');
 
+  //create array to hold the results when searching for each keyword
   var wordsresults = [];
 
+
+  var root = $('#bubbleView').get(0).mynode = $('#bubbleView').addRootNode($('.inv_idea_title').text(),{});
+
+  if ( typeof(parentnode) === 'undefined') {
+    var parentnode = root; 
+  } else {
+    var parentnode = parentnode.mynode;
+  }
+
+
+  //search each keyword for related words.
   $.each(searchKeywords, function(index, value) {
     wordtolookup = value;
     
-    var root = $('section h2').get(0).mynode = $('#bubbleView').addRootNode($('.inv_idea_title').text(),{});
-    
-    if ( typeof(parentnode) === 'undefined') {
-      parentnode = root; 
-    } else {
-      parentnode = parentnode.mynode;
-    }
-    this.mynode = $('#bubbleView').addNode(parentnode, wordtolookup, {});
-
     $.ajax({
-      url: 'http://api.wordnik.com/v4/word.json/' + wordtolookup + '/relatedWords?api_key=e22c18406c64c389fe4000964950f380a3474965ab180be08&useCanonical=true&relationshipTypes=same-context&limitPerRelationshipType=10',
+      url: 'http://api.wordnik.com/v4/word.json/' + wordtolookup + '/relatedWords?api_key=e22c18406c64c389fe4000964950f380a3474965ab180be08&useCanonical=true&relationshipTypes=same-context&limitPerRelationshipType=3',
       dataType : 'json',
       success: function(data) {
         //called when successful
         //console.log(data);
         wordsresults = data[0].words;
         //console.log(wordsresults);
-        //makenodes(wordsresults, wordtolookup);
+
+        //check if wordtolookup exist in array if so remove it.
+       //console.log( wordsresults);
+       //console.log( wordsresults.splice($.inArray(wordtolookup, wordsresults),1) );
         addNodeWordnik(wordsresults, wordtolookup);
       },
       error: function(e) {
