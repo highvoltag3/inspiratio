@@ -27,6 +27,8 @@ jQuery(document).ready(function($) {
 		}).success(function( msg ) {
 		  	likes = msg.idea.likes;
 		  	$(thisobj).html(likes);
+		  	$('#container > header').append('<div class="alert alert-success"><a class="close" data-dismiss="alert">&#215;</a>Your liking was saved :)</div>');
+		  	$('.alert').delay(900).fadeOut(900);
 		}).error(function(xhr, status, err) {
 			if (xhr.status == 401)
 			openErrorModal("<p>We are sorry, but to ensure quality and so we can all benefit from a great community we require that you register before you can like an idea.</p><br /> <p>Join us and enjoy some great benefits, it's really quick and easy.</p>", 'I\'d like to Register!');
