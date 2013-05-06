@@ -1400,6 +1400,7 @@ article div.preview img {
   			.list {
   				border: 2px dashed #ccc;
   				padding: .5rem .7rem;
+  				margin-bottom: 1rem;
   			}
 
   			.list .lead {
