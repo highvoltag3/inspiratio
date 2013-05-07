@@ -180,6 +180,17 @@
 
 					<hr>
 
+					<div class="tags">
+					 	<h2 data-placement="top" data-title="You may add more keywords in the Bubble View (or by editing your idea) to refine the feedback"> Keywords & tags </h2>
+						<% if @idea.tags.any? %>
+					 		<% @idea.tags.each do |tag_name| %>
+				              <span class="label"><%= tag_name %></span>
+				            <% end %>
+					 	<% end %>
+					</div>
+
+					<hr>
+
 					<div id="relatedarticles">
 						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">RELATED ARTICLES, LINKS & MORE</h2>
 						<%# words = Wordnik.word.get_related('hysterical')					%>

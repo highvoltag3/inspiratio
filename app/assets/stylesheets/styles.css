@@ -1329,12 +1329,12 @@ article div.preview img {
 		z-index: 99;
 
 		background: rgb(255,255,255);
-		background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(232,232,232,1) 100%);
-		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(232,232,232,1)));
-		background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(232,232,232,1) 100%);
-		background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(232,232,232,1) 100%);
-		background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(232,232,232,1) 100%);
-		background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(232,232,232,1) 100%);
+		background: -moz-radial-gradient(center, ellipse cover,  #3a87ad 0%, rgba(204, 204, 204, 1) 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3a87ad), color-stop(100%,rgba(204, 204, 204, 1)));
+		background: -webkit-radial-gradient(center, ellipse cover,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: -o-radial-gradient(center, ellipse cover,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: -ms-radial-gradient(center, ellipse cover,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: radial-gradient(ellipse at center,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=1 );
 
 	}
@@ -1377,7 +1377,10 @@ article div.preview img {
 			color: rgba(55, 55, 55, 0.9);
 		}
 
-		#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+		.js-mindmap-active div.node.ui-draggable-dragging {
+			background: rgba(54, 109, 146, 0.7);
+		}
+
   		#droppable {
   			position: absolute;
   			top: 0;
@@ -1395,6 +1398,7 @@ article div.preview img {
 				padding: .3rem .5rem;
 				letter-spacing: .07rem;
 				font-size: .9rem;
+				background: #356D88;
   			}
 
   			.list {

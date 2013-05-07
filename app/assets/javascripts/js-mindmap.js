@@ -112,25 +112,37 @@
         obj.root.animateToStatic();
       }
     });
+//// DARIO GOT SORTABLE HERE NOW ;)
+//    $( ".labels" ).sortable({
+//      revert: true
+//    });
+
+// when we get sortable working un-comment the 3 lines in draggable function below
+
+
 /////////// DARIO GOT DROPPABLE HERE //////////
     var list = [];
     $( "#droppable" ).droppable({
+      //connectToSortable: ".labels",
+      //helper: "clone",
+      //revert: "invalid",
       drop: function( event, ui ) {
         $( this )
           .addClass( "ui-state-highlight" )
           .find(".list")
-          .append("<p class='word label'>" + ui.draggable.text() + "</p>");
-          //.delay(180000).html('Drop here..');
+          .append("<p class='word label label-info " + ui.draggable.text() + "'>" + ui.draggable.text() + "</p>");
+          
+          $('.' + ui.draggable.text() + '').delay(600).fadeOut('normal', function(){
+              $('.labels').prepend("<p class='word label label-info'><span class='term'>" + ui.draggable.text() + "</span><a class='close' data-dismiss='alert'>&#215;</a></p>");
+          });
+
         
-        //list.push( ui.draggable.text() );
-        //console.log(list);
         $('#bubblelist_tag_list').val(ui.draggable.text());
-        //console.log($('#bubblelist').val());
 
         $.ajax({
         type: "POST",
         url: $('.edit_idea').attr('action') + '/save_bubble_list',
-        data: {bubblelist : {tag_list : $('#bubblelist_tag_list').val()}},  
+        data: { bubblelist : { tag_list : $('#bubblelist_tag_list').val() } },  
         dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
         }).success(function( msg ) {
               //console.log(msg);
@@ -147,7 +159,6 @@
         $('.saved').fadeOut(1200);
 
         $( ui.draggable ).remove();
-       // $('#droppable p').delay(100000).html('Drop here');
       }
     });
 

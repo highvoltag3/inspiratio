@@ -1,21 +1,25 @@
 Inspiratio::Application.routes.draw do
 
-  resources :ideas do
-    member do
-      get :like # NOTE: choose either a "post"
-      post :comment
-      post :save_bubble_list
-    end
-  end
-
-  devise_for :users
-  
   # Do this once you build a Users Controller
   # resources :users do
   #  member do
   #    resources :ideas
   #  end
   # end
+
+  resources :ideas do
+    member do
+      get :like # NOTE: choose either a "post"
+      post :comment
+      post :save_bubble_list
+      get  :get_bubble_list
+      post :del_from_bubble_list
+    end
+  end
+
+  devise_for :users
+  
+  
   
   get 'users/:id/ideas' => 'ideas#user_idea', :as => :user_idea
 

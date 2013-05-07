@@ -15,8 +15,10 @@
     <h5></h5>
     <p class="list">
     	<span class="lead muted">Drop Keywords here</span>
-		<% @idea.tags.each do |t| %>
-			<p class='word label'> <%= t %> </p>
-		<% end %>
+		  <div class="labels">
+      <% @idea.tags.each do |t| %>
+  			<p class='word label label-info'> <span class="term"><%= t %></span> <a class='close' data-dismiss='alert'>&#215;</a></p>
+  		<% end %>
+      </div>
     </p>
   </div>
