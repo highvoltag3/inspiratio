@@ -49,7 +49,7 @@ class Idea < ActiveRecord::Base
 
   def flickr_photos
     if (self.tags.many?)
-      @flickr_photos ||= FLICKR_CLIENT.photos.search(tags: self.tags.collect { |w| w.name }.join(", "), per_page: 10)
+      @flickr_photos ||= FLICKR_CLIENT.photos.search(tags: self.tags.take(10).collect { |w| w.name }.join(", "), per_page: 10)
     else
       @flickr_photos ||= FLICKR_CLIENT.photos.search(text: self.title, per_page: 10)
     end
