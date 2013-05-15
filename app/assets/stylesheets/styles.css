@@ -1329,21 +1329,23 @@ article div.preview img {
 		z-index: 99;
 
 		background: rgb(255,255,255);
-		background: -moz-radial-gradient(center, ellipse cover,  #3a87ad 0%, rgba(204, 204, 204, 1) 100%);
-		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#3a87ad), color-stop(100%,rgba(204, 204, 204, 1)));
-		background: -webkit-radial-gradient(center, ellipse cover,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
-		background: -o-radial-gradient(center, ellipse cover,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
-		background: -ms-radial-gradient(center, ellipse cover,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
-		background: radial-gradient(ellipse at center,  #3a87ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: -moz-radial-gradient(center, ellipse cover,  #7aa2ad 0%, rgba(204, 204, 204, 1) 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7aa2ad), color-stop(100%,rgba(204, 204, 204, 1)));
+		background: -webkit-radial-gradient(center, ellipse cover,  #7aa2ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: -o-radial-gradient(center, ellipse cover,  #7aa2ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: -ms-radial-gradient(center, ellipse cover,  #7aa2ad 0%,rgba(204, 204, 204, 1) 100%);
+		background: radial-gradient(ellipse at center,  #7aa2ad 0%,rgba(204, 204, 204, 1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=1 );
 
 	}
 
-	.map {width: 900px;
-		height: 100%;}
+	.map {
+		width: 900px;
+		height: 100%;
+	}
 
 		.js-mindmap-active div.node.root {
-		  background: rgba(0, 0, 0, 0.25);
+		  background: rgba(0, 0, 0, .5);
 		  border: 1px solid #fff;
 		  -webkit-border-radius:  5px;
 		  -moz-border-radius:     5px;

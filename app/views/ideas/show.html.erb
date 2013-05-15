@@ -171,8 +171,9 @@
 						<h2 data-placement="top" data-title="Tell me what doesn’t belong, I’ll learn from your feedback">Related images</h2>
 						<div class="clearfix"></div>
 						<% @idea.flickr_photos.each do |photo| %>
-              				<%= link_to(photo.url(:large), :class => 'relatedthumb pull-left', :rel => 'relatedimages', :title => photo.description) do %>
-              					<%= image_tag(photo.url(:large), :class => 'thumb', :title => photo.title, :size => '250x250' ) %>
+              				<%= link_to(photo.url(:large), :class => 'relatedthumb pull-left', :rel => 'relatedimages', :title => photo.description, :'data-tags' => photo.tags) do %>
+              					<%= image_tag(photo.url(:large), :class => 'thumb', :title => photo.title, :size => '250x250' )
+								%>
 							<% end %>
 						<% end %>
 						<div class="clearfix"></div>
