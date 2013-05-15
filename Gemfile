@@ -44,6 +44,7 @@ end
 
 group :production do
   gem 'pg' # postgresql db
+  gem 'newrelic_rpm'
 end
 
 group :development do
