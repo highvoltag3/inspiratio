@@ -36,3 +36,5 @@ ror/inspiratio/tmp/*
 
 #Ignore sensitive info file
 config/config.yml
+
+config/config.yml
