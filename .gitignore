@@ -33,3 +33,6 @@ tags
 
 ror/inspiratio/log/*
 ror/inspiratio/tmp/*
+
+#Ignore sensitive info file
+config.yml
