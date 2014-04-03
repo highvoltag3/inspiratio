@@ -44,7 +44,8 @@ group :assets do
 end
 
 group :production do
-  gem 'pg' # postgresql db
+  #gem 'pg' # postgresql db
+  gem 'mysql2' # database
   gem 'newrelic_rpm'
 end
 
