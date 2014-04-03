@@ -17,7 +17,6 @@ gem 'likes_tracker' # track likes
 gem 'thin'  # web server
 #gem 'heroku' #this is now heroku toolbet, so Gem is deprecated.
 gem 'foreman' # launcher (mainly for heroku)
-gem 'rails_12factor' #disable heroku injection
 
 # external APIs
 #
@@ -44,8 +43,7 @@ group :assets do
 end
 
 group :production do
-  #gem 'pg' # postgresql db
-  gem 'mysql2' # database
+  gem 'pg' # postgresql db
   gem 'newrelic_rpm'
 end
 
@@ -55,3 +53,6 @@ group :development do
   gem "quiet_assets"
   gem "ruby-debug19"
 end
+
+
+
