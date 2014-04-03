@@ -1,0 +1,35 @@
+development:
+  aws:
+    key: ENV['S3_KEY'] //place AWS key
+    secret: ENV['S3_SECRET'] //place AWS secret
+    bucket: 'inspiratio'
+    region: 'eu-west-1'
+
+  redis:
+    host: 'localhost'
+    port: '6379'
+    db: '1'
+
+test:
+  aws:
+    key: ''
+    secret: ''
+    bucket: ''
+    region: 'eu-west-1'
+
+  redis:
+    host: 'localhost'
+    port: '6379'
+    db: '2'
+
+production:
+  aws:
+    key: ENV['S3_KEY'] //place AWS key
+    secret: ENV['S3_SECRET']  //place AWS secret
+    bucket: 'inspiratio'
+    region: 'eu-west-1'
+
+  redis:
+    host: 'localhost'
+    port: '6379'
+    db: '3'
